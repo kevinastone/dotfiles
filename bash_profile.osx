@@ -1,0 +1,22 @@
+export EDITOR=vim
+export PATH=$PATH:"~/bin"
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+if [ -d $(brew --prefix)/etc/bash_completion.d ]; then
+	for fn in $(brew --prefix)/etc/bash_completion.d/*; do
+		. $fn
+	done
+fi
+
+if [ -d ~/.profile.d ]; then
+	for fn in ~/.profile.d/*.bash; do
+		. $fn
+	done
+fi
+
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi

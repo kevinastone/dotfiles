@@ -1,0 +1,42 @@
+[user]
+	name = Kevin Stone
+	email = kevinastone@gmail.com
+[color]
+	ui = true
+[merge]
+	tool = Kaleidoscope
+[core]
+	quotepath = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[mergetool]
+	keepBackup = true
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[alias]
+	ignored = ls-files --others -i --exclude-standard
+	# Log Aliases
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	
+	# Shortcuts
+	co = checkout
+	ci = commit
+	st = status -sb
+	r = reset
+	r1 = reset HEAD^
+	
+	# History
+	diverges = !sh -c 'git rev-list --boundary $1...$2 | grep ^- | cut -c2-'
+[hub]
+	protocol = https
+[push]
+	default = upstream
