@@ -18,12 +18,25 @@ do
 	then
 		echo "${DEST_FILE} already installed"
 	else
-		read -p "Install ${DEST_FILE}? (y/n)" -r
-		if [[ $REPLY =~ ^[Yy]$ ]]
-		then
-			echo "Installing $DEST_FILE"
-			ln -sf $SRC_FILE $DEST_FILE
-		fi
+		while true; do
+			read -p "Install ${DEST_FILE}? (y/n/d)" yn
+			case $yn in
+				[Yy]* ) 
+					echo "Installing $DEST_FILE"
+					ln -sf $SRC_FILE $DEST_FILE
+					break
+					;;
+				[Nn]* )
+					break
+					;;
+				[Dd]* )
+					diff -u $DEST_FILE $SRC_FILE
+					;;
+				* )
+					echo "Please answer yes, no or diff."
+					;;
+			esac
+		done
 	fi
 done
 popd >/dev/null
