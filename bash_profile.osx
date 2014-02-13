@@ -1,16 +1,21 @@
 export EDITOR=vim
 export PATH=$PATH:"~/bin"
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+# Setup Brew Based Completions
+if `hash brew >/dev/null 2>&1`
+then
+	if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	    . $(brew --prefix)/etc/bash_completion
+	fi
+
+	if [ -d $(brew --prefix)/etc/bash_completion.d ]; then
+		for fn in $(brew --prefix)/etc/bash_completion.d/*; do
+			. $fn
+		done
+	fi
 fi
 
-if [ -d $(brew --prefix)/etc/bash_completion.d ]; then
-	for fn in $(brew --prefix)/etc/bash_completion.d/*; do
-		. $fn
-	done
-fi
-
+# Load our Defined Bash Profile Configurations
 if [ -d ~/.profile.d ]; then
 	for fn in ~/.profile.d/*.bash; do
 		. $fn
