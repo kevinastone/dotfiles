@@ -1,4 +1,4 @@
-export EB_HOME="/Volumes/eb_home/work/eventbritecore/"
+export EB_HOME="/Users/kevinstone/eventbrite/core"
 export EB_VM_MEMSIZE="4096"
 
 function vg() {
