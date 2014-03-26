@@ -1,4 +1,5 @@
 export EB_HOME="/Volumes/eb_home/work/eventbritecore/"
+export EB_VM_MEMSIZE="4096"
 
 function vg() {
 
@@ -8,7 +9,7 @@ function vg() {
        vagrant $@
        popd
    else
-       pushd $EB_HOME
+       cd $EB_HOME
    fi
 }
 
