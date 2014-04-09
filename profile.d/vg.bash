@@ -6,6 +6,7 @@ function vg() {
 
     if [ $1 ]
     then
+    	ssh-add
         pushd $EB_HOME/django/scripts/vagrant/vagrant_1.4/
         vagrant $@
         popd
