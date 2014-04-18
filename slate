@@ -52,8 +52,9 @@ bind left:${activate-key}	push left  bar-resize:screenSizeX/2
 bind right:${activate-key}	${righthalf}
 bind space:${activate-key}	move screenOriginX;screenOriginY screenSizeX;screenSizeY
 
-bind ,:${activate-key}	corner bottom-left
-bind .:${activate-key}	corner bottom-right
+bind v:${activate-key}	sequence push top | resize +0 +100%
+bind ,:${activate-key}  sequence push top | push left | resize +0 +100%
+bind .:${activate-key}  sequence push top | push right | resize +0 +100%
 
 # 
 # # Nudge Bindings
