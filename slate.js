@@ -4,7 +4,8 @@ var FULLSCREEN_ORDER = [
 	/Terminal/,
 	/Sublime Text/,
 	/Safari/,
-	/Mail/
+	/Mail/,
+	/Slack/,
 ];
 
 
@@ -19,28 +20,26 @@ processFullscreenApps = function(toggle) {
 			if (appName.match(name)) {
 
 /*jshint multistr: true */
-// var cmd = '/usr/bin/osascript -e \' \
-//   set theapp to "' + appName + '" \
-//     set toggleOnFull to "' + toggle.toString() + '" \
-// \
-//   tell application theapp \
-//     activate \
-//     delay 0.3 \
-//     set isfullscreen to false \
-//     tell application "System Events" to tell process theapp \
-//       set isfullscreen to value of attribute "AXFullScreen" of window 1 \
-//     end tell \
-// \
-//     if isfullscreen is toggleOnFull then \
-//       tell application "System Events"  \
-//         keystroke "f" using { command down, control down } \
-//       end tell \
-//       delay 1.2 \
-//     end if \
-//   end tell \
-// \'';
-
-				var cmd = '~/bin/makeFullScreen.applescript "' + appName + '" ' + toggle.toString();
+var cmd = '/usr/bin/osascript -e \' \n\
+  set theapp to "' + appName + '" \n\
+    set toggleOnFull to ' + (!toggle).toString() + ' \n\
+    \
+  tell application theapp \n\
+      activate \n\
+      delay 0.3 \n\
+      set isfullscreen to false \n\
+      tell application "System Events" to tell process theapp \n\
+        set isfullscreen to value of attribute "AXFullScreen" of window 1 \n\
+      end tell \n\
+      \
+    if isfullscreen is toggleOnFull then \n\
+          tell application "System Events"  \n\
+            keystroke "f" using { command down, control down } \n\
+          end tell \n\
+          delay 1.2 \n\
+        end if \n\
+      end tell \n\
+      \'';
 				// slate.log(cmd);
 				slate.shell(cmd, true);
 			}
