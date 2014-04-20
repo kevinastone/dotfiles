@@ -1,6 +1,7 @@
 export EB_HOME="/Users/kevinstone/eventbrite/core"
 export EB_VM_MEMSIZE="4096"
 export EB_VG_NFS_VENV="yes"
+export EB_VG_SYNC_VENV="yes"
 
 function vg() {
 
