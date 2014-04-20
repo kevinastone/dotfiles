@@ -16,4 +16,4 @@ function vg() {
     fi
 }
 
-complete -F _vagrant vg
+type -t _vagrant >/dev/null && complete -F _vagrant vg
