@@ -7,8 +7,21 @@ function vg() {
 
     if [ $1 ]
     then
-    	ssh-add
         pushd $EB_HOME/django/scripts/vagrant/vagrant_1.4/
+        case "$1" in
+            up|resume|ssh|provision)
+                # Add the ssh-key on boot
+                ssh-add
+            ;;
+        	halt|suspend)
+                # Need to rsync back before shutdown
+    			vm_name=`vagrant status | grep running | head -1 | cut -f1 -d" "`
+                sync_cmd=`vagrant list-commands | grep rsync-back | head -1 | cut -f1 -d" "`
+    			if [[ "$vm_name" != "" && "$sync_cmd" != "" ]]; then
+    				vagrant $sync_cmd
+    			fi
+			;;
+    	esac
         vagrant $@
         popd
     else
