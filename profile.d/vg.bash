@@ -17,6 +17,11 @@ function vg() {
     if [ $1 ]
     then
         case "$1" in
+            plugins)
+                pushd $VAGRANT_PATH
+                ./manage_plugins.py
+                exit
+            ;;
             up|resume|ssh|reload|provision)
                 # Add the ssh-key on boot
                 ssh-add
