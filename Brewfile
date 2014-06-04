@@ -6,7 +6,6 @@ install node
 install phantomjs
 install tmux
 install tree
-install vagrant-completion
 install watch
 
 # cask install virtualbox
