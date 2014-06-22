@@ -6,5 +6,6 @@ install node
 install tmux
 install tree
 install watch
+install wget
 
 # cask install virtualbox
