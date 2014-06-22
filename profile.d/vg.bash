@@ -12,6 +12,12 @@ function __call_vagrant() {
     # VAGRANT_CWD="$VAGRANT_PATH" vagrant $@
 }
 
+function start_selenium() {
+    pushd $VAGRANT_PATH
+    /usr/bin/java -jar ../../../src/www/eventbrite/common/automation/webdriver/server/selenium-server-standalone-2.41.0.jar -trustAllSSLCertificates &
+    popd
+}
+
 function vg() {
 
     if [ $1 ]
