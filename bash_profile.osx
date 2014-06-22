@@ -1,6 +1,8 @@
 export EDITOR=vim
 export PATH=$PATH:"~/bin"
 
+ulimit -n 4096
+
 # Setup Brew Based Completions
 if `hash brew >/dev/null 2>&1`
 then
