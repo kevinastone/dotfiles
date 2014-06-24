@@ -7,5 +7,6 @@ install tmux
 install tree
 install watch
 install wget
+install ack
 
 # cask install virtualbox
