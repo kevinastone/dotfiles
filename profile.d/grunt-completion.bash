@@ -1,4 +1,4 @@
 #!/bin/bash
 
-hash grunt >/dev/null && \
+hash grunt 2>/dev/null && \
 eval "$(grunt --completion=bash)"
