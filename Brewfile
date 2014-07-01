@@ -10,3 +10,5 @@ install wget
 install ack
 
 # cask install virtualbox
+cask install soundcleod
+cask alfred link
