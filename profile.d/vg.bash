@@ -43,7 +43,20 @@ function vg() {
                 fi
             ;;
         esac
+        case "$1" in
+            up)
+                pushd $VAGRANT_PATH
+                ./manage_plugins.py
+            ;;
+        esac
+
         __call_vagrant $@
+
+        case "$1" in
+            up)
+                rm ~/.vagrant.d/plugins.json
+            ;;
+        esac
     else
         cd $EB_HOME
     fi
