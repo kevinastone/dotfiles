@@ -9,14 +9,6 @@ then
 	if [ -f $(brew --prefix)/etc/bash_completion ]; then
 	    . $(brew --prefix)/etc/bash_completion
 	fi
-
-	if [ -d $(brew --prefix)/etc/bash_completion.d ]; then
-		for fn in $(brew --prefix)/etc/bash_completion.d/*; do
-			. $fn
-		done
-	fi
-
-	. $(brew --repository)/Library/Contributions/brew_bash_completion.sh
 fi
 
 # Load our Defined Bash Profile Configurations
