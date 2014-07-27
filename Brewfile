@@ -7,8 +7,10 @@ install tmux
 install tree
 install watch
 install wget
-install ack
+install bash-completion
 
 # cask install virtualbox
+# cask install vagrant
+# homebrew/completions/vagrant-completion
 cask install soundcleod
 cask alfred link
