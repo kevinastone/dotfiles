@@ -4,8 +4,8 @@ var FULLSCREEN_ORDER = [
 	/Terminal/,
 	/Sublime Text/,
 	/Safari/,
-	/Mail/,
 	/Slack/,
+	/Mail/,
 ];
 
 
