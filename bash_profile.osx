@@ -1,6 +1,8 @@
 export EDITOR=vim
 export PATH=$PATH:"~/bin"
 
+export WORKON_BASE_DIR="${HOME}/Documents"
+
 ulimit -n 4096
 
 # Setup Brew Based Completions

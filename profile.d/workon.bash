@@ -1,6 +1,7 @@
 
 # Change this to your base projects path [$WORKON_BASE_DIR/{project1,project2,...}]
-WORKON_BASE_DIR=/mnt/hgfs
+WORKON_BASE_DIR=${WORKON_BASE_DIR:-"/mnt/hgfs"}
+
 # Change this to your relative virtual_env dir (if exists) [$WORKON_BASE_DIR/{project}/$VENV_DIR]
 VENV_DIR=".env"
 
