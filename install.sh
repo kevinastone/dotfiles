@@ -2,6 +2,16 @@
 
 SCRIPT_NAME=$(basename ${BASH_SOURCE})
 
+OS_EXTENSION=""
+OS_NAME=`uname -s`
+if [[ $OS_NAME == "Darwin" ]]
+then
+	OS_EXTENSION=".osx"
+elif [[ $OS_NAME == "Linux" ]]
+then
+	OS_EXTENSION=".linux"
+fi
+
 pushd $(dirname ${BASH_SOURCE}) >/dev/null
 SRC_DIR=`pwd -P`
 
@@ -12,7 +22,7 @@ do
 	fi
 	
 	SRC_FILE="$SRC_DIR/$fn"
-	DEST_FILE="$HOME/.${fn%.osx}"
+	DEST_FILE="$HOME/.${fn%$OS_EXTENSION}"
 	
 	if [ -L $DEST_FILE ] && [ $(readlink $DEST_FILE) = $SRC_FILE ]
 	then
