@@ -3,7 +3,7 @@ export EB_VM_MEMSIZE="4096"
 # export EB_VG_NFS_VENV="yes"
 export EB_VG_SYNC_VENV="yes"
 
-export VAGRANT_PATH="$EB_HOME/django/scripts/vagrant/vagrant_1.5"
+VAGRANT_PATH="$EB_HOME/django/scripts/vagrant/vagrant_1.5"
 
 function __call_vagrant() {
     pushd $VAGRANT_PATH
