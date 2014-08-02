@@ -20,7 +20,11 @@ do
 	if [ $fn == $SCRIPT_NAME ]; then
 		continue
 	fi
-	
+
+	if $(grep -xq $fn ${SRC_DIR}/.skip-install); then
+		continue
+	fi
+
 	SRC_FILE="$SRC_DIR/$fn"
 	DEST_FN=${fn%$OS_EXTENSION}
 	DEST_DIR=$(dirname ${DEST_FN})
