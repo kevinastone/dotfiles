@@ -16,6 +16,7 @@ install tree
 install watch
 install wget
 install hub
+install --HEAD fish
 
 # Cask Apps
 cask install virtualbox
