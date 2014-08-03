@@ -1,9 +1,4 @@
-
-
 set -x EB_HOME "/Users/kevinstone/eventbrite/core"
-set -x EB_VM_MEMSIZE "4096"
-# export EB_VG_NFS_VENV="yes"
-set -x EB_VG_SYNC_VENV "yes"
 
 set VAGRANT_PATH "$EB_HOME/django/scripts/vagrant/vagrant_1.5"
 

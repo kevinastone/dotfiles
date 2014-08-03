@@ -7,3 +7,7 @@ end
 set -x WORKON_BASE_DIR "$HOME/Documents"
 
 ulimit -n 4096
+
+set -x EB_VM_MEMSIZE "4096"
+# export EB_VG_NFS_VENV="yes"
+set -x EB_VG_SYNC_VENV "yes"
