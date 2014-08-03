@@ -15,7 +15,7 @@ fi
 pushd $(dirname ${BASH_SOURCE}) >/dev/null
 SRC_DIR=`pwd -P`
 
-for fn in `find * -not -name '.*' -type f-`
+for fn in `find -L * -not -name '.*' -type f`
 do
 	if [ $fn == $SCRIPT_NAME ]; then
 		continue
