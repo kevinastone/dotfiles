@@ -21,7 +21,7 @@ end
 
 function vg
 
-    set -q $argv[1]
+    set -q argv[1]
     and begin
     	set -l command $argv[1]
         switch $command
