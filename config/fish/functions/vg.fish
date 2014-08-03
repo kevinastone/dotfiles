@@ -52,7 +52,7 @@ function vg
 
         switch $command
             case up
-                rm ~/.vagrant.d/plugins.json
+                test -e ~/.vagrant.d/plugins.json; and rm ~/.vagrant.d/plugins.json
         end
     end
     or cd $EB_HOME
