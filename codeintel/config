@@ -1,0 +1,10 @@
+{
+    "Python": {
+        "pythonExtraPaths": [
+            "/Users/kevinstone/eventbrite/core/",
+            "/Users/kevinstone/eventbrite/core/django/src/www",
+            "/Users/kevinstone/eventbrite/core/django/src/www/eventbrite",
+            "/Users/kevinstone/eventbrite/python_venv/eb/lib/python2.6/site-packages"
+        ]
+    }
+}
