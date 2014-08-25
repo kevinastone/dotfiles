@@ -19,6 +19,7 @@ install hub
 install --HEAD fish
 
 # Cask Apps
+cask install sublime-text3
 cask install virtualbox
 cask install vagrant
 cask install soundcleod
