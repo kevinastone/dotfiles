@@ -1,1 +1,3 @@
 virtualenv
+flake8
+IPython
