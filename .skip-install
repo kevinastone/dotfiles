@@ -5,3 +5,4 @@ Gemfile
 Gemfile.lock
 gem.sh
 Install.markdown
+sublime.sh
