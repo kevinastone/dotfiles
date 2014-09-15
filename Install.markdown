@@ -11,7 +11,8 @@
 ## Install Libraries
 
         # Install Python Libraries
-        sudo pip install -r requirements.txt
+        sudo pip install pipsi
+        cat requirements.txt | xargs -n1 pipsi install
         # Install NPM Libraries
         ./npm.sh
         # Install Ruby Gems
