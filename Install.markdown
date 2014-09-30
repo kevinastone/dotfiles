@@ -9,9 +9,9 @@
         brew bundle
 
 ## Install Libraries
-
-        # Install Python Libraries
+        # Install pipsi
         sudo pip install pipsi
+        # Install Python Libraries
         cat requirements.txt | xargs -n1 pipsi install
         # Install NPM Libraries
         ./npm.sh
