@@ -25,16 +25,20 @@ do
 		continue
 	fi
 
+	PREFIX="."
+	if [[ "$fn" == *.nodot* ]]; then
+		PREFIX=""
+	fi
 	SRC_FILE="$SRC_DIR/$fn"
 	DEST_FN=${fn%$OS_EXTENSION}
+	DEST_FN=${DEST_FN%$".nodot"}
 	DEST_DIR=$(dirname ${DEST_FN})
 	if [ $DEST_DIR == "." ]; then
-		DEST_FILE="$HOME/.${DEST_FN}"
+		DEST_FILE="$HOME/${PREFIX}${DEST_FN}"
 	else
-		mkdir -p "$HOME/.${DEST_DIR}"
-		DEST_FILE="$HOME/.${DEST_DIR}/$(basename ${DEST_FN})"
+		mkdir -p "$HOME/${PREFIX}${DEST_DIR}"
+		DEST_FILE="$HOME/${PREFIX}${DEST_DIR}/$(basename ${DEST_FN})"
 	fi
-	DEST_FILE="$HOME/.${fn%$OS_EXTENSION}"
 
 	if [ -L $DEST_FILE ] && [ $(readlink $DEST_FILE) = $SRC_FILE ]
 	then
