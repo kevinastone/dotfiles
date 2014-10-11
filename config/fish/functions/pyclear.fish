@@ -1,1 +1,1 @@
-alias pyclear="find . -name '*.pyc' -print0 | xargs -0 rm"
+alias pyclear="find . -name '*.pyc' -delete"
