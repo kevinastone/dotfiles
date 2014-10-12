@@ -4,7 +4,7 @@ function pullall --description "Git Pull all Repos under the current path"
     and set -l path $argv[1]
     or set -l path $PWD
     
-    for git_dir in (find "$path" -name .git -type d)
+    for git_dir in (find "$path" -name .git -type d -prune)
         pushd $git_dir/..
         set_color blue
         echo $PWD
