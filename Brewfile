@@ -24,4 +24,5 @@ cask install sublime-text3
 cask install virtualbox
 cask install vagrant
 cask install soundcleod
+cask install slate
 cask alfred link
