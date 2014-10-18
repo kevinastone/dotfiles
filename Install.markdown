@@ -6,7 +6,9 @@
 
 ## Install System Packages
 
-        brew bundle
+        # Install Homebrew
+        curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
+        ./brewinstall.sh
 
 ## Install Libraries
         # Install pipsi
