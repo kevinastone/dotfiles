@@ -1,5 +1,6 @@
 
 function vssh --description "SSH into Vagrant"
+    cd ~/eventbrite/docker-dev
     test -d .vagrant
     or begin
         echo "No Vagrantfile found" 1>&2
