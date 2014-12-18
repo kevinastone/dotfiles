@@ -5,10 +5,7 @@ function prbt() {
 	BRANCH=$1
 	shift
 
-	BASE=`git merge-base $BRANCH origin/master`
-	HEAD=`git rev-parse $BRANCH`
-
-	rbt post --revision-range $BASE:$HEAD $*
+	rbt post --branch=$BRANCH --tracking-branch=origin/master $*
 }
 
 
