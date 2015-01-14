@@ -33,6 +33,9 @@
 	st = status -sb
 	r = reset
 	r1 = reset HEAD^
+
+	# Unadd
+	unadd = reset HEAD
 	
 	# History
 	diverges = !sh -c 'git rev-list --boundary $1...$2 | grep ^- | cut -c2-'
