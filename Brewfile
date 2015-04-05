@@ -17,6 +17,7 @@ install tree
 install watch
 install wget
 install hub
+install jq
 install --HEAD fish
 
 # Cask Apps
