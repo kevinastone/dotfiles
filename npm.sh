@@ -3,4 +3,5 @@ npm install -g \
     jshint \
     grunt-cli \
     coffee-script \
-    coffeelint
+    coffeelint \
+    eslint

@@ -1,5 +1,6 @@
 tap caskroom/cask
 tap caskroom/versions
+tap Osso/homebrew-arcanist
 
 # Bash Completions
 install bash-completion
@@ -19,6 +20,8 @@ install wget
 install hub
 install jq
 install --HEAD fish
+
+install arcanist
 
 # Cask Apps
 cask install sublime-text3
