@@ -31,6 +31,14 @@ function arc --description "command line client to the phabricator review system
                 if not contains -- "--keep-branch" $argv
                     set argv "--keep-branch" $argv
                 end
+
+            case patch
+                if not contains -- "--nocommit" $argv
+                    set argv "--nocommit" $argv
+                end
+                if not contains -- "--nobranch" $argv
+                    set argv "--nobranch" $argv
+                end
         end
     end
     echo "arc $subcommand $argv" >&2
