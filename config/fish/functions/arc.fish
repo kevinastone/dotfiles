@@ -20,6 +20,9 @@ function arc --description "command line client to the phabricator review system
                 if not contains -- "--browse" $argv
                     set argv "--browse" $argv
                 end
+                if not contains -- "--allow-untracked" $argv
+                    set argv "--allow-untracked" $argv
+                end
 
             case land
                 if not contains -- "--onto" $argv
