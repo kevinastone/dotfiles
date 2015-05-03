@@ -29,4 +29,5 @@ cask install virtualbox
 cask install vagrant
 cask install soundcleod
 cask install slate
+cask install licecap
 cask alfred link
