@@ -19,6 +19,7 @@ install watch
 install wget
 install hub
 install jq
+install httpie
 install --HEAD fish
 
 install arcanist
