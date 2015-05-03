@@ -1,0 +1,4 @@
+# For Sequence Diagrams
+seqdiag
+# For Documentation
+sphinx
