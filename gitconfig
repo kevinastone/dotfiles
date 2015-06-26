@@ -49,5 +49,6 @@
 	protocol = https
 [push]
 	default = upstream
+	followTags = true
 [branch]
 	autosetuprebase = always
