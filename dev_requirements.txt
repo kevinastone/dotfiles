@@ -2,3 +2,4 @@
 seqdiag
 # For Documentation
 sphinx
+cookiecutter
