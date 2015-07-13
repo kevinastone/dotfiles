@@ -20,7 +20,7 @@ install wget
 install hub
 install jq
 install httpie
-install --HEAD fish
+install fish
 
 install arcanist
 
