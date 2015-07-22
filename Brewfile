@@ -21,6 +21,7 @@ install hub
 install jq
 install httpie
 install fish
+install moreutils
 
 install arcanist
 
