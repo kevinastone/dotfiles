@@ -3,3 +3,4 @@ seqdiag
 # For Documentation
 sphinx
 cookiecutter
+virtualfish
