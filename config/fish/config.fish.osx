@@ -11,3 +11,5 @@ ulimit -n 4096
 set -x EB_VM_MEMSIZE "6144"
 # export EB_VG_NFS_VENV="yes"
 set -x EB_VG_SYNC_VENV "yes"
+
+set -x GOPATH ~/.go
