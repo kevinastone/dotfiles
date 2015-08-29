@@ -14,7 +14,7 @@
         # Install pipsi
         sudo pip install pipsi
         # Install Python Libraries
-        cat requirements.txt | xargs -n1 pipsi install
+        cat requirements.txt | sed '/^\s*#/d'| xargs -n1 pipsi install
         # Install NPM Libraries
         ./npm.sh
         # Install Ruby Gems
