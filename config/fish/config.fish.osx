@@ -20,9 +20,6 @@ end 2>&1 >/dev/null
 
 # Fundle
 begin
-
-    fundle plugin 'tuvistavie/oh-my-fish-core'
-    fundle plugin 'oh-my-fish/plugin-tab'
-    fundle init
-
+    set -l config_path (dirname (status -f))
+    source $config_path/fundle.fish
 end 2>&1 >/dev/null
