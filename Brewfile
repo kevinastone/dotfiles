@@ -27,6 +27,7 @@ install grc
 install arcanist
 
 # Cask Apps
+cask install alfred
 cask install sublime-text3
 cask install virtualbox
 cask install vagrant

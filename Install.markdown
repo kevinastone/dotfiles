@@ -11,6 +11,8 @@
         ./brewinstall.sh
 
 ## Install Libraries
+        # Install Pip
+        sudo easy_install pip
         # Install pipsi
         sudo pip install pipsi
         # Install Python Libraries
