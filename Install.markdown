@@ -24,3 +24,8 @@
         bundler install
         # Install Sublime Package Manager
         ./sublime.sh
+
+## Configure Fish Shell
+
+        echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+        chsh -s /usr/local/bin/fish
