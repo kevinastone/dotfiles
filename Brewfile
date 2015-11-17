@@ -23,6 +23,7 @@ install httpie
 install fish
 install moreutils
 install grc
+install mobile-shell
 
 install arcanist
 
