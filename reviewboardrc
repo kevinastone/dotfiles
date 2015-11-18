@@ -1,4 +1,0 @@
-REVIEWBOARD_URL = "http://reviews.evbhome.com"
-
-GUESS_DESCRIPTION = True
-GUESS_SUMMARY = True
