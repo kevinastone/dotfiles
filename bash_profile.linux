@@ -1,0 +1,16 @@
+export EDITOR=vim
+
+# Load our Defined Bash Profile Configurations
+if [ -d ~/.profile.d ]; then
+    for fn in ~/.profile.d/*.bash; do
+        . $fn
+    done
+fi
+
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+
+export PATH=$PATH:$HOME/bin
+
+shopt -s checkwinsize
