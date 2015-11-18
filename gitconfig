@@ -43,9 +43,6 @@
 
 	# Branch Age
 	# ages = !sh -c 'for k in `git branch -r`; do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort'
-
-	ppush = !sh -c 'git push origin HEAD:proposed-`whoami`-`git rev-parse --abbrev-ref HEAD`'
-	fppush = !sh -c 'git push origin HEAD:proposed-`whoami`-`git rev-parse --abbrev-ref HEAD` -f'
 [hub]
 	protocol = https
 [push]
