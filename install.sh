@@ -45,7 +45,7 @@ do
 		echo "${DEST_FILE} already installed"
 	else
 		while true; do
-			read -p "Install ${DEST_FILE}? (y/n/d)" yn
+			read -p "Install ${DEST_FILE}? (y/n/c/d)" yn
 			case $yn in
 				[Yy]* ) 
 					echo "Installing $DEST_FILE"
@@ -55,11 +55,16 @@ do
 				[Nn]* )
 					break
 					;;
+				[Cc]* )
+					echo "Copying to $DEST_FILE"
+					cp -i $SRC_FILE $DEST_FILE
+					break
+					;;
 				[Dd]* )
 					diff -u $DEST_FILE $SRC_FILE
 					;;
 				* )
-					echo "Please answer yes, no or diff."
+					echo "Please answer yes, no, copy or diff."
 					;;
 			esac
 		done
