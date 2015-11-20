@@ -9,3 +9,10 @@ set wildmenu            " visual autocomplete for command menu
 
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
