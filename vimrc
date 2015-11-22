@@ -1,8 +1,33 @@
 set nocompatible
 
 syntax on
-set autoindent                  "Keep indentation from previous line
-filetype plugin indent on
+
+" Change leader to a comma because the backslash is too far away
+" That means all \x commands turn into ,x
+" The mapleader has to be set before vundle starts loading all 
+" the plugins.
+let mapleader=","
+
+
+" ================ General Config ====================
+
+set noerrorbells                " No beeps
+set number                      " Show line numbers
+set ruler                       " Show cursor position
+set backspace=indent,eol,start  " Makes backspace key more powerful.
+set showcmd                     " Show me what I'm typing
+set showmode                    " Show current mode.
+set autoread                    " Reload files changed outside vim
+
+set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
+
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
+
+
+" ================ Indentation =======================
 
 " Prefer spaces over tabs
 set tabstop=4
@@ -10,21 +35,57 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-set noerrorbells                " No beeps
-set number                      " Show line numbers
-set backspace=indent,eol,start  " Makes backspace key more powerful.
-set showcmd                     " Show me what I'm typing
-set showmode                    " Show current mode.
- 
-set wildmenu                    " visual autocomplete for command menu
+set autoindent                  " Keep indentation from previous line
 
-set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
+" Auto indent pasted text
+nnoremap p p=`]<C-o>
+nnoremap P P=`]<C-o>
+
+filetype plugin indent on
+
+set nowrap                      " Don't wrap lines
+set linebreak                   " Wrap lines at convenient points
+
+set listchars=tab:»·,trail:·,eol:¬
+nmap <silent> <leader>a :set nolist!<CR>
+
+ 
+" ================ Completion =======================
+
+set wildmode=list:longest
+set wildmenu                    " enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~     " stuff to ignore when tab completing
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
+
+
+" ================ Scrolling ========================
+
+set scrolloff=8                 " Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
+
+
+" ================ Search ===========================
 
 set showmatch                   " Do not show matching brackets by flickering
 set incsearch                   " Shows the match while typing
 set hlsearch                    " Highlight found searches
 set ignorecase                  " Search case insensitive...
 set smartcase                   " ... but not when search pattern contains upper case characters
+
+" ================ Turn Off Swap Files ==============
+
+set noswapfile
+set nobackup
+set nowb
 
 set shell=/bin/sh
 
@@ -94,7 +155,7 @@ call plug#end()
 colorscheme molokai
 
 " Use airline!!!
-let g:airline_theme="molokai"
+let g:airline_theme=" molokai"
 let g:airline#extensions#tabline#enabled = 1
 
 " Searching
@@ -115,7 +176,7 @@ if executable('ag')
           \ 1: ['.git', 'cd %s && git ls-files'],
           \ 2: ['.hg', 'hg --cwd %s locate -I .'],
           \ },
-        \ 'fallback': 'cd %s && ag -l'
+        \ 'fallback': 'cd %s && ag -l --nocolor'
         \ }
 endif
 
@@ -127,12 +188,12 @@ if executable('pt')
           \ 1: ['.git', 'cd %s && git ls-files'],
           \ 2: ['.hg', 'hg --cwd %s locate -I .'],
           \ },
-        \ 'fallback': 'cd %s && pt -l *'
+        \ 'fallback': 'cd %s && pt -l --nocolor *'
         \ }
 endif
 
 
 " Load a local override
-if !empty(glob("$HOME/.vimrc_local"))
-    source $HOME/.vimrc_local
+if !empty(glob("$HOME/.vimrc.local"))
+    source $HOME/.vimrc.local
 endif
