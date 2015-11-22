@@ -1,3 +1,8 @@
+" Load a local pre override
+if !empty(glob("$HOME/.vimrc.pre"))
+    source $HOME/.vimrc.pre
+endif
+
 set nocompatible
 
 syntax on
@@ -150,7 +155,7 @@ Plug 'chrisbra/vim-show-whitespace'
 
 " == Autocompletion ==
 if v:version >= 703 && has('patch598')
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+    Plug 'Valloric/YouCompleteMe', { 'do': './install.py', 'for': ['python', 'c', 'cpp'] }
     autocmd! User YouCompleteMe call youcompleteme#Enable()
 endif
 
@@ -173,6 +178,8 @@ nmap <silent> <leader>a :set nolist!<CR>
 " Commenting
 nmap <C-m> gcc
 vmap <C-m> gc
+" Autocompletion
+nmap <leader>d :YcmCompleter GoToDefinition<CR>
 
 " ================ Theme ==============
 silent! colorscheme wellsokai
