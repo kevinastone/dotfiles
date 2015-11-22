@@ -91,41 +91,43 @@ set shell=/bin/sh
 
 call plug#begin('~/.vim/plugged')
 
-" Fuzzy Searching
+" == Theme ==
+Plug 'tomasr/molokai'
+
+" == Fuzzy Searching ==
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
-" Awesomebar
+" == Awesomebar ==
 Plug 'kien/ctrlp.vim'
-Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
-let g:ctrlp_match_func = { 'match': 'matcher#cmatch' }
 
-" Sidebar
+" == Sidebar ==
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Comments
+" == Comments ==
 Plug 'tomtom/tcomment_vim'
 
-" Multiple Cursors
+" == Multiple Cursors ==
 Plug 'terryma/vim-multiple-cursors'
 
-" Editing
+" == Editing ==
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
 Plug 'mattn/emmet-vim'
 
-" Git
+" == Git ==
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
-" Status Bar
+" == Status Bar ==
 Plug 'bling/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
 
-" Whitespace
+" == Whitespace ==
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_start_level = 2
@@ -133,32 +135,27 @@ let g:indent_guides_guide_size = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=236
 
-" Linting
+" == Linting ==
 
 Plug 'scrooloose/syntastic'
-
 Plug 'chrisbra/vim-show-whitespace'
 
-" Autocompletion
+" == Autocompletion ==
 if v:version >= 703598
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
     autocmd! User YouCompleteMe call youcompleteme#Enable()
 endif
 
-" Theme
-Plug 'tomasr/molokai'
-
-" Editorconfig
+" == Editorconfig ==
 Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
+
 " Theme
 colorscheme molokai
+let g:airline_theme="molokai"
 
-" Use airline!!!
-let g:airline_theme=" molokai"
-let g:airline#extensions#tabline#enabled = 1
 
 " Searching
 
