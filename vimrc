@@ -36,8 +36,14 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set shiftround
 
 set autoindent                  " Keep indentation from previous line
+
+" Shortcut to clear search highlight
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
 
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
@@ -56,6 +62,7 @@ set listchars=tab:»·,trail:·,eol:¬
 set wildmode=list:longest
 set wildmenu                    " enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~     " stuff to ignore when tab completing
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/* 
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
@@ -94,7 +101,7 @@ set shell=/bin/sh
 call plug#begin('~/.vim/plugged')
 
 " == Theme ==
-Plug 'tomasr/molokai'
+Plug 'wellsjo/wellsokai.vim'
 
 " == Fuzzy Searching ==
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -120,6 +127,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
 Plug 'mattn/emmet-vim'
+if v:version >= 704
+    Plug 'SirVer/ultisnips'
+endif
 
 " == Git ==
 Plug 'tpope/vim-fugitive'
@@ -139,7 +149,7 @@ Plug 'scrooloose/syntastic'
 Plug 'chrisbra/vim-show-whitespace'
 
 " == Autocompletion ==
-if v:version >= 703598
+if v:version >= 703 && has('patch598')
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
     autocmd! User YouCompleteMe call youcompleteme#Enable()
 endif
@@ -160,33 +170,35 @@ call plug#end()
 " noremap <silent> <C-]> :bnext<CR>
 " Whitespace
 nmap <silent> <leader>a :set nolist!<CR>
-
+" Commenting
+nmap <C-m> gcc
+vmap <C-m> gc
 
 " ================ Theme ==============
-colorscheme molokai
-let g:airline_theme="molokai"
+silent! colorscheme wellsokai
+silent! let g:airline_theme="molokai"
 
 
 " Searching
 
 let g:ctrlp_user_command = {
     \ 'types': {
-      \ 1: ['.git', 'cd %s && git ls-files'],
-      \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-      \ },
+        \ 1: ['.git', 'cd %s && git ls-files'],
+        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+        \ },
     \ 'fallback': 'find %s -type f'
-    \ }
+\ }
 
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 
     let g:ctrlp_user_command = {
         \ 'types': {
-          \ 1: ['.git', 'cd %s && git ls-files'],
-          \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-          \ },
+            \ 1: ['.git', 'cd %s && git ls-files'],
+            \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+            \ },
         \ 'fallback': 'cd %s && ag -l --nocolor'
-        \ }
+    \ }
 endif
 
 if executable('pt')
@@ -194,11 +206,11 @@ if executable('pt')
 
     let g:ctrlp_user_command = {
         \ 'types': {
-          \ 1: ['.git', 'cd %s && git ls-files'],
-          \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-          \ },
+            \ 1: ['.git', 'cd %s && git ls-files'],
+            \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+            \ },
         \ 'fallback': 'cd %s && pt -l --nocolor *'
-        \ }
+    \ }
 endif
 
 
