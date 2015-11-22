@@ -98,10 +98,6 @@ colorscheme molokai
 let g:airline_theme="molokai"
 let g:airline#extensions#tabline#enabled = 1
 
-if !empty(glob("$HOME/.vimrc_local"))
-    source $HOME/.vimrc_local
-endif
-
 " Searching
 
 let g:ctrlp_user_command = {
@@ -134,4 +130,10 @@ if executable('pt')
           \ },
         \ 'fallback': 'cd %s && pt -l *'
         \ }
+endif
+
+
+" Load a local override
+if !empty(glob("$HOME/.vimrc_local"))
+    source $HOME/.vimrc_local
 endif
