@@ -31,7 +31,7 @@ call plug#begin('~/.vim/plugged')
 " Fuzzy Searching
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 
 " Awesomebar
 Plug 'kien/ctrlp.vim'
@@ -81,4 +81,38 @@ let g:airline#extensions#tabline#enabled = 1
 
 if !empty(glob("$HOME/.vimrc_local"))
     source $HOME/.vimrc_local
+endif
+
+" Searching
+
+let g:ctrlp_user_command = {
+    \ 'types': {
+      \ 1: ['.git', 'cd %s && git ls-files'],
+      \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+      \ },
+    \ 'fallback': 'find %s -type f'
+    \ }
+
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+
+    let g:ctrlp_user_command = {
+        \ 'types': {
+          \ 1: ['.git', 'cd %s && git ls-files'],
+          \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+          \ },
+        \ 'fallback': 'cd %s && ag -l'
+        \ }
+endif
+
+if executable('pt')
+    let g:ackprg = 'pt --nogroup --nocolor'
+
+    let g:ctrlp_user_command = {
+        \ 'types': {
+          \ 1: ['.git', 'cd %s && git ls-files'],
+          \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+          \ },
+        \ 'fallback': 'cd %s && pt -l *'
+        \ }
 endif
