@@ -19,6 +19,8 @@ set showcmd                     " Show me what I'm typing
 set showmode                    " Show current mode.
 set autoread                    " Reload files changed outside vim
 
+set switchbuf=usetab,newtab     " Prefer tabs to split windows
+
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 
 " This makes vim act like all other editors, buffers can
@@ -47,7 +49,6 @@ set nowrap                      " Don't wrap lines
 set linebreak                   " Wrap lines at convenient points
 
 set listchars=tab:»·,trail:·,eol:¬
-nmap <silent> <leader>a :set nolist!<CR>
 
  
 " ================ Completion =======================
@@ -89,6 +90,14 @@ set nowb
 
 set shell=/bin/sh
 
+" ================ Shortcuts ==============
+" Tabs
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+" Whitespace
+nmap <silent> <leader>a :set nolist!<CR>
+
+
 call plug#begin('~/.vim/plugged')
 
 " == Theme ==
@@ -123,10 +132,6 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
-" == Status Bar ==
-Plug 'bling/vim-airline'
-let g:airline#extensions#tabline#enabled = 1
-
 " == Whitespace ==
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
@@ -148,6 +153,10 @@ endif
 
 " == Editorconfig ==
 Plug 'editorconfig/editorconfig-vim'
+
+" == Status Bar ==
+Plug 'bling/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
 
 call plug#end()
 
