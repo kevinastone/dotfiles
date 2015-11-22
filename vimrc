@@ -158,6 +158,8 @@ if v:version >= 703 && has('patch598')
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py', 'for': ['python', 'c', 'cpp'] }
     autocmd! User YouCompleteMe call youcompleteme#Enable()
 endif
+" XML/HTML
+Plug 'sukima/xmledit', { 'do': 'make' }
 
 " == Editorconfig ==
 Plug 'editorconfig/editorconfig-vim'
@@ -180,6 +182,7 @@ nmap <C-m> gcc
 vmap <C-m> gc
 " Autocompletion
 nmap <leader>d :YcmCompleter GoToDefinition<CR>
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " ================ Theme ==============
 silent! colorscheme wellsokai
