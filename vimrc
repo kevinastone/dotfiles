@@ -1,9 +1,8 @@
 set nocompatible
 
 syntax on
-filetype plugin indent on
 set autoindent                  "Keep indentation from previous line
-set smartindent                 "Automatically inserts indentation in some cases
+filetype plugin indent on
 
 " Prefer spaces over tabs
 set tabstop=4
