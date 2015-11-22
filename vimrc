@@ -98,6 +98,8 @@ Plug 'mileszs/ack.vim'
 
 " Awesomebar
 Plug 'kien/ctrlp.vim'
+Plug 'JazzCore/ctrlp-cmatcher', { 'do': './install.sh' }
+let g:ctrlp_match_func = { 'match': 'matcher#cmatch' }
 
 " Sidebar
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
