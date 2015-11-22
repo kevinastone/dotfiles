@@ -52,7 +52,9 @@ Plug 'terryma/vim-multiple-cursors'
 " Editing
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
-Plug 'junegunn/vim-easy-align'
+Plug 'godlygeek/tabular'
+Plug 'easymotion/vim-easymotion'
+Plug 'mattn/emmet-vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -68,6 +70,10 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=236
+
+" Linting
+
+Plug 'scrooloose/syntastic'
 
 Plug 'chrisbra/vim-show-whitespace'
 
