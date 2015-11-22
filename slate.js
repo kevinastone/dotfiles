@@ -1,23 +1,23 @@
 var activateKey = "ctrl;cmd;space";
 
 var FULLSCREEN_ORDER = [
-	/Terminal/,
-	/Sublime Text/,
-	/Safari/,
-	/Slack/,
-	/Mail/,
+    /Terminal/,
+    /Sublime Text/,
+    /Safari/,
+    /Slack/,
+    /Mail/,
 ];
 
 
 processFullscreenApps = function(toggle) {
 
-	FULLSCREEN_ORDER.forEach(function(name) {
+    FULLSCREEN_ORDER.forEach(function(name) {
 
-		slate.eachApp(function (app) {
+        slate.eachApp(function (app) {
 
-			var appName = app.name();
+            var appName = app.name();
 
-			if (appName.match(name)) {
+            if (appName.match(name)) {
 
 /*jshint multistr: true */
 var cmd = '/usr/bin/osascript -e \' \n\
@@ -40,17 +40,17 @@ var cmd = '/usr/bin/osascript -e \' \n\
         end if \n\
       end tell \n\
       \'';
-				// slate.log(cmd);
-				slate.shell(cmd, true);
-			}
-		});
-	});
+                // slate.log(cmd);
+                slate.shell(cmd, true);
+            }
+        });
+    });
 };
 
 slate.bind("f" + ":" + activateKey, function() {
-	processFullscreenApps(true);
+    processFullscreenApps(true);
 });
 
 slate.bind("d" + ":" + activateKey, function() {
-	processFullscreenApps(false);
+    processFullscreenApps(false);
 });
