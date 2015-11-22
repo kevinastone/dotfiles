@@ -67,6 +67,9 @@ endif
 " Theme
 Plug 'tomasr/molokai'
 
+" Editorconfig
+Plug 'editorconfig/editorconfig-vim'
+
 call plug#end()
 
 " Theme
