@@ -53,7 +53,7 @@ Plug 'junegunn/vim-easy-align'
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signifyg'
+Plug 'mhinz/vim-signify'
 
 " Status Bar
 Plug 'bling/vim-airline'
@@ -74,8 +74,11 @@ call plug#end()
 
 " Theme
 colorscheme molokai
-highlight SignColumn guibg=#272822
 
 " Use airline!!!
 let g:airline_theme="molokai"
 let g:airline#extensions#tabline#enabled = 1
+
+if !empty(glob("$HOME/.vimrc_local"))
+    source $HOME/.vimrc_local
+endif
