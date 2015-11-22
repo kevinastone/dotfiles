@@ -19,7 +19,7 @@ set showcmd                     " Show me what I'm typing
 set showmode                    " Show current mode.
 set autoread                    " Reload files changed outside vim
 
-set switchbuf=usetab,newtab     " Prefer tabs to split windows
+set switchbuf=newtab            " Prefer tabs to split windows
 
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 
@@ -90,13 +90,6 @@ set nowb
 
 set shell=/bin/sh
 
-" ================ Shortcuts ==============
-" Tabs
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-" Whitespace
-nmap <silent> <leader>a :set nolist!<CR>
-
 
 call plug#begin('~/.vim/plugged')
 
@@ -161,7 +154,15 @@ let g:airline#extensions#tabline#enabled = 1
 call plug#end()
 
 
-" Theme
+" ================ Shortcuts ==============
+" Tabs
+" noremap <silent> <C-[> :bprevious<CR>
+" noremap <silent> <C-]> :bnext<CR>
+" Whitespace
+nmap <silent> <leader>a :set nolist!<CR>
+
+
+" ================ Theme ==============
 colorscheme molokai
 let g:airline_theme="molokai"
 
