@@ -113,9 +113,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
-" == Awesomebar ==
-Plug 'kien/ctrlp.vim'
-
 " == Sidebar ==
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -180,6 +177,8 @@ nmap <silent> <leader>a :set nolist!<CR>
 " Commenting
 nmap <C-m> gcc
 vmap <C-m> gc
+" Fuzzy
+map <C-p> :FZF<CR>
 " Autocompletion
 nmap <leader>d :YcmCompleter GoToDefinition<CR>
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
