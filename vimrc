@@ -175,8 +175,8 @@ call plug#end()
 " Whitespace
 nmap <silent> <leader>a :set nolist!<CR>
 " Commenting
-nmap <C-m> gcc
-vmap <C-m> gc
+" nmap <C-m> gcc
+" vmap <C-m> gc
 " Fuzzy
 map <C-p> :FZF<CR>
 " Autocompletion
