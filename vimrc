@@ -133,9 +133,10 @@ if v:version >= 704
     Plug 'SirVer/ultisnips'
 endif
 
-" == Git ==
+" == Version Control ==
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
+Plug 'ludovicchabant/vim-lawrencium'
 
 " == Whitespace ==
 Plug 'nathanaelkane/vim-indent-guides'
