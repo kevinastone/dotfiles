@@ -115,7 +115,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
 " == Sidebar ==
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " == Comments ==
@@ -204,6 +207,9 @@ nnoremap <Leader>Q :qa!<cr>
 " Window Navigation
 nnoremap <tab>   <c-w>w
 nnoremap <S-tab> <c-w>W
+" NERDTree
+map <leader>b :NERDTreeToggle<CR>
+map <leader>s :NERDTreeFind<CR>
 
 " ================ Theme ==============
 silent! colorscheme wellsokai
