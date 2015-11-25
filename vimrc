@@ -102,8 +102,9 @@ set nowb
 
 set shell=/bin/sh
 
+" ================ Plugins ==============
 
-call plug#begin('~/.vim/plugged')
+silent! if plug#begin('~/.vim/plugged')
 
 " == Theme ==
 Plug 'wellsjo/wellsokai.vim'
@@ -166,7 +167,13 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 
+" == Languages ==
+Plug 'honza/dockerfile.vim'
+Plug 'dag/vim-fish'
+Plug 'solarnz/thrift.vim'
+
 call plug#end()
+endif
 
 
 " ================ Shortcuts ==============
@@ -183,6 +190,20 @@ map <C-p> :FZF<CR>
 " Autocompletion
 nmap <leader>d :YcmCompleter GoToDefinition<CR>
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+" Save
+inoremap <C-s>     <C-O>:update<cr>
+nnoremap <C-s>     :update<cr>
+nnoremap <leader>s :update<cr>
+nnoremap <leader>w :update<cr>
+" Quit
+inoremap <C-Q>     <esc>:q<cr>
+nnoremap <C-Q>     :q<cr>
+vnoremap <C-Q>     <esc>
+nnoremap <Leader>q :q<cr>
+nnoremap <Leader>Q :qa!<cr>
+" Window Navigation
+nnoremap <tab>   <c-w>w
+nnoremap <S-tab> <c-w>W
 
 " ================ Theme ==============
 silent! colorscheme wellsokai
