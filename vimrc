@@ -23,6 +23,7 @@ set backspace=indent,eol,start  " Makes backspace key more powerful.
 set showcmd                     " Show me what I'm typing
 set showmode                    " Show current mode.
 set autoread                    " Reload files changed outside vim
+set laststatus=2                " always show status line
 
 set switchbuf=newtab            " Prefer tabs to split windows
 
@@ -42,7 +43,6 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set shiftround
-set wrap
 
 set autoindent                  " Keep indentation from previous line
 
@@ -57,12 +57,20 @@ nnoremap P P=`]<C-o>
 
 filetype plugin indent on
 
-set nowrap                      " Don't wrap lines
-set linebreak                   " Wrap lines at convenient points
-
 set listchars=tab:»·,trail:·,eol:¬
 
- 
+
+" ================ Wrapping =======================
+
+set wrap                        " Wrap lines
+set linebreak                   " Wrap lines at convenient points
+" saner up/down movement (screen-wise, not line-wise)
+nmap j gj
+nmap k gk
+map <down> j
+map <up> k
+
+
 " ================ Completion =======================
 
 set wildmode=list:longest
@@ -173,6 +181,9 @@ let g:airline#extensions#tabline#enabled = 1
 Plug 'honza/dockerfile.vim'
 Plug 'dag/vim-fish'
 Plug 'solarnz/thrift.vim'
+Plug 'hhvm/vim-hack'
+let g:hack#omnifunc=1
+autocmd BufNewFile,BufRead *.php setl omnifunc=hackcomplete#Complete
 
 call plug#end()
 endif
@@ -184,6 +195,8 @@ endif
 " noremap <silent> <C-]> :bnext<CR>
 " Whitespace
 nmap <silent> <leader>a :set nolist!<CR>
+" Wrapping
+
 " Commenting
 " nmap <C-m> gcc
 " vmap <C-m> gc
