@@ -42,6 +42,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set shiftround
+set wrap
 
 set autoindent                  " Keep indentation from previous line
 
