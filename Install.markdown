@@ -29,3 +29,11 @@
 
         echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
         chsh -s /usr/local/bin/fish
+
+## Setup Syncing for Alfred
+
+1. After installing powerpack license
+
+2. Preferences->Advanced
+
+    Syncing -> Set sync folder
