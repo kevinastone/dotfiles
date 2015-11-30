@@ -25,7 +25,7 @@ install moreutils
 install grc
 install mobile-shell
 
-install fpp --HEAD
+install fpp
 install arcanist
 
 # Cask Apps
