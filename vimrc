@@ -181,6 +181,7 @@ let g:airline#extensions#tabline#enabled = 1
 Plug 'honza/dockerfile.vim'
 Plug 'dag/vim-fish'
 Plug 'solarnz/thrift.vim'
+Plug 'elixir-lang/vim-elixir'
 Plug 'hhvm/vim-hack'
 let g:hack#omnifunc=1
 autocmd BufNewFile,BufRead *.php setl omnifunc=hackcomplete#Complete
