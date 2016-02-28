@@ -140,6 +140,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
 Plug 'mattn/emmet-vim'
+Plug 'tweekmonster/braceless.vim'
 if v:version >= 704
     Plug 'SirVer/ultisnips'
 endif

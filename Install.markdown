@@ -24,6 +24,8 @@
         bundler install
         # Install Sublime Package Manager
         ./sublime.sh
+        # Vim Plugins
+        vim -c "PlugInstall"
 
 ## Configure Fish Shell
 
