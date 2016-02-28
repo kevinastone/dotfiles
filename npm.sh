@@ -3,4 +3,5 @@ npm install -g \
     grunt-cli \
     coffee-script \
     coffeelint \
-    eslint
+    eslint \
+    eslint-plugin-babel
