@@ -32,6 +32,9 @@
         echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
         chsh -s /usr/local/bin/fish
 
+        # Install Fisherman
+        curl -sL get.fisherman.sh | fish
+
 ## Setup Syncing for Alfred
 
 1. After installing powerpack license
