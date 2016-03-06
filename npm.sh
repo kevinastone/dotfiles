@@ -4,5 +4,7 @@ npm install -g \
     coffee-script \
     coffeelint \
     eslint \
-    flow-bin \
-    eslint-plugin-babel
+    eslint-plugin-babel \
+    eslint-plugin-react \
+    eslint-config-airbnb \
+    flow-bin
