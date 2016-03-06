@@ -4,4 +4,5 @@ npm install -g \
     coffee-script \
     coffeelint \
     eslint \
+    flow-bin \
     eslint-plugin-babel
