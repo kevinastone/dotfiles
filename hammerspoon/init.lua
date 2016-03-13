@@ -6,7 +6,7 @@ local modal = hs.hotkey.modal.new({'cmd', 'ctrl'}, 'space')
 local modalRect = null
 
 modal:bind({}, 'escape', function() modal:exit() end )
-modal:bind({}, 'escape', function() modal:exit() end )
+modal:bind({}, 'return', function() modal:exit() end )
 modal:bind({'cmd', 'ctrl'}, 'space', function() modal:exit() end )
 
 function modalExit(callback)
