@@ -31,9 +31,9 @@ install arcanist
 
 # Cask Apps
 cask install alfred
+cask install hammerspoon
 cask install sublime-text3
 cask install virtualbox
 cask install vagrant
 cask install soundcleod
-cask install slate
 cask install licecap
