@@ -9,15 +9,18 @@ modal:bind({}, 'escape', function() modal:exit() end )
 modal:bind({}, 'return', function() modal:exit() end )
 modal:bind({'cmd', 'ctrl'}, 'space', function() modal:exit() end )
 
-function modal.runThenExit(this, callback)
+function modal.runThenExit(self, callback)
     return function()
         callback()
-        this:exit()
+        self:exit()
     end
 end
 
-function modal:entered()
+function modal.entered(self)
     local win = hs.window.focusedWindow()
+    if not win then
+        self:exit()
+    end
     local screen = win:screen()
     local max = screen:frame()
     modalRect = hs.drawing.rectangle(max)
@@ -31,7 +34,7 @@ function modal:entered()
     modalRect:show()
 end
 
-function modal:exited()
+function modal.exited()
     modalRect:hide()
 end
 
