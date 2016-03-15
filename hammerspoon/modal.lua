@@ -3,7 +3,6 @@ hs.window.animationDuration = 0
 
 -- Modal activation / deactivation
 local modal = hs.hotkey.modal.new({'cmd', 'ctrl'}, 'space')
-local modalRect = null
 
 modal:bind({}, 'escape', function() modal:exit() end )
 modal:bind({}, 'return', function() modal:exit() end )
@@ -16,6 +15,15 @@ function modal.runThenExit(self, callback)
     end
 end
 
+-- Modal Indicator
+local modalRect = hs.drawing.rectangle(hs.geometry(0, 0, 1, 1))
+modalRect:setFill(false)
+modalRect:setStroke(true)
+modalRect:setStrokeWidth(5.0)
+modalRect:setStrokeColor(hs.drawing.color.colorsFor('System')['alternateSelectedControlColor'])
+modalRect:setAlpha(0.8)
+modalRect:setRoundedRectRadii(5.0, 5.0)
+
 function modal.entered(self)
     local win = hs.window.focusedWindow()
     if not win then
@@ -23,13 +31,7 @@ function modal.entered(self)
     end
     local screen = win:screen()
     local max = screen:frame()
-    modalRect = hs.drawing.rectangle(max)
-    modalRect:setFill(false)
-    modalRect:setStroke(true)
-    modalRect:setStrokeWidth(5.0)
-    modalRect:setStrokeColor(hs.drawing.color.colorsFor('System')['alternateSelectedControlColor'])
-    modalRect:setAlpha(0.8)
-    modalRect:setRoundedRectRadii(5.0, 5.0)
+    modalRect:setSize(max)
     modalRect:bringToFront()
     modalRect:show()
 end
