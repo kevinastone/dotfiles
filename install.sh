@@ -26,12 +26,12 @@ do
 	fi
 
 	PREFIX="."
-	if [[ "$fn" == *.nodot* ]]; then
+	if [[ "$fn" == *.nodot ]]; then
 		PREFIX=""
 	fi
 	SRC_FILE="$SRC_DIR/$fn"
 	DEST_FN=${fn%$OS_EXTENSION}
-	DEST_FN=${DEST_FN%$".nodot"}
+	DEST_FN=${DEST_FN%%".nodot"}
 	DEST_DIR=$(dirname ${DEST_FN})
 	if [ $DEST_DIR == "." ]; then
 		DEST_FILE="$HOME/${PREFIX}${DEST_FN}"
