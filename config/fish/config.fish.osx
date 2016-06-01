@@ -1,16 +1,12 @@
 set -x EDITOR vim
 
 if status --is-login
-    set -x PATH ./node_modules/.bin ~/.bin ~/.cargo/bin ~/.local/bin $PATH
+    set -x PATH ./node_modules/.bin ~/.bin ~/.local/bin $PATH
 end
 
 set -x WORKON_BASE_DIR "$HOME/Documents"
 
 ulimit -n 4096
-
-set -x EB_VM_MEMSIZE "6144"
-# export EB_VG_NFS_VENV="yes"
-set -x EB_VG_SYNC_VENV "yes"
 
 set -x GOPATH ~/.go
 
@@ -18,9 +14,8 @@ begin
     set vf_eval (python -m virtualfish auto_activation 2>/dev/null); and eval $vf_eval
 end 2>&1 >/dev/null
 
-# Fisherman
-set fisher_home ~/.local/share/fisherman
-set fisher_config ~/.config/fisherman
+
+# Config.d
 begin
-    source $fisher_home/config.fish
+    source ~/.config/fish/config.d/**.fish
 end 2>&1 >/dev/null
