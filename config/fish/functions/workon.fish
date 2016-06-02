@@ -1,5 +1,5 @@
 set -q WORKON_BASE_DIR
-or set -x WORKON_BASE_DIR "/mnt/hgfs"
+or set -x WORKON_BASE_DIR "$HOME"
 
 function workon
 	# Change this to your base projects path [$WORKON_BASE_DIR/{project1,project2,...}]

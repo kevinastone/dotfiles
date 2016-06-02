@@ -1,5 +1,3 @@
-set -x RUST_SRC_PATH ~/Documents/rustc-1.9.0/src
-
 if status --is-login
     set -x PATH ~/.cargo/bin $PATH
 end
