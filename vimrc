@@ -185,6 +185,8 @@ Plug 'solarnz/thrift.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'hhvm/vim-hack'
 Plug 'keith/swift.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 let g:hack#omnifunc=1
 autocmd BufNewFile,BufRead *.php setl omnifunc=hackcomplete#Complete
 
