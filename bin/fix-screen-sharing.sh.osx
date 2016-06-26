@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Disable Screen Sharing
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.screensharing.plist
+# Enable Screen Sharing
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.screensharing.plist
