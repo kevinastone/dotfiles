@@ -1,5 +1,4 @@
 tap caskroom/cask
-tap caskroom/versions
 tap Osso/homebrew-arcanist
 
 # Bash Completions
@@ -27,13 +26,12 @@ install grc
 install mobile-shell
 
 install fpp
-install arcanist
 
 # Cask Apps
 cask install alfred
 cask install hammerspoon
-cask install sublime-text3
-cask install virtualbox
-cask install vagrant
+cask install sublime-text
 cask install soundcleod
 cask install licecap
+cask install paparazzi
+cask install vlc
