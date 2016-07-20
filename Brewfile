@@ -35,3 +35,4 @@ cask install soundcleod
 cask install licecap
 cask install paparazzi
 cask install vlc
+cask install keepingyouawake
