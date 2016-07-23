@@ -1,3 +1,4 @@
 virtualenv
 flake8
 IPython
+http-prompt
