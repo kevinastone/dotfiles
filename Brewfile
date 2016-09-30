@@ -24,6 +24,7 @@ install fish
 install moreutils
 install grc
 install mobile-shell
+install brew-gem
 
 install fpp
 

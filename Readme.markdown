@@ -19,9 +19,6 @@
         cat requirements.txt | sed '/^\s*#/d'| xargs -n1 pipsi install
         # Install NPM Libraries
         ./npm.sh
-        # Install Ruby Gems
-        sudo ./gem.sh
-        bundler install
         # Install Sublime Package Manager
         ./sublime.sh
         # Vim Plugins
