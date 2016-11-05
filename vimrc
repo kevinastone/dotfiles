@@ -258,8 +258,7 @@ silent! colorscheme wellsokai
 silent! let g:airline_theme="molokai"
 
 
-" Searching
-
+" ================ Searching ==============
 let g:ctrlp_user_command = {
     \ 'types': {
         \ 1: ['.git', 'cd %s && git ls-files'],
@@ -292,8 +291,14 @@ if executable('pt')
     \ }
 endif
 
+" ================ Override Fileypes ==============
+aug python
+    " ftype/python.vim overwrites this
+    au FileType python setlocal ts=4 sts=4 sw=4 noexpandtab
+aug end
 
-" Load a local override
+
+" ================ Local Overrides ==============
 if !empty(glob("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
 endif
