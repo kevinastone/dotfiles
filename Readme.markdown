@@ -11,6 +11,7 @@
         ./brewinstall.sh
 
 ## Install Libraries
+
         # Install Pip
         sudo easy_install pip
         # Install pipsi
@@ -19,10 +20,6 @@
         cat requirements.txt | sed '/^\s*#/d'| xargs -n1 pipsi install
         # Install NPM Libraries
         ./npm.sh
-        # Install Sublime Package Manager
-        ./sublime.sh
-        # Vim Plugins
-        vim -c "PlugInstall"
 
 ## Configure Fish Shell
 
@@ -31,6 +28,15 @@
 
         # Install Fisherman
         curl -sL get.fisherman.sh | fish
+
+## Editors
+
+        # Install Sublime Package Manager
+        ./sublime.sh
+        # Vim Plugins
+        vim -c "PlugInstall"
+        # Configure Atom
+        ./atom.sh
 
 ## Setup Syncing for Alfred
 
