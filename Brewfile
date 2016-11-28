@@ -38,3 +38,4 @@ cask install licecap
 cask install paparazzi
 cask install vlc
 cask install keepingyouawake
+cask install rocket
