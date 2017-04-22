@@ -1,5 +1,6 @@
 tap caskroom/cask
 tap Osso/homebrew-arcanist
+tap fisherman/tap
 
 # Bash Completions
 install bash-completion
@@ -20,6 +21,7 @@ install hub
 install jq
 install httpie
 install fish
+install fisherman
 install moreutils
 install grc
 install mobile-shell

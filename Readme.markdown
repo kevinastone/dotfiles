@@ -26,8 +26,7 @@
         echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
         chsh -s /usr/local/bin/fish
 
-        # Install Fisherman
-        curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+        # Configure Fisherman
         fisher
 
 ## Editors
