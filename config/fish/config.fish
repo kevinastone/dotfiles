@@ -1,5 +1,3 @@
-set -x EDITOR vim
-
 if status --is-login
     set -x PATH ~/.bin $PATH
 end
@@ -7,8 +5,6 @@ end
 if status --is-login; and test -d ~/.local/bin
     set -x PATH ~/.local/bin $PATH
 end
-
-ulimit -n 4096
 
 # Fish Completions
 if test -d /usr/local/share/fish/vendor_completions.d
