@@ -34,7 +34,6 @@ cask install alfred
 cask install hammerspoon
 cask install sublime-text
 cask install atom
-cask install soundcleod
 cask install licecap
 cask install paparazzi
 cask install vlc
