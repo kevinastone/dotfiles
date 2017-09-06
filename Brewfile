@@ -11,7 +11,7 @@ install pip-completion
 # System Packages
 install brew-cask
 install ssh-copy-id
-install htop
+install htop-osx
 install node
 install tmux
 install tree
