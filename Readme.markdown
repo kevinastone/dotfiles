@@ -10,17 +10,6 @@
         curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
         ./brewinstall.sh
 
-## Install Libraries
-
-        # Install Pip
-        sudo easy_install pip
-        # Install pipsi
-        sudo pip install pipsi
-        # Install Python Libraries
-        cat requirements.txt | sed '/^\s*#/d'| xargs -n1 pipsi install
-        # Install NPM Libraries
-        ./npm.sh
-
 ## Configure Fish Shell
 
         echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
@@ -37,6 +26,11 @@
         vim -c "PlugInstall"
         # Configure Atom
         ./atom.sh
+
+## Install Libraries
+
+        # Install NPM Libraries
+        ./npm.sh
 
 ## Setup Syncing for Alfred
 

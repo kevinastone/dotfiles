@@ -1,5 +1,4 @@
 tap caskroom/cask
-tap Osso/homebrew-arcanist
 tap fisherman/tap
 
 # Bash Completions
@@ -25,16 +24,13 @@ install fisherman
 install moreutils
 install grc
 install mobile-shell
-install brew-gem
-
 install fpp
 
 # Cask Apps
 cask install alfred
 cask install hammerspoon
 cask install sublime-text
-cask install atom
-cask install licecap
+cask install kap
 cask install paparazzi
 cask install vlc
 cask install keepingyouawake

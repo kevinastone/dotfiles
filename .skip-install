@@ -1,9 +1,5 @@
 Brewfile
-requirements.txt
 npm.sh
-Gemfile
-Gemfile.lock
-gem.sh
 Readme.markdown
 sublime.sh
 brewinstall.sh
