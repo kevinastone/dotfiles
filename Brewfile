@@ -4,7 +4,7 @@ tap fisherman/tap
 # Bash Completions
 install bash-completion
 # install homebrew/completions/git-completion
-install https://raw.githubusercontent.com/kevinastone/homebrew-completions/d0e5d99feab388297d5f1e87768bdcf64229b48b/git-completion.rb
+install https://raw.githubusercontent.com/kevinastone/homebrew-completions/2cabd27e396c7b924b8da361c9004064d00c5533/git-completion.rb
 install pip-completion
 
 # System Packages
