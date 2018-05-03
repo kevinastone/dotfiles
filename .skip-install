@@ -4,3 +4,5 @@ Readme.markdown
 sublime.sh
 brewinstall.sh
 atom.sh
+macos.sh
+macos.d/.*

@@ -21,7 +21,7 @@ do
 		continue
 	fi
 
-	if $(grep -xq $fn ${SRC_DIR}/.skip-install); then
+	if $(echo $fn | grep -xq -f ${SRC_DIR}/.skip-install); then
 		continue
 	fi
 
@@ -33,6 +33,8 @@ do
 	DEST_FN=${fn%$OS_EXTENSION}
 	DEST_FN=${DEST_FN%%".nodot"}
 	DEST_DIR=$(dirname ${DEST_FN})
+
+
 	if [ $DEST_DIR == "." ]; then
 		DEST_FILE="$HOME/${PREFIX}${DEST_FN}"
 	else
