@@ -1,5 +1,6 @@
 tap caskroom/cask
 tap fisherman/tap
+tap caskroom/fonts
 
 # Bash Completions
 install bash-completion
@@ -35,3 +36,4 @@ cask install paparazzi
 cask install vlc
 cask install keepingyouawake
 cask install rocket
+cask install font-fira-code
