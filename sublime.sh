@@ -7,10 +7,15 @@ cd $HOME/Library/"Application Support"/"Sublime Text 3"/"Installed Packages"
 
 if [ -e $HOME/Dropbox/AppData/Sublime/User ]; then
 
-    [ "$(readlink $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"/User)" = "$HOME/Dropbox/AppData/Sublime/User" ] || {
-        mv $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"/User $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"/orig.User
+    if [ -e $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"/User ]; then
+        [ "$(readlink $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"/User)" = "$HOME/Dropbox/AppData/Sublime/User" ] || {
+            mv $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"/User $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"/orig.User
+            ln -sf $HOME/Dropbox/AppData/Sublime/User $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"/User
+        }
+    else
+        mkdir -p $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"
         ln -sf $HOME/Dropbox/AppData/Sublime/User $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"/User
-    }
+    fi
 else
     echo "No Dropbox User Folder"
 fi
