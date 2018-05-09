@@ -14,7 +14,9 @@ if [ -e $HOME/Dropbox/AppData/Sublime/User ]; then
         }
     else
         mkdir -p $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"
-        ln -sf $HOME/Dropbox/AppData/Sublime/User $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"/User
+        [ "$(readlink $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"/User)" = "$HOME/Dropbox/AppData/Sublime/User" ] || {
+            ln -sf $HOME/Dropbox/AppData/Sublime/User $HOME/Library/"Application Support"/"Sublime Text 3"/"Packages"/User
+        }
     fi
 else
     echo "No Dropbox User Folder"
