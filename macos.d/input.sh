@@ -53,6 +53,14 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightC
 # com.apple.system.sleep
 # com.apple.system.volume
 
+defaults write com.apple.controlstrip FullCustomized -array 'com.apple.system.group.brightness com.apple.system.mission-control com.apple.system.launchpad com.apple.system.group.keyboard-brightness com.apple.system.group.media com.apple.system.group.volume com.apple.system.screen-lock'
 defaults write com.apple.controlstrip MiniCustomized -array 'com.apple.system.media-play-pause' 'com.apple.system.volume' 'com.apple.system.mute' 'com.apple.system.screen-lock'
+
+# Prefer full control-strip
+defaults write com.apple.touchbar.agent PresentationModeGlobal fullControlStrip
+
+# Prefer Fn keys for certain apps (disabled)
+# defaults write com.apple.touchbar.agent PresentationModePerApp -dict-add "com.sublimetext.3" "functionKeys"
+# defaults write com.apple.touchbar.agent PresentationModePerApp -dict-add "com.apple.Terminal" "functionKeys"
 
 killall ControlStrip &> /dev/null
