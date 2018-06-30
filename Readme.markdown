@@ -9,6 +9,8 @@
         # Install Homebrew
         curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
         brew bundle
+        # Optional dev
+        brew bundle --file=dev.Brewfile
 
 ## Configure Fish Shell
 
