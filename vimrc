@@ -163,14 +163,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=236
 Plug 'scrooloose/syntastic'
 Plug 'chrisbra/vim-show-whitespace'
 
-" == Autocompletion ==
-if v:version >= 703 && has('patch598')
-    if has('python3')
-        " YouCompleteMe now really requires Python3 in Vim
-        Plug 'Valloric/YouCompleteMe', { 'do': './install.py', 'for': ['python', 'c', 'cpp'] }
-        autocmd! User YouCompleteMe call youcompleteme#Enable()
-    endif
-endif
 " XML/HTML
 Plug 'sukima/xmledit', { 'do': 'make' }
 
