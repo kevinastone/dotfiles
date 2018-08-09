@@ -11,3 +11,6 @@ username = Kevin Stone <kevinastone@gmail.com>
 # pager =
 # progress =
 # color =
+
+[hint]
+ack = sl-short-headers
