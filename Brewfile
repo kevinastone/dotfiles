@@ -1,5 +1,4 @@
 tap "caskroom/cask"
-tap "fisherman/tap"
 tap "caskroom/fonts"
 
 # Bash Completions
@@ -19,7 +18,6 @@ brew "hub"
 brew "jq"
 brew "httpie"
 brew "fish"
-brew "fisherman"
 brew "moreutils"
 brew "grc"
 brew "mosh"
