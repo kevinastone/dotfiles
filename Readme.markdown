@@ -29,11 +29,6 @@
         # Configure Atom
         ./atom.sh
 
-## Install Libraries
-
-        # Install NPM Libraries
-        ./npm.sh
-
 ## Setup Syncing for Alfred
 
 1. After installing powerpack license
