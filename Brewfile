@@ -33,6 +33,5 @@ cask "rocket"
 cask "font-fira-code"
 
 # Mac App Store Apps
-mas "1Password", id: 443987910
 mas "PDF Expert", id: 1055273043
 mas "Pixelmator Pro", id: 1289583905

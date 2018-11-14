@@ -17,9 +17,6 @@
         echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
         chsh -s /usr/local/bin/fish
 
-        # Configure Fisherman
-        fisher
-
 ## Editors
 
         # Install Sublime Package Manager
