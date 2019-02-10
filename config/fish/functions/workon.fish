@@ -10,7 +10,7 @@ function workon
 	# Change this to your base projects path [$WORKON_BASE_DIR/{project1,project2,...}]
 
 	# Change this to your relative virtual_env dir (if exists) [$WORKON_BASE_DIR/{project}/$VENV_DIR]
-	set VENV_DIR ".env"
+	set VENV_DIR ".venv"
 
 	test -z "$VIRTUAL_ENV"
 	or deactivate
