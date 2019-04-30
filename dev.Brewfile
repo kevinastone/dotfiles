@@ -20,6 +20,7 @@ brew "heroku"
 brew "hub"
 brew "mosh"
 brew "cloc"
+brew "direnv"
 
 # Cask Apps
 cask "atom"
