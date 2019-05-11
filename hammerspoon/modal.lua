@@ -20,7 +20,7 @@ local modalRect = hs.drawing.rectangle(hs.geometry(0, 0, 1, 1))
 modalRect:setFill(false)
 modalRect:setStroke(true)
 modalRect:setStrokeWidth(5.0)
-modalRect:setStrokeColor(hs.drawing.color.colorsFor('System')['alternateSelectedControlColor'])
+modalRect:setStrokeColor(hs.drawing.color.colorsFor('System')['controlAccentColor'])
 modalRect:setAlpha(0.8)
 modalRect:setRoundedRectRadii(5.0, 5.0)
 
@@ -29,9 +29,11 @@ function modal.entered(self)
     if not win then
         self:exit()
     end
-    local screen = win:screen()
-    local max = screen:frame()
-    modalRect:setSize(max)
+    -- -- For full-screen:
+    -- local screen = win:screen()
+    -- local frame = screen:frame()
+    local frame = win:frame()
+    modalRect:setFrame(frame)
     modalRect:bringToFront()
     modalRect:show()
 end
