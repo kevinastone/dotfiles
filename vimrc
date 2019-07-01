@@ -280,13 +280,6 @@ if executable('pt')
     \ }
 endif
 
-" ================ Override Fileypes ==============
-aug python
-    " ftype/python.vim overwrites this
-    au FileType python setlocal ts=4 sts=4 sw=4 noexpandtab
-aug end
-
-
 " ================ Local Overrides ==============
 if !empty(glob("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
