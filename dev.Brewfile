@@ -29,3 +29,6 @@ cask "google-chrome"
 cask "kaleidoscope"
 cask "kap"
 cask "paparazzi"
+
+# Langauge Helers
+brew "kevinastone/formulae/swift-format"
