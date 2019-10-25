@@ -11,6 +11,6 @@ sudo -v
 if [ -d macos.d ]; then
     for fn in macos.d/*.sh; do
         echo $fn
-        . $fn
+        bash $fn
     done
 fi
