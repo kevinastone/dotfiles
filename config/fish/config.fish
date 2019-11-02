@@ -1,3 +1,5 @@
+set -x fish_user_paths /usr/local/sbin $fish_user_paths
+
 if status --is-login
     set -x fish_user_paths ~/.bin $fish_user_paths
 end
