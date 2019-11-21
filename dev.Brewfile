@@ -14,7 +14,6 @@ brew "fpp"
 
 # Frameworks and Helpers
 brew "brew-gem"
-brew "pipenv"
 brew "gem-travis"
 brew "heroku"
 brew "hub"
