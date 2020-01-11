@@ -219,8 +219,8 @@ nmap <silent> <leader>a :set nolist!<CR>
 " Fuzzy
 map <C-p> :FZF<CR>
 " Autocompletion
-nmap <leader>d :YcmCompleter GoToDefinition<CR>
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+" nmap <leader>d :YcmCompleter GoToDefinition<CR>
+" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 " Save
 inoremap <C-s>     <C-O>:update<cr>
 nnoremap <C-s>     :update<cr>
