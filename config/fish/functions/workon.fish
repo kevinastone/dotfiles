@@ -18,4 +18,6 @@ function workon
     cd $WORKON_BASE_DIR/$path
     and test -d $VENV_DIR
     and source $VENV_DIR/bin/activate.fish
+
+    true
 end
