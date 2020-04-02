@@ -3,7 +3,7 @@ brew "node"
 brew "elixir"
 brew "go"
 brew "python"
-brew "flow"
+brew "typescript"
 brew "yarn"
 
 # CLI Utils
@@ -14,9 +14,7 @@ brew "fpp"
 
 # Frameworks and Helpers
 brew "brew-gem"
-brew "gem-travis"
 brew "heroku"
-brew "hub"
 brew "mosh"
 brew "cloc"
 brew "direnv"
@@ -28,6 +26,10 @@ cask "google-chrome"
 cask "kaleidoscope"
 cask "kap"
 cask "paparazzi"
+cask "fork"
 
 # Langauge Helers
-brew "kevinastone/formulae/swift-format"
+brew "pipx"
+brew "swift-format"
+brew "swiftlint"
+brew "shellcheck"
