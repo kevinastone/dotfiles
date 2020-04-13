@@ -6,6 +6,7 @@ disabled = true
 
 [git_branch]
 symbol = "🌱 "
+# symbol = "\uE0A0 "
 
 [package]
 disabled = true
