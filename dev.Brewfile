@@ -13,7 +13,6 @@ brew "gron"
 brew "fpp"
 
 # Frameworks and Helpers
-brew "brew-gem"
 brew "heroku"
 brew "mosh"
 brew "cloc"
@@ -33,3 +32,4 @@ brew "pipx"
 brew "swift-format"
 brew "swiftlint"
 brew "shellcheck"
+brew "kevinastone/formulae/rust-analyzer"
