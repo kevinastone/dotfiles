@@ -3,8 +3,6 @@ tap "caskroom/fonts"
 
 # Bash Completions
 brew "bash-completion"
-# brew "homebrew/completions/git-completion"
-brew "https://raw.githubusercontent.com/kevinastone/homebrew-completions/2cabd27e396c7b924b8da361c9004064d00c5533/git-completion.rb"
 
 # System Packages
 brew "ssh-copy-id"

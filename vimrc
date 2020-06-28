@@ -119,20 +119,12 @@ silent! if plug#begin('~/.vim/plugged')
 Plug 'wellsjo/wellsokai.vim'
 
 " == Fuzzy Searching ==
+Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
-
-" == Sidebar ==
-Plug 'scrooloose/nerdtree'
-
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " == Comments ==
 Plug 'tomtom/tcomment_vim'
-
-" == Multiple Cursors ==
-Plug 'terryma/vim-multiple-cursors'
 
 " == Editing ==
 Plug 'tpope/vim-surround'
@@ -143,12 +135,14 @@ Plug 'mattn/emmet-vim'
 Plug 'tweekmonster/braceless.vim'
 
 " == Version Control ==
-Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
-Plug 'ludovicchabant/vim-lawrencium'
+" Plug 'tpope/vim-fugitive'
+" Plug 'mhinz/vim-signify'
+" Plug 'ludovicchabant/vim-lawrencium'
 
 " == Whitespace ==
+nnoremap <C-A> :ShowWhiteToggle<cr>
 Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
@@ -157,8 +151,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=236
 
 " == Linting ==
 
-Plug 'scrooloose/syntastic'
-Plug 'chrisbra/vim-show-whitespace'
+Plug 'dense-analysis/ale'
+Plug 'chrisbra/vim-show-char'
 
 " XML/HTML
 Plug 'sukima/xmledit', { 'do': 'make' }
@@ -167,33 +161,16 @@ Plug 'sukima/xmledit', { 'do': 'make' }
 Plug 'editorconfig/editorconfig-vim'
 
 " == Status Bar ==
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_left_sep = ''
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_right_sep = ''
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = '☰'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-let g:airline_symbols.whitespace = 'Ξ'
+Plug 'itchyny/lightline.vim'
+
+let g:lightline = {
+      \ 'component_function': {
+      \   'filename': 'LightlineFilename',
+      \ },
+      \ }
+function! LightlineFilename()
+  return expand('%:t') !=# '' ? @% : '[No Name]'
+endfunction
 
 " == Languages ==
 Plug 'sheerun/vim-polyglot'
@@ -214,67 +191,41 @@ nmap <silent> <leader>a :set nolist!<CR>
 " Wrapping
 
 " Commenting
-" nmap <C-m> gcc
-" vmap <C-m> gc
+nmap <C-m> gcc
+vmap <C-m> gc
+
 " Fuzzy
-map <C-p> :FZF<CR>
-" Autocompletion
-" nmap <leader>d :YcmCompleter GoToDefinition<CR>
-" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+map <C-p> :GFiles<CR>
+
 " Save
 inoremap <C-s>     <C-O>:update<cr>
 nnoremap <C-s>     :update<cr>
 nnoremap <leader>s :update<cr>
 nnoremap <leader>w :update<cr>
+
 " Quit
 inoremap <C-Q>     <esc>:q<cr>
 nnoremap <C-Q>     :q<cr>
 vnoremap <C-Q>     <esc>
 nnoremap <Leader>q :q<cr>
 nnoremap <Leader>Q :qa!<cr>
+
 " Window Navigation
 nnoremap <tab>   <c-w>w
 nnoremap <S-tab> <c-w>W
-" NERDTree
-map <leader>b :NERDTreeToggle<CR>
-map <leader>s :NERDTreeFind<CR>
 
 " ================ Theme ==============
 silent! colorscheme wellsokai
-silent! let g:airline_theme="molokai"
-
+set background=dark
 
 " ================ Searching ==============
-let g:ctrlp_user_command = {
-    \ 'types': {
-        \ 1: ['.git', 'cd %s && git ls-files'],
-        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-        \ },
-    \ 'fallback': 'find %s -type f'
-\ }
-
 if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-
-    let g:ctrlp_user_command = {
-        \ 'types': {
-            \ 1: ['.git', 'cd %s && git ls-files'],
-            \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-            \ },
-        \ 'fallback': 'cd %s && ag -l --nocolor'
-    \ }
+    set grepprg=ag\ --nogroup\ --nocolor
 endif
 
-if executable('pt')
-    let g:ackprg = 'pt --nogroup --nocolor'
-
-    let g:ctrlp_user_command = {
-        \ 'types': {
-            \ 1: ['.git', 'cd %s && git ls-files'],
-            \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-            \ },
-        \ 'fallback': 'cd %s && pt -l --nocolor *'
-    \ }
+if executable('rg')
+    set grepprg=rg\ --no-heading\ --vimgrep
+    set grepformat=%f:%l:%c:%m
 endif
 
 " ================ Local Overrides ==============

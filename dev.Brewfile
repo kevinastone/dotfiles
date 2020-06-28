@@ -12,6 +12,9 @@ brew "jo"
 brew "gron"
 brew "fpp"
 
+# Wireshark
+brew "wireshark"
+
 # Frameworks and Helpers
 brew "heroku"
 brew "mosh"
