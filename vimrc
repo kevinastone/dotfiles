@@ -135,12 +135,13 @@ Plug 'mattn/emmet-vim'
 Plug 'tweekmonster/braceless.vim'
 
 " == Version Control ==
-" Plug 'tpope/vim-fugitive'
-" Plug 'mhinz/vim-signify'
-" Plug 'ludovicchabant/vim-lawrencium'
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
 
 " == Whitespace ==
+Plug 'chrisbra/vim-show-char'
 nnoremap <C-A> :ShowWhiteToggle<cr>
+
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
@@ -150,19 +151,16 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=236
 
 " == Linting ==
-
 Plug 'dense-analysis/ale'
-Plug 'chrisbra/vim-show-char'
-
-" XML/HTML
-Plug 'sukima/xmledit', { 'do': 'make' }
+if executable('rust-analyzer')
+    let g:ale_linters = {'rust': ['analyzer']}
+endif
 
 " == Editorconfig ==
 Plug 'editorconfig/editorconfig-vim'
 
 " == Status Bar ==
 Plug 'itchyny/lightline.vim'
-
 let g:lightline = {
       \ 'component_function': {
       \   'filename': 'LightlineFilename',
@@ -174,9 +172,9 @@ endfunction
 
 " == Languages ==
 Plug 'sheerun/vim-polyglot'
+" XML/HTML
+Plug 'sukima/xmledit', { 'do': 'make' }
 
-let g:hack#omnifunc=1
-autocmd BufNewFile,BufRead *.php setl omnifunc=hackcomplete#Complete
 
 call plug#end()
 endif
@@ -186,9 +184,6 @@ endif
 " Tabs
 " noremap <silent> <C-[> :bprevious<CR>
 " noremap <silent> <C-]> :bnext<CR>
-" Whitespace
-nmap <silent> <leader>a :set nolist!<CR>
-" Wrapping
 
 " Commenting
 nmap <C-m> gcc
