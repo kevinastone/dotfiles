@@ -123,6 +123,12 @@ Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
+" Fuzzy
+map <C-p> :Files<CR>
+
 " == Comments ==
 Plug 'tomtom/tcomment_vim'
 
@@ -189,9 +195,6 @@ endif
 nmap <C-m> gcc
 vmap <C-m> gc
 
-" Fuzzy
-map <C-p> :GFiles<CR>
-
 " Save
 inoremap <C-s>     <C-O>:update<cr>
 nnoremap <C-s>     :update<cr>
@@ -221,6 +224,7 @@ endif
 if executable('rg')
     set grepprg=rg\ --no-heading\ --vimgrep
     set grepformat=%f:%l:%c:%m
+    let $FZF_DEFAULT_COMMAND = "rg --files"
 endif
 
 " ================ Local Overrides ==============
