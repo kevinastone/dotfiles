@@ -1,3 +1,4 @@
 if status --is-login; and test -d ~/.cargo/bin
-    set -x fish_user_paths ~/.cargo/bin $fish_user_paths
+    contains $HOME/.cargo/bin $fish_user_paths
+    or set -x fish_user_paths $HOME/.cargo/bin $fish_user_paths
 end

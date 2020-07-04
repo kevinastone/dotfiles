@@ -6,7 +6,8 @@ if test -d /opt/android_sdk
 
     for dir  in tools platform-tools
         if test -d "$ANDROID_SDK"/"$dir"
-            set -x fish_user_paths "$ANDROID_SDK"/"$dir" $fish_user_paths
+            contains "$ANDROID_SDK"/"$dir" $fish_user_paths
+            or set -x fish_user_paths "$ANDROID_SDK"/"$dir" $fish_user_paths
         end
     end
 end

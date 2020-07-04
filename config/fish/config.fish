@@ -1,9 +1,12 @@
-set -x fish_user_paths /usr/local/sbin $fish_user_paths
+contains /usr/local/sbin $fish_user_paths
+or set -x fish_user_paths /usr/local/sbin $fish_user_paths
 
 if status --is-login
-    set -x fish_user_paths ~/.bin $fish_user_paths
+    contains $HOME/.bin $fish_user_paths
+    or set -x fish_user_paths $HOME/.bin $fish_user_paths
 end
 
 if status --is-login; and test -d ~/.local/bin
-    set -x fish_user_paths ~/.local/bin $fish_user_paths
+    contains $HOME/.local/bin $fish_user_paths
+    or set -x fish_user_paths $HOME/.local/bin $fish_user_paths
 end
