@@ -13,5 +13,7 @@ pushd "${BASH_SOURCE%/*}" &>/dev/null
     -c 'Delete :"Window Settings":Basic:noWarnProcesses' \
     -c 'Add :"Window Settings":Basic:noWarnProcesses array' \
     -c 'Merge nowarn.terminal.plist :"Window Settings":Basic:noWarnProcesses' \
+    -c 'Delete :"Window Settings":Basic:useOptionAsMetaKey' \
+    -c 'Add :"Window Settings":Basic:useOptionAsMetaKey bool true' \
     ~/Library/Preferences/com.apple.Terminal.plist
 popd &>/dev/null
