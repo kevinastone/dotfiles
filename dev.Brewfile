@@ -22,7 +22,6 @@ brew "cloc"
 brew "direnv"
 
 # Cask Apps
-cask "atom"
 cask "firefox"
 cask "google-chrome"
 cask "kaleidoscope"
