@@ -8,12 +8,10 @@ defaults write com.apple.Terminal NewTabWorkingDirectoryBehavior -bool true
 
 pushd "${BASH_SOURCE%/*}" &>/dev/null
 /usr/libexec/PlistBuddy \
-    -c 'Delete :"Window Settings":Basic:shellExitAction' \
-    -c 'Add :"Window Settings":Basic:shellExitAction bool true' \
+    -c 'Set :"Window Settings":Basic:shellExitAction true' \
     -c 'Delete :"Window Settings":Basic:noWarnProcesses' \
     -c 'Add :"Window Settings":Basic:noWarnProcesses array' \
     -c 'Merge nowarn.terminal.plist :"Window Settings":Basic:noWarnProcesses' \
-    -c 'Delete :"Window Settings":Basic:useOptionAsMetaKey' \
-    -c 'Add :"Window Settings":Basic:useOptionAsMetaKey bool true' \
+    -c 'Set :"Window Settings":Basic:useOptionAsMetaKey true' \
     ~/Library/Preferences/com.apple.Terminal.plist
 popd &>/dev/null
