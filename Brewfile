@@ -1,5 +1,5 @@
-tap "caskroom/cask"
-tap "caskroom/fonts"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 
 # Bash Completions
 brew "bash-completion"
