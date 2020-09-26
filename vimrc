@@ -119,7 +119,6 @@ silent! if plug#begin('~/.vim/plugged')
 Plug 'wellsjo/wellsokai.vim'
 
 " == Fuzzy Searching ==
-Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
