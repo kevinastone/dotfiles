@@ -3,7 +3,7 @@ export PATH="~/.bin:~/.local/bin":$PATH
 
 export WORKON_BASE_DIR="${HOME}/Documents"
 
-ulimit -n 4096
+ulimit -n 10000
 
 # Setup Brew Based Completions
 if `hash brew >/dev/null 2>&1`

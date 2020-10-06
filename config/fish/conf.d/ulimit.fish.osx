@@ -1,1 +1,1 @@
-ulimit -n 4096
+ulimit -n 10000
