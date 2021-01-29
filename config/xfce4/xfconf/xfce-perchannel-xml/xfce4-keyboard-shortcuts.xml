@@ -145,6 +145,8 @@
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Left" type="string" value="tile_left_key"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Right" type="string" value="tile_right_key"/>
+      <property name="&lt;Primary&gt;&lt;Super&gt;Left" type="string" value="left_workspace_key"/>
+      <property name="&lt;Primary&gt;&lt;Super&gt;Right" type="string" value="right_workspace_key"/>
     </property>
   </property>
   <property name="providers" type="array">
