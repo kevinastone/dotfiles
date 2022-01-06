@@ -27,6 +27,7 @@ cask "google-chrome"
 cask "kaleidoscope"
 cask "kap"
 cask "fork"
+cask "proxyman"
 
 # Langauge Helers
 brew "pipx"
