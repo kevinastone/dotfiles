@@ -53,9 +53,3 @@ vim -c "PlugInstall"
 ```
 brew bundle --file=dev.Brewfile
 ```
-
-### Install `pipx` for Python virtualization
-
-```
-sudo pip3 install pipx
-```
