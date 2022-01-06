@@ -26,7 +26,6 @@ cask "firefox"
 cask "google-chrome"
 cask "kaleidoscope"
 cask "kap"
-cask "paparazzi"
 cask "fork"
 
 # Langauge Helers
@@ -35,3 +34,6 @@ brew "swift-format"
 brew "swiftlint"
 brew "shellcheck"
 brew "rust-analyzer"
+
+# Podman
+brew "podman"
