@@ -16,7 +16,7 @@ brew "fish"
 brew "starship"
 brew "moreutils"
 brew "grc"
-brew "youtube-dl"
+brew "yt-dlp"
 brew "mas"
 
 # Cask Apps
