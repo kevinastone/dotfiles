@@ -5,5 +5,6 @@ Readme.markdown
 sublime.sh
 brewinstall.sh
 atom.sh
+icloud.sh
 macos.sh
 macos.d/.*
