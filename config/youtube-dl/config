@@ -1,2 +1,5 @@
 --embed-thumbnail
 -o ~/Downloads/%(title)s.%(ext)s
+
+# Maximum of 720p
+-S "res:720"
