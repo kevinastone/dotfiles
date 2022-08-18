@@ -10,3 +10,7 @@ symbol = "🌱 "
 
 [package]
 disabled = true
+
+[battery]
+empty_symbol = "🪫"
+discharging_symbol = "🪫"
