@@ -16,7 +16,7 @@ brew "fpp"
 brew "wireshark"
 
 # Frameworks and Helpers
-brew "heroku"
+brew "flyctl"
 brew "mosh"
 brew "cloc"
 brew "direnv"
