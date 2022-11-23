@@ -12,7 +12,7 @@ yes | ./install.sh
 
 ```
 # Install Homebrew
-curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew bundle
 ```
 
