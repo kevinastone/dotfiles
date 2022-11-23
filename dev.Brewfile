@@ -24,7 +24,6 @@ brew "direnv"
 # Cask Apps
 cask "firefox"
 cask "google-chrome"
-cask "kaleidoscope"
 cask "kap"
 cask "fork"
 cask "proxyman"

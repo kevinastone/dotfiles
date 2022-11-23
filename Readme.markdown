@@ -33,8 +33,6 @@ chsh -s /opt/homebrew/bin/fish
 ./sublime.sh
 # Vim Plugins
 vim -c "PlugInstall"
-# Configure Atom
-./atom.sh
 ```
 
 
