@@ -1,5 +1,8 @@
-contains /usr/local/sbin $fish_user_paths
-or set -x fish_user_paths /usr/local/sbin $fish_user_paths
+contains /opt/homebrew/bin $fish_user_paths
+or set -x fish_user_paths /opt/homebrew/bin $fish_user_paths
+
+contains /opt/homebrew/sbin $fish_user_paths
+or set -x fish_user_paths /opt/homebrew/sbin $fish_user_paths
 
 if status --is-login
     contains $HOME/.bin $fish_user_paths

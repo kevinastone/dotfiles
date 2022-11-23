@@ -21,8 +21,8 @@ brew bundle
 ## Configure Fish Shell
 
 ```
-echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish
+echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
 ```
 
 
