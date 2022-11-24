@@ -1,5 +1,5 @@
 export EDITOR=vim
-export PATH="~/.bin:~/.local/bin":$PATH
+export PATH="~/.bin:~/.local/bin:/opt/homebrew/bin":$PATH
 
 export WORKON_BASE_DIR="${HOME}/Documents"
 
@@ -30,5 +30,3 @@ fi
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
-
-if [ -e /Users/kstone/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/kstone/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
