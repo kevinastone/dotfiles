@@ -25,3 +25,9 @@ defaults write org.m0k.transmission RenamePartialFiles -bool false
 
 # General
 defaults write org.m0k.transmission AutoSize -bool true
+
+# Prompts
+defaults write org.m0k.transmission CheckDownload -bool true
+defaults write org.m0k.transmission CheckQuitDownloading -bool true
+defaults write org.m0k.transmission CheckRemoveDownloading -bool true
+defaults write org.m0k.transmission CheckUpload -bool true
