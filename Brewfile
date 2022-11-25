@@ -17,6 +17,7 @@ brew "starship"
 brew "moreutils"
 brew "grc"
 brew "yt-dlp"
+brew "duti"
 brew "mas"
 
 # Cask Apps
