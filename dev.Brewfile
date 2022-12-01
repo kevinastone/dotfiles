@@ -7,6 +7,7 @@ brew "typescript"
 brew "yarn"
 
 # CLI Utils
+brew "httpie"
 brew "jq"
 brew "jo"
 brew "gron"
