@@ -26,6 +26,7 @@ cask "1password"
 cask "dropbox"
 cask "spotify"
 cask "vlc"
+cask "the-unarchiver"
 cask "keepingyouawake"
 cask "font-fira-code"
 
