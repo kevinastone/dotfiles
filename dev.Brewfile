@@ -24,7 +24,6 @@ brew "cloc"
 brew "direnv"
 
 # Cask Apps
-cask "firefox"
 cask "google-chrome"
 cask "kap"
 cask "fork"
@@ -37,5 +36,7 @@ brew "swiftlint"
 brew "shellcheck"
 brew "rust-analyzer"
 
-# Podman
+# Containers
+brew "docker"
 brew "podman"
+brew "colima"
