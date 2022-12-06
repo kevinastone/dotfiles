@@ -12,6 +12,7 @@ brew "jq"
 brew "jo"
 brew "gron"
 brew "fpp"
+brew "ripgrep"
 
 # Wireshark
 brew "wireshark"
