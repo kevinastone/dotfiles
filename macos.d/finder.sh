@@ -4,6 +4,12 @@
 # Finder                                                                      #
 ###############################################################################
 
+# Show Internal HDDs on Desktop
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+
+# Show Path Bar
+defaults write com.apple.finder ShowPathbar -bool true
+
 # New window target
 # Computer     : `PfCm`
 # Volume       : `PfVo`
