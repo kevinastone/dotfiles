@@ -1,5 +1,6 @@
 #!/bin/bash
 
+[ -d ~/.local/pipx/venvs ] || exit
 cd ~/.local/pipx/venvs || exit
 
 PY_VERSION="$1"
