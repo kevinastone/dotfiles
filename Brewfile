@@ -1,14 +1,13 @@
 # System Packages
-brew "duti"
 brew "mas"
 
 # Cask Apps
 cask "alfred"
 cask "hammerspoon"
-cask "sublime-text"
+# cask "sublime-text"
 cask "1password"
-cask "spotify"
-cask "vlc"
+# cask "spotify"
+# cask "vlc"
 cask "the-unarchiver"
 cask "keepingyouawake"
 
