@@ -1,18 +1,14 @@
-# System Packages
-brew "duti"
-brew "mas"
+brew "starship"
+brew "tree"
 
 # Cask Apps
 cask "alfred"
 cask "hammerspoon"
-cask "sublime-text"
+# cask "sublime-text"
 cask "1password"
-cask "spotify"
-cask "vlc"
+# cask "spotify"
+# cask "vlc"
 cask "the-unarchiver"
 cask "keepingyouawake"
+cask "font-fira-code-nerd-font"
 
-# Mac App Store Apps
-mas "PDF Expert", id: 1055273043
-mas "Pixelmator Pro", id: 1289583905
-mas "Affinity Designer", id: 824171161
