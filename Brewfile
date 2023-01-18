@@ -14,7 +14,6 @@ brew "wget"
 brew "fish"
 brew "starship"
 brew "moreutils"
-brew "grc"
 brew "duti"
 brew "mas"
 
