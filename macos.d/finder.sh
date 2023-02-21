@@ -20,9 +20,6 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Other…       : `PfLo`
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
 
-# Path bar
-defaults write com.apple.finder ShowPathbar -bool true
-
 # Search scope
 # This Mac       : `SCev`
 # Current Folder : `SCcf`
