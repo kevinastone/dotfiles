@@ -71,6 +71,19 @@ modal:bind({}, "v", modal:runThenExit(function()
 end))
 
 
+modal:bind({"shift"}, "\\", modal:runThenExit(function()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.y = max.y
+    f.h = max.h
+    win:setFrame(f)
+end))
+
+
 modal:bind({}, "space", modal:runThenExit(function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
