@@ -97,3 +97,73 @@ modal:bind({}, "space", modal:runThenExit(function()
     f.h = max.h
     win:setFrame(f)
 end))
+
+modal:bind({}, "a", modal:runThenExit(function()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x
+    f.y = max.y
+    f.w = max.w / 3
+    f.h = max.h
+    win:setFrame(f)
+end))
+
+modal:bind({"shift"}, "a", modal:runThenExit(function()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x
+    f.y = max.y
+    f.w = 2 * max.w / 3
+    f.h = max.h
+    win:setFrame(f)
+end))
+
+modal:bind({}, "b", modal:runThenExit(function()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x + max.w / 3
+    f.y = max.y
+    f.w = max.w / 3
+    f.h = max.h
+    win:setFrame(f)
+end))
+
+modal:bind({}, "c", modal:runThenExit(function()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x + 2 * max.w / 3
+    f.y = max.y
+    f.w = max.w / 3
+    f.h = max.h
+    win:setFrame(f)
+end))
+
+modal:bind({"shift"}, "c", modal:runThenExit(function()
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x + max.w / 3
+    f.y = max.y
+    f.w = 2 * max.w / 3
+    f.h = max.h
+    win:setFrame(f)
+end))
