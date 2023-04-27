@@ -1,4 +1,4 @@
-dev.Brewfile
+.*\.Brewfile
 Brewfile
 npm.sh
 Readme.markdown
