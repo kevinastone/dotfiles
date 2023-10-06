@@ -5,7 +5,6 @@ tap "homebrew/cask-fonts"
 brew "bash-completion"
 
 # System Packages
-brew "ssh-copy-id"
 brew "htop"
 brew "tmux"
 brew "tree"
