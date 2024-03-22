@@ -3,4 +3,4 @@
 --no-mtime
 
 # Maximum of 720p
--S "res:720"
+-S "res:1080"
