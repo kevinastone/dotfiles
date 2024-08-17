@@ -1,6 +1,0 @@
---embed-thumbnail
--o ~/Downloads/%(title)s.%(ext)s
---no-mtime
-
-# Maximum of 720p
--S "res:1080"

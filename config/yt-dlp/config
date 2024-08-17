@@ -1,0 +1,9 @@
+--embed-thumbnail
+-o ~/Downloads/%(title)s.%(ext)s
+--no-mtime
+
+# Maximum of 720p
+--format-sort "res:1080"
+
+# Prefer Audio extension priority (m4a > aac > mp3 > ogg > opus > webm > other)
+--format-sort "aext"
