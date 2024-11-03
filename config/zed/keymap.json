@@ -9,13 +9,19 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "cmd-ctrl-p": "projects::OpenRecent"
     }
   },
   {
     "context": "Editor",
     "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "cmd-ctrl-p": "projects::OpenRecent"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-s": "pane::RevealInProjectPanel"
     }
   }
 ]

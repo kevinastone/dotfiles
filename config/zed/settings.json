@@ -7,22 +7,34 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "ui_font_size": 14,
+  "features": {
+    "inline_completion_provider": "none"
+  },
+  "ui_font_size": 15,
   "buffer_font_size": 12,
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Andromeda"
+    "dark": "Catppuccin Mocha"
   },
   "base_keymap": "SublimeText",
   "double_click_in_multibuffer": "open",
+  "scrollbar": {
+    "show": "system"
+  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
   "project_panel": {
     "folder_icons": false,
-    "auto_reveal_entries": false
+    "auto_reveal_entries": false,
+    "indent_size": 15
+  },
+  "assistant": {
+    "version": "2",
+    "enabled": false,
+    "button": false
   },
   "collaboration_panel": {
     // Whether to show the collaboration panel button in the status bar.
@@ -35,5 +47,13 @@
   "notification_panel": {
     // Whether to show the notification panel button in the status bar.
     "button": false
+  },
+  "auto_install_extensions": {
+    "html": true,
+    "dockerfile": true,
+    "catppuccin": true,
+    "git-firefly": true,
+    "sql": true,
+    "toml": true
   }
 }
