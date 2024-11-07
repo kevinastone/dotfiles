@@ -15,13 +15,15 @@
   {
     "context": "Editor",
     "bindings": {
-      "cmd-ctrl-p": "projects::OpenRecent"
+      "cmd-ctrl-p": "projects::OpenRecent",
+      "ctrl-cmd-g": "editor::SelectAllMatches"
     }
   },
   {
     "context": "Pane",
     "bindings": {
-      "ctrl-s": "pane::RevealInProjectPanel"
+      "ctrl-s": "pane::RevealInProjectPanel",
+      "ctrl-cmd-w": "pane::CloseAllItems"
     }
   }
 ]
