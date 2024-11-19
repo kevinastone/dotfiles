@@ -8,7 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "features": {
-    "inline_completion_provider": "none"
+    "inline_completion_provider": "supermaven"
   },
   "ui_font_size": 15,
   "buffer_font_size": 12,
@@ -53,7 +53,40 @@
     "dockerfile": true,
     "catppuccin": true,
     "git-firefly": true,
+    "ruff": true,
     "sql": true,
     "toml": true
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          // Ruff server settings goes here
+          "lineLength": 100,
+          "lint": {
+            "extendSelect": ["I"]
+          }
+        }
+      }
+    }
   }
 }
