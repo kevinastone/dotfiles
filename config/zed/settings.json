@@ -8,7 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "features": {
-    "inline_completion_provider": "supermaven"
+    "edit_prediction_provider": "supermaven"
   },
   "ui_font_size": 15,
   "buffer_font_size": 12,
@@ -42,7 +42,7 @@
   },
   "chat_panel": {
     // Whether to show the chat panel button in the status bar.
-    "button": false
+    "button": "never"
   },
   "notification_panel": {
     // Whether to show the notification panel button in the status bar.
