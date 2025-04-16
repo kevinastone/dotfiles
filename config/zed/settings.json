@@ -48,6 +48,9 @@
     // Whether to show the notification panel button in the status bar.
     "button": false
   },
+  "outline_panel": {
+    "dock": "right"
+  },
   "auto_install_extensions": {
     "html": true,
     "dockerfile": true,
@@ -56,6 +59,9 @@
     "ruff": true,
     "sql": true,
     "toml": true
+  },
+  "inlay_hints": {
+    "enabled": true
   },
   "languages": {
     "Python": {
