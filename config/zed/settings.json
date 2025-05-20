@@ -31,9 +31,13 @@
     "auto_reveal_entries": false,
     "indent_size": 15
   },
-  "assistant": {
+  "agent": {
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.5-flash-preview-04-17"
+    },
     "version": "2",
-    "enabled": false,
+    "enabled": true,
     "button": false
   },
   "collaboration_panel": {
@@ -61,7 +65,7 @@
     "toml": true
   },
   "inlay_hints": {
-    "enabled": true
+    "enabled": false
   },
   "languages": {
     "Python": {
