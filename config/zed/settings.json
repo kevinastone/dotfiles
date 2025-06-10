@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Catppuccin Mocha"
+  },
   "features": {
     "edit_prediction_provider": "supermaven"
   },
@@ -25,6 +30,9 @@
   "telemetry": {
     "diagnostics": false,
     "metrics": false
+  },
+  "minimap": {
+    "show": "always"
   },
   "project_panel": {
     "folder_icons": false,
@@ -59,6 +67,7 @@
     "html": true,
     "dockerfile": true,
     "catppuccin": true,
+    "catppuccin-icons": true,
     "git-firefly": true,
     "ruff": true,
     "sql": true,
