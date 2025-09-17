@@ -1,3 +1,4 @@
 confirm-close-surface = false
 window-inherit-working-directory = false
 theme = catppuccin mocha
+shell-integration-features = ssh-env
