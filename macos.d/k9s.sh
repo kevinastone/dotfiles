@@ -9,5 +9,5 @@ if [ ! -e "$HOME/Library/Application Support/k9s/" ]; then
 fi
 
 pushd "${BASH_SOURCE%/*}" &>/dev/null
-    ln -sf "$PWD/k9s/plugins" "$HOME/Library/Application Support/k9s/plugins"
+    ln -sfh "$PWD/k9s/plugins" "$HOME/Library/Application Support/k9s/plugins"
 popd &>/dev/null
