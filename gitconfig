@@ -3,23 +3,14 @@
 	email = kevinastone@gmail.com
 [color]
 	ui = true
-[merge]
-	tool = Kaleidoscope
 [core]
 	quotepath = false
 	excludesfile = ~/.gitignore_global
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
-[diff]
-	tool = Kaleidoscope
 [mergetool]
 	keepBackup = true
 	prompt = false
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustExitCode = true
 [alias]
 	ignored = ls-files --others -i --exclude-standard
 	# Log Aliases
@@ -28,7 +19,7 @@
 	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=short
 	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=relative
 	lgv = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --numstat
-	
+
 	# Shortcuts
 	co = checkout
 	ci = commit
@@ -38,7 +29,7 @@
 
 	# Unadd
 	unadd = reset HEAD
-	
+
 	# History
 	diverges = !sh -c 'git rev-list --boundary $1...$2 | grep ^- | cut -c2-'
 
