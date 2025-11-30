@@ -42,7 +42,7 @@
   "agent": {
     "default_model": {
       "provider": "google",
-      "model": "gemini-2.5-pro"
+      "model": "gemini-3-pro-preview"
     },
     "enabled": true,
     "button": false
@@ -50,10 +50,6 @@
   "collaboration_panel": {
     // Whether to show the collaboration panel button in the status bar.
     "button": false
-  },
-  "chat_panel": {
-    // Whether to show the chat panel button in the status bar.
-    "button": "never"
   },
   "notification_panel": {
     // Whether to show the notification panel button in the status bar.
