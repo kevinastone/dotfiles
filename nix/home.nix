@@ -13,22 +13,17 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "23.05"; # Please read the comment before changing.
+  home.stateVersion = "25.05"; # Please read the comment before changing.
+
+  imports = [
+    ./home
+  ];
 
   # Direnv, load and unload environment variables depending on the current directory.
-    # https://direnv.net
-    # https://rycee.gitlab.io/home-manager/options.html#opt-programs.direnv.enable
-    programs.direnv.enable = true;
-    programs.direnv.nix-direnv.enable = true;
-
-    # Htop
-    # https://rycee.gitlab.io/home-manager/options.html#opt-programs.htop.enable
-    programs.htop.enable = true;
-    programs.htop.settings.show_program_path = true;
-
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
+    htop
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -61,7 +56,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    ".vimrc".source = ./vimrc;
+    ".vimrc".source = ../vimrc;
   };
 
   # You can also manage environment variables but you will have to manually
@@ -87,4 +82,14 @@
           switch = "darwin-rebuild switch --flake ~/dotfiles";
       };
   };
+
+  # https://direnv.net
+  # https://rycee.gitlab.io/home-manager/options.html#opt-programs.direnv.enable
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+
+  # Htop
+  # https://rycee.gitlab.io/home-manager/options.html#opt-programs.htop.enable
+  programs.htop.enable = true;
+  programs.htop.settings.show_program_path = true;
 }
