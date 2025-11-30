@@ -52,3 +52,18 @@ vim -c "PlugInstall"
 ```
 brew bundle --file=dev.Brewfile
 ```
+
+
+## Nix (on MacOS)
+
+### Install Nix
+
+```
+curl -fsSL https://install.determinate.systems/nix | sh -s -- install --prefer-upstream-nix
+```
+
+### Install Nix-Darwin
+
+```
+sudo nix run nix-darwin -- switch --flake ~/dotfiles
+```
