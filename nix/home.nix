@@ -55,41 +55,8 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-
-    ".vimrc".source = ../vimrc;
-  };
-
-  # You can also manage environment variables but you will have to manually
-  # source
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/davish/etc/profile.d/hm-session-vars.sh
-  #
-  # if you don't want to manage your shell through Home Manager.
-  home.sessionVariables = {
-    EDITOR = "vim";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.zsh = {
-      enable = true;
-      shellAliases = {
-          switch = "darwin-rebuild switch --flake ~/dotfiles";
-      };
-  };
-
-  # https://direnv.net
-  # https://rycee.gitlab.io/home-manager/options.html#opt-programs.direnv.enable
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
-
-  # Htop
-  # https://rycee.gitlab.io/home-manager/options.html#opt-programs.htop.enable
-  programs.htop.enable = true;
-  programs.htop.settings.show_program_path = true;
 }
