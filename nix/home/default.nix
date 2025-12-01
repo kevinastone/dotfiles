@@ -6,6 +6,7 @@
     ./htop.nix
     ./packages.nix
     ./shell
+    ./sqlite.nix
     ./tmux.nix
     ./vim.nix
   ];
