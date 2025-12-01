@@ -16,19 +16,9 @@
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  # Keyboard
-  system.keyboard.enableKeyMapping = true;
-  system.keyboard.remapCapsLockToEscape = true;
-
-  # MacOS System Preferences
-  system.defaults = {
-    dock = {
-      show-recents = false;
-    };
-    finder = {
-      ShowPathbar = true;
-    };
-  };
+  imports = [
+    ./darwin
+  ];
 
   # Add ability to used TouchID for sudo authentication
   security.pam.services.sudo_local.touchIdAuth = true;
@@ -37,37 +27,5 @@
   users.users.kstone = {
       name = "kstone";
       home = "/Users/kstone";
-  };
-
-  environment.systemPackages =
-    [ pkgs.vim
-      pkgs.fish
-      pkgs.starship
-    ];
-
-  environment.defaultPackages = [ pkgs.neofetch ];
-
-  homebrew = {
-    enable = true;
-    # onActivation.cleanup = "uninstall";
-
-    taps = [];
-    brews = [];
-    casks = [
-      "1password"
-      "alfred"
-      "ghostty"
-      "hammerspoon"
-      "keepingyouawake"
-      "spotify"
-      "sublime-text"
-      "the-unarchiver"
-      "vlc"
-    ];
-    masApps = {
-      "PDF Expert" = 1055273043;
-      "Pixelmator Pro" = 1289583905;
-      "Affinity Designer" = 824171161;
-    };
   };
 }
