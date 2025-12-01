@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ./direnv.nix
+    ./ghostty.nix
     ./git.nix
     ./htop.nix
     ./shell
