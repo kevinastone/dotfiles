@@ -2,7 +2,7 @@
   imports = [
     ./direnv.nix
     ./ghostty.nix
-    ./git.nix
+    ./git
     ./htop.nix
     ./packages.nix
     ./shell
