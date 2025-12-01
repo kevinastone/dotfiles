@@ -4,7 +4,9 @@
     ./ghostty.nix
     ./git.nix
     ./htop.nix
+    ./packages.nix
     ./shell
+    ./tmux.nix
     ./vim.nix
   ];
 

@@ -16,13 +16,10 @@
         ./nix/darwin
         home-manager.darwinModules.home-manager
         {
-          home-manager.verbose = true;
+          # home-manager.verbose = true;
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.kstone = import ./nix/home;
-
-          # Optionally, use home-manager.extraSpecialArgs to pass
-          # arguments to home.nix
         }
       ];
       specialArgs = { inherit inputs; };
