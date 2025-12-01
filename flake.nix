@@ -16,6 +16,7 @@
         ./nix/darwin
         home-manager.darwinModules.home-manager
         {
+          home-manager.verbose = true;
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.kstone = import ./nix/home;

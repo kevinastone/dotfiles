@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     curl
     htop
+    pstree
     tree
     vim
     watch
