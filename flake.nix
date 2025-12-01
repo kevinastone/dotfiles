@@ -12,12 +12,13 @@
   outputs = inputs@{ self, nix-darwin, home-manager, nixpkgs }: {
     darwinConfigurations."M1Max" = nix-darwin.lib.darwinSystem {
       modules = [
-        ./nix/darwin.nix
+        ./nix
+        ./nix/darwin
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.kstone = import ./nix/home.nix;
+          home-manager.users.kstone = import ./nix/home;
 
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
