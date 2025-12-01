@@ -1,14 +1,14 @@
 { config, pkgs, ... }: {
   imports = [
-    ./direnv.nix
-    ./ghostty.nix
+    ./direnv
+    ./ghostty
     ./git
     ./htop.nix
     ./packages.nix
     ./shell
     ./sqlite
-    ./tmux.nix
-    ./vim.nix
+    ./tmux
+    ./vim
     ./yt-dlp
   ];
 

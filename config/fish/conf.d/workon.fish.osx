@@ -1,1 +1,0 @@
-set -x WORKON_BASE_DIR "$HOME/Documents"
