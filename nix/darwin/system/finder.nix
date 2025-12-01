@@ -1,6 +1,8 @@
 {...}: {
   system.defaults.finder = {
     ShowPathbar = true;
+    ShowHardDrivesOnDesktop = true;
+    ShowExternalHardDrivesOnDesktop = true;
 
     # Search scope
     # This Mac       : `SCev`
