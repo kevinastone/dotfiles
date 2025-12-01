@@ -1,4 +1,3 @@
-brew "yt-dlp"
 brew "ffmpeg"
 brew "atomicparsley"
 cask "homebrew/cask/handbrake"

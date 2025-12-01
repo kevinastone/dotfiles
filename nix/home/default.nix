@@ -6,9 +6,10 @@
     ./htop.nix
     ./packages.nix
     ./shell
-    ./sqlite.nix
+    ./sqlite
     ./tmux.nix
     ./vim.nix
+    ./yt-dlp
   ];
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
