@@ -1,5 +1,9 @@
-{ pkgs, ... }: {
-
+{ lib, pkgs, ... }:
+let
+  preferencesPath = if pkgs.stdenv.isDarwin
+    then "Library/Preferences/org.videolan.vlc"
+    else ".config";
+in {
   imports = [
     ../file-associations.nix
   ];
@@ -8,7 +12,7 @@
     vlc-bin
   ];
 
-  home.file."Library/Preferences/org.videolan.vlc/vlcrc".source = ./vlcrc;
+  home.file."${preferencesPath}/vlcrc".source = ./vlcrc;
 
   file-associations.mp4 = "org.videolan.vlc";
   file-associations.mkv = "org.videolan.vlc";
