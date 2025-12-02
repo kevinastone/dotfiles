@@ -1,8 +1,9 @@
-{ config, pkgs, zed-extensions, ... }: {
+{ config, pkgs, ... }: {
   imports = [
     ./direnv
     ./ghostty
     ./git
+    ./hammerspoon.nix
     ./htop.nix
     ./icloud.nix
     ./packages.nix
