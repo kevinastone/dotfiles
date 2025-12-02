@@ -3,6 +3,7 @@
     ./apps.nix
     ./fonts.nix
     ./homebrew.nix
+    ./sudo.nix
     ./system
   ];
 
