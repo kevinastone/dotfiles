@@ -10,6 +10,7 @@
     ./tmux
     ./vim
     ./yt-dlp
+    ./zed
   ];
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
