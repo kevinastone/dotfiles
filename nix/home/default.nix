@@ -4,6 +4,7 @@
     ./ghostty
     ./git
     ./htop.nix
+    ./icloud.nix
     ./packages.nix
     ./python
     ./shell
