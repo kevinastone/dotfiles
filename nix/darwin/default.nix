@@ -1,12 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
   imports = [
     ./apps.nix
     ./fonts.nix
     ./homebrew.nix
     ./system
   ];
-
-  nix.settings.experimental-features = "nix-command flakes";
 
   # Enable alternative shell support in nix-darwin.
   programs.fish.enable = true;
@@ -15,7 +13,7 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
 
-  system.primaryUser = "kstone";
+  system.primaryUser = username;
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -28,9 +26,9 @@
   ];
 
   # Declare the user that will be running `nix-darwin`.
-  users.users.kstone = {
-      name = "kstone";
-      home = "/Users/kstone";
+  users.users.${username} = {
+      name = username;
+      home = "/Users/${username}";
       shell = pkgs.fish;
   };
 }
