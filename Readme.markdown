@@ -67,3 +67,9 @@ curl -fsSL https://install.determinate.systems/nix | sh -s -- install --prefer-u
 ```
 sudo nix run nix-darwin -- switch --flake ~/dotfiles
 ```
+
+### Fixing Nix-Store issues
+
+```
+sudo nix-store --verify --check-contents --repair
+```
