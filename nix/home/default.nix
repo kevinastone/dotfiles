@@ -5,6 +5,7 @@
     ./git
     ./htop.nix
     ./packages.nix
+    ./python
     ./shell
     ./sqlite
     ./tmux
