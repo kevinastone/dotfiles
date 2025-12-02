@@ -1,5 +1,6 @@
 { config, pkgs, ... }: {
   imports = [
+    ./chrome.nix
     ./direnv
     ./ghostty
     ./git
