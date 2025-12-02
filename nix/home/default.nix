@@ -14,6 +14,8 @@
     ./tmux
     ./vim
     ./vlc
+    ./xfce4
+    ./x
     ./yt-dlp
     ./zed
   ];
