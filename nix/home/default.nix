@@ -7,6 +7,7 @@
     ./hammerspoon.nix
     ./htop.nix
     ./icloud.nix
+    ./k8s
     ./node
     ./packages.nix
     ./python
