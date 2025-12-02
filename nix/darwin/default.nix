@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./apps.nix
+    ./fonts.nix
     ./homebrew.nix
     ./system
   ];

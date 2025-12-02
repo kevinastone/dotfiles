@@ -1,17 +1,4 @@
-tap "homebrew/cask"
-
-# Bash Completions
-brew "bash-completion"
-
 # System Packages
-brew "htop"
-brew "tmux"
-brew "tree"
-brew "watch"
-brew "wget"
-brew "fish"
-brew "starship"
-brew "moreutils"
 brew "duti"
 brew "mas"
 
