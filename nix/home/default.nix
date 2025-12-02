@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, zed-extensions, ... }: {
   imports = [
     ./direnv
     ./ghostty
@@ -10,6 +10,7 @@
     ./sqlite
     ./tmux
     ./vim
+    ./vlc
     ./yt-dlp
     ./zed
   ];

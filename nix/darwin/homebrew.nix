@@ -8,13 +8,11 @@
     casks = [
       "1password"
       "alfred"
-      # "ghostty"
       "hammerspoon"
       "keepingyouawake"
       "spotify"
       "sublime-text"
       "the-unarchiver"
-      "vlc"
     ];
     masApps = {
       "PDF Expert" = 1055273043;
