@@ -1,7 +1,9 @@
-{ ... }: {
+{ ... }:
+{
   imports = [
     ./lib
-  ] ++ [
+  ]
+  ++ [
     ./chrome.nix
     ./dev
     ./direnv

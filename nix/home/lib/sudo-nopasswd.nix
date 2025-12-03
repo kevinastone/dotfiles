@@ -1,30 +1,33 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 let
   inherit (lib)
     literalExpression
     mkIf
     mkOption
-    types;
+    types
+    ;
   profileDirectory = config.home.profileDirectory;
   cfg = config.sudo.nopasswd;
-  getExecutable = item:
-    if lib.isString item then
-      item
-    else
-      item.meta.mainProgram;
-in {
+  getExecutable = item: if lib.isString item then item else item.meta.mainProgram;
+in
+{
   options.sudo.nopasswd.executables = mkOption {
     type = with types; listOf (either str package);
     default = [ ];
     example = literalExpression ''
-    [
-      pkgs.htop
-      "reboot"
-      "shutdown"
-      "halt"
-      "poweroff"
-    ]
+      [
+        pkgs.htop
+        "reboot"
+        "shutdown"
+        "halt"
+        "poweroff"
+      ]
     '';
     description = ''
       List of executables to allow to run under sudo without a password
@@ -37,9 +40,11 @@ in {
     default = [ ];
   };
 
-  config.sudo.nopasswd.paths = lib.forEach cfg.executables
-    (item: lib.pipe item [
+  config.sudo.nopasswd.paths = lib.forEach cfg.executables (
+    item:
+    lib.pipe item [
       getExecutable
       (item: "${profileDirectory}/bin/${item}")
-    ]);
+    ]
+  );
 }

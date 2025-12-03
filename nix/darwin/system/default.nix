@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   imports = [
     ./clock.nix
     ./control-center.nix

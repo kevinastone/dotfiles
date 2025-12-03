@@ -1,4 +1,10 @@
-{ config, lib, username, pkgs, ... }:
+{
+  config,
+  lib,
+  username,
+  pkgs,
+  ...
+}:
 let
   # profileDirectory = config.home-manager.users."${username}".home.profileDirectory;
   # resolveExecutableBasename = item:
@@ -8,9 +14,9 @@ let
   #     item.meta.mainProgram;
   # executables = map resolveExecutableBasename config.home-manager.users."${username}".sudo.nopasswd-executables;
   paths = config.home-manager.users."${username}".sudo.nopasswd.paths;
-in lib.mkIf (paths != []) {
+in
+lib.mkIf (paths != [ ]) {
   security.sudo.extraConfig = lib.concatMapStrings (
-    path:
-    "%admin ALL=(ALL) NOPASSWD: ${path}\n"
+    path: "%admin ALL=(ALL) NOPASSWD: ${path}\n"
   ) paths;
 }

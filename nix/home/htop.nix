@@ -1,4 +1,5 @@
-{ pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./lib/sudo-nopasswd.nix
   ];

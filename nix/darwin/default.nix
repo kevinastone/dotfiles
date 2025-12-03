@@ -1,4 +1,5 @@
-{ pkgs, username, ... }: {
+{ pkgs, username, ... }:
+{
   imports = [
     ./apps.nix
     ./fonts.nix
@@ -28,8 +29,8 @@
 
   # Declare the user that will be running `nix-darwin`.
   users.users.${username} = {
-      name = username;
-      home = "/Users/${username}";
-      shell = pkgs.fish;
+    name = username;
+    home = "/Users/${username}";
+    shell = pkgs.fish;
   };
 }

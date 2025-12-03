@@ -4,7 +4,8 @@
   config,
   systemSettings,
   ...
-}: {
+}:
+{
 
   programs.delta = {
     enable = true;

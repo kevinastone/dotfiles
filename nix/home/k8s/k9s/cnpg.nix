@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.k9s.plugins.cnpg-logs = {
     shortCut = "l";
     description = "Logs";

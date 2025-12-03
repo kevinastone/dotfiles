@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   homebrew = {
     enable = true;
     onActivation = {
@@ -6,8 +7,8 @@
       # cleanup = "zap";
       upgrade = true;
     };
-    taps = [];
-    brews = [];
+    taps = [ ];
+    brews = [ ];
     casks = [
       "1password"
       "1password-cli"

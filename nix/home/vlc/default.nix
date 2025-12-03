@@ -1,9 +1,9 @@
 { lib, pkgs, ... }:
 let
-  preferencesPath = if pkgs.stdenv.isDarwin
-    then "Library/Preferences/org.videolan.vlc"
-    else ".config";
-in {
+  preferencesPath =
+    if pkgs.stdenv.isDarwin then "Library/Preferences/org.videolan.vlc" else ".config";
+in
+{
   imports = [
     ../lib/file-associations.nix
   ];
