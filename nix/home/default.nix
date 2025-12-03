@@ -5,22 +5,16 @@
   ]
   ++ [
     ./admin
-    ./bat.nix
     ./chrome.nix
     ./dev
     ./direnv
-    ./duckdb.nix
     ./ghostty
     ./git
     ./hammerspoon.nix
-    ./htop.nix
     ./icloud.nix
-    ./k8s
     ./media
     ./shell
-    ./sqlite
-    ./tmux
-    ./utils.nix
+    ./utils
     ./vim
     ./xfce4
     ./x

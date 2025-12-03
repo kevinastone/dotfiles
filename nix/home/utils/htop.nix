@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./lib/sudo-nopasswd.nix
+    ../lib/sudo-nopasswd.nix
   ];
 
   programs.htop.enable = true;
