@@ -17,7 +17,7 @@
           postinstall = "corepack enable";
         };
         rust = "stable";
-        python = "stable";
+        python = "latest";
         uv = "latest";
       };
     };

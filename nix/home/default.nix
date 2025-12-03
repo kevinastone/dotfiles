@@ -4,6 +4,7 @@
     ./lib
   ]
   ++ [
+    ./admin
     ./bat.nix
     ./chrome.nix
     ./dev
