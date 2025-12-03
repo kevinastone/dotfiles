@@ -1,11 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  systemSettings,
-  ...
-}: {
-
+{ pkgs, ... }: {
   imports = [
     ./delta.nix
     ./settings.nix

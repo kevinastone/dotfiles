@@ -3,6 +3,7 @@
     ./lib
   ] ++ [
     ./chrome.nix
+    ./dev
     ./direnv
     ./ghostty
     ./git
@@ -11,7 +12,6 @@
     ./icloud.nix
     ./k8s
     ./node
-    ./python
     ./shell
     ./sqlite
     ./tmux
