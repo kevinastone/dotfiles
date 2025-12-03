@@ -4,9 +4,11 @@
     ./lib
   ]
   ++ [
+    ./bat.nix
     ./chrome.nix
     ./dev
     ./direnv
+    ./duckdb.nix
     ./ghostty
     ./git
     ./hammerspoon.nix

@@ -1,7 +1,9 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    python3
-    uv
+    nodejs
+    prettier
+    typescript
+    yarn
   ];
 }
