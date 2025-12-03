@@ -1,7 +1,6 @@
 { ... }: {
   imports = [
-    ./file-associations.nix
-    ./sudo-nopasswd.nix
+    ./lib
   ] ++ [
     ./chrome.nix
     ./direnv

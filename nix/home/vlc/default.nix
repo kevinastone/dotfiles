@@ -5,7 +5,7 @@ let
     else ".config";
 in {
   imports = [
-    ../file-associations.nix
+    ../lib/file-associations.nix
   ];
 
   home.packages = with pkgs; [
