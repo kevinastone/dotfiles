@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ ... }: {
   imports = [
     ./file-associations.nix
     ./sudo-nopasswd.nix
@@ -12,11 +12,11 @@
     ./icloud.nix
     ./k8s
     ./node
-    ./packages.nix
     ./python
     ./shell
     ./sqlite
     ./tmux
+    ./utils.nix
     ./vim
     ./vlc
     ./xfce4
