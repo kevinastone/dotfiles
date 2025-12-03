@@ -1,7 +1,11 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [
-    kubectl
+  imports = [
+    ./k9s
   ];
 
-  programs.k9s.enable = true;
+  home.packages = with pkgs; [
+    kubectl
+    kubectl-cnpg
+    kubectl-rook-ceph
+  ];
 }
