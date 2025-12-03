@@ -8,6 +8,8 @@
     ./icloud.nix
     ./input.nix
     ./keyboard.nix
+    ./mail.nix
+    ./photos.nix
     ./safari.nix
     ./screencapture.nix
   ];
