@@ -1,4 +1,9 @@
-{ pkgs, osConfig, ...}: {
+{ pkgs, ...}: {
+  imports = [
+    ./sudo-nopasswd.nix
+  ];
+
   programs.htop.enable = true;
-  programs.htop.settings.show_program_path = true;
+
+  sudo.nopasswd.executables = with pkgs; [ htop ];
 }

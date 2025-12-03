@@ -9,10 +9,10 @@ let
 
   cfg = config.file-associations;
 
-  extensions = lib.concatStrings (
+  extensions = lib.concatLines (
     lib.mapAttrsToList (
       ext: bundleId:
-      "${bundleId} ${ext} all\n"
+      "${bundleId} ${ext} all"
     ) cfg
   );
 
