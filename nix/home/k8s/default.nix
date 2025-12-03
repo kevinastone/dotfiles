@@ -8,5 +8,6 @@
     kubectl
     kubectl-cnpg
     kubectl-rook-ceph
+    kustomize
   ];
 }

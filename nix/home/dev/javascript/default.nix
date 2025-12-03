@@ -1,9 +1,11 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./node
+  ];
+
   home.packages = with pkgs; [
-    nodejs
     prettier
     typescript
-    yarn
   ];
 }

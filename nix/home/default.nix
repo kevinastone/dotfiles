@@ -16,16 +16,14 @@
     ./htop.nix
     ./icloud.nix
     ./k8s
-    ./node
+    ./media
     ./shell
     ./sqlite
     ./tmux
     ./utils.nix
     ./vim
-    ./vlc
     ./xfce4
     ./x
-    ./yt-dlp
     ./zed
   ];
 
