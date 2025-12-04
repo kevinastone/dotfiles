@@ -1,0 +1,43 @@
+[alias]
+	ci = "commit"
+	co = "checkout"
+	diverges = "!sh -c 'git rev-list --boundary $1...$2 | grep ^- | cut -c2-'"
+	fpush = "push --force-with-lease"
+	ignored = "ls-files --others -i --exclude-standard"
+	ld = "log --pretty=format:\"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]\" --decorate --date=relative"
+	lds = "log --pretty=format:\"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]\" --decorate --date=short"
+	lgv = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --numstat"
+	ll = "log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an]\" --decorate --numstat"
+	ls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an]\" --decorate"
+	r = "reset"
+	r1 = "reset HEAD^"
+	st = "status -sb"
+	unadd = "reset HEAD"
+
+[color]
+	ui = true
+
+[core]
+	quotepath = false
+
+[delta]
+	navigate = true
+
+[difftool]
+	prompt = false
+
+[init]
+	defaultBranch = "main"
+
+[mergetool]
+	keepBackup = true
+	prompt = false
+
+[push]
+	autoSetupRemote = true
+	default = "upstream"
+	followTags = true
+
+[user]
+	email = "kevinastone@gmail.com"
+	name = "Kevin Stone"

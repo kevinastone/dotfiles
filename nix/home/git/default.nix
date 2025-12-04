@@ -2,7 +2,6 @@
 {
   imports = [
     ./delta.nix
-    ./settings.nix
   ];
 
   home.packages = with pkgs; [
@@ -10,4 +9,11 @@
   ];
 
   programs.git.enable = true;
+  programs.git.ignores = [ ".DS_Store" ];
+  # Keep bulk git config external for better re-use
+  programs.git.includes = [
+    {
+      path = ../../../config/git/config;
+    }
+  ];
 }
