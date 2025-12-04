@@ -1,0 +1,6 @@
+{ ... }:
+{
+  imports = [
+    ./catppuccin-mocha.nix
+  ];
+}
