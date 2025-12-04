@@ -1,11 +1,14 @@
 { pkgs, ... }:
 {
   imports = [
-    ./tmux
+    # keep-sorted start
     ./htop.nix
+    ./tmux
+    # keep-sorted end
   ];
 
   home.packages = with pkgs; [
+    # keep-sorted start
     htop
     httpie
     iperf
@@ -14,6 +17,7 @@
     moreutils
     mosh
     ripgrep
+    # keep-sorted end
   ];
 
   programs.bat.enable = true;

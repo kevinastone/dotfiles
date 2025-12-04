@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    # keep-sorted start
     # ./colima.nix
     ./docker.nix
     ./duckdb.nix
@@ -8,5 +9,6 @@
     ./mise.nix
     ./nix.nix
     ./python
+    # keep-sorted end
   ];
 }

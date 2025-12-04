@@ -4,6 +4,7 @@
     ./lib
   ]
   ++ [
+    # keep-sorted start
     ./admin
     ./chrome.nix
     ./dev
@@ -16,9 +17,10 @@
     ./shell
     ./utils
     ./vim
-    ./xfce4
     ./x
+    ./xfce4
     ./zed
+    # keep-sorted end
   ];
 
   home.stateVersion = "25.11"; # Please read the comment before changing.

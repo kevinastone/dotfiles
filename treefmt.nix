@@ -14,4 +14,6 @@
   programs.taplo.enable = true;
 
   programs.mdformat.enable = true;
+
+  programs.keep-sorted.enable = true;
 }
