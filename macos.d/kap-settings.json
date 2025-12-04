@@ -1,7 +1,7 @@
 {
-    "kapturesDir": "/Users/kstone/Downloads",
-    "openOnStartup": true,
-    "allowAnalytics": true,
-    "showCursor": true,
-    "highlightClicks": false
+  "kapturesDir": "/Users/kstone/Downloads",
+  "openOnStartup": true,
+  "allowAnalytics": true,
+  "showCursor": true,
+  "highlightClicks": false
 }

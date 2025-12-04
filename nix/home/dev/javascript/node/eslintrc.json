@@ -7,8 +7,18 @@
     "jasmine": true
   },
   "rules": {
-    "no-unused-vars": [2, {"args": "after-used", "argsIgnorePattern": "^_", "varsIgnorePattern": "^_"}],
-    "space-before-function-paren": [2, {"anonymous": "never", "named": "never"}],
+    "no-unused-vars": [
+      2,
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "space-before-function-paren": [
+      2,
+      { "anonymous": "never", "named": "never" }
+    ],
     "func-names": [0],
     "react/prefer-stateless-function": 0,
     "max-len": 0
