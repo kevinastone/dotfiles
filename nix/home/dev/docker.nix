@@ -1,9 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    docker-client
     docker-compose
     docker-buildx
   ];
-
-  programs.docker-cli.enable = true;
 }
