@@ -2,10 +2,10 @@
 {
 
   home.packages = with pkgs; [
-    yt-dlp
+    (yt-dlp.override {
+      withAlias = true;
+    })
   ];
-
-  home.shellAliases."youtube-dl" = "yt-dlp";
 
   xdg.configFile."yt-dlp/config".source = ./config;
 }
