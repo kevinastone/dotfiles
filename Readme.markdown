@@ -73,3 +73,18 @@ sudo nix run nix-darwin -- switch --flake ~/dotfiles
 ```
 sudo nix-store --verify --check-contents --repair
 ```
+
+
+### Development
+
+Reformat
+
+```
+nix fmt
+```
+
+Checks 
+
+```
+nix flake check
+```
