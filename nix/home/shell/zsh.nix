@@ -1,8 +1,3 @@
 _: {
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      switch = "darwin-rebuild switch --flake ~/dotfiles";
-    };
-  };
+  programs.zsh.enable = true;
 }

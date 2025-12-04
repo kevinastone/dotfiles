@@ -12,6 +12,8 @@
     ];
   };
 
+  home.shellAliases.zed = pkgs.zed-editor.meta.mainProgram;
+
   xdg.configFile.zed = {
     source = ./zed;
     recursive = true;
