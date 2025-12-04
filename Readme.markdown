@@ -1,28 +1,43 @@
 # Installation Instructions
 
+## Nix (on MacOS)
 
-## Setup your dotfiles
-
-```
-yes | ./install.sh
-```
-
-
-## Install System Packages
+### Install Nix
 
 ```
-# Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
-brew bundle
+curl -fsSL https://install.determinate.systems/nix | sh -s -- install --prefer-upstream-nix
 ```
 
-
-## Configure Fish Shell
+### Run Nix-Darwin
 
 ```
-echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
-chsh -s /opt/homebrew/bin/fish
+sudo nix run nix-darwin -- switch --flake ~/dotfiles
+```
+
+Rebuilds can be run with:
+
+```
+sudo darwin-rebuild switch --flake ~/dotfiles
+```
+
+### Fixing Nix-Store issues
+
+```
+sudo nix-store --verify --check-contents --repair
+```
+
+### Development
+
+Reformat
+
+```
+nix fmt
+```
+
+Checks 
+
+```
+nix flake check
 ```
 
 
@@ -45,46 +60,8 @@ vim -c "PlugInstall"
         Syncing -> Set sync folder
 
 
-## Development (optional)
-
-### Install dev homebrew packages
+## Alternative: Setup your dotfiles
 
 ```
-brew bundle --file=dev.Brewfile
-```
-
-
-## Nix (on MacOS)
-
-### Install Nix
-
-```
-curl -fsSL https://install.determinate.systems/nix | sh -s -- install --prefer-upstream-nix
-```
-
-### Install Nix-Darwin
-
-```
-sudo nix run nix-darwin -- switch --flake ~/dotfiles
-```
-
-### Fixing Nix-Store issues
-
-```
-sudo nix-store --verify --check-contents --repair
-```
-
-
-### Development
-
-Reformat
-
-```
-nix fmt
-```
-
-Checks 
-
-```
-nix flake check
+yes | ./install.sh
 ```
