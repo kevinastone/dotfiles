@@ -1,3 +1,0 @@
-#!/bin/sh
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist

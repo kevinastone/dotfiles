@@ -14,6 +14,7 @@
     ./hammerspoon.nix
     ./icloud.nix
     ./media
+    ./scripts
     ./shell
     ./utils
     ./vim

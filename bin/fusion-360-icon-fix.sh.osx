@@ -1,3 +1,0 @@
-#!/bin/bash
-
-cp -f "$HOME/Library/CloudStorage/Dropbox/AppData/Fusion 360/Fusion360.icns" "$HOME/Applications/Autodesk Fusion 360.app/Contents/Resources/Fusion 360_Install.icns"

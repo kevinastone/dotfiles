@@ -12,7 +12,9 @@ let
     ;
   inherit (config.home) profileDirectory;
   cfg = config.sudo.nopasswd;
-  getExecutable = item: if lib.isString item then item else item.meta.mainProgram;
+  getExecutable =
+    item:
+    if lib.isString item then item else item.meta.mainProgram or (throw "No main program for ${item}");
 in
 {
   options.sudo.nopasswd.executables = mkOption {
