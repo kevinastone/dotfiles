@@ -2,7 +2,7 @@
 {
   imports = [
     # keep-sorted start
-    # ./colima.nix
+    ./colima.nix
     ./docker.nix
     ./duckdb.nix
     ./javascript
