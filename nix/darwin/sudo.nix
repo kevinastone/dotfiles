@@ -5,7 +5,7 @@
   ...
 }:
 let
-  paths = config.home-manager.users."${username}".sudo.nopasswd.paths;
+  inherit (config.home-manager.users."${username}".sudo.nopasswd) paths;
 in
 lib.mkIf (paths != [ ]) {
   security.sudo.extraConfig = lib.concatMapStrings (

@@ -1,18 +1,16 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 
 let
   inherit (lib)
     literalExpression
-    mkIf
     mkOption
     types
     ;
-  profileDirectory = config.home.profileDirectory;
+  inherit (config.home) profileDirectory;
   cfg = config.sudo.nopasswd;
   getExecutable = item: if lib.isString item then item else item.meta.mainProgram;
 in

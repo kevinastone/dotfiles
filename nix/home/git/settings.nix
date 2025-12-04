@@ -1,10 +1,4 @@
-{
-  lib,
-  config,
-  systemSettings,
-  ...
-}:
-{
+_: {
 
   programs.git.settings = {
     user = {

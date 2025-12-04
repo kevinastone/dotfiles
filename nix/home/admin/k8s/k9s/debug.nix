@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+_: {
   programs.k9s.plugins.debug = {
     shortCut = "Shift-D";
     description = "Add debug container";

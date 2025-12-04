@@ -1,11 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  systemSettings,
-  ...
-}:
-{
+_: {
 
   programs.delta = {
     enable = true;

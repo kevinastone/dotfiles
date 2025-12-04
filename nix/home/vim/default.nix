@@ -1,11 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  systemSettings,
-  ...
-}:
-{
+_: {
   programs.vim = {
     enable = true;
     defaultEditor = true;
