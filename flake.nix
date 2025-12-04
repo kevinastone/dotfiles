@@ -35,10 +35,8 @@
             nix-homebrew = {
               # Install Homebrew under the default prefix
               enable = true;
-
               # User owning the Homebrew prefix
               user = username;
-
               # Automatically migrate existing Homebrew installations
               autoMigrate = true;
             };

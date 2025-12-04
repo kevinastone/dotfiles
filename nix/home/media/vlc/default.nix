@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 let
   preferencesPath =
     if pkgs.stdenv.isDarwin then "Library/Preferences/org.videolan.vlc" else ".config";
