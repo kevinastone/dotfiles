@@ -14,7 +14,6 @@
 #
 # Namespace actions:
 #   Shift-H   Wake up Hibernated cluster in this namespace (assumes cluster name equals namespace name)
-
 cnpg-backup:
   shortCut: b
   description: Backup
