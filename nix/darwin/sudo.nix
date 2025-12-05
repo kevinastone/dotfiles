@@ -1,14 +1,18 @@
 {
   config,
   lib,
-  username,
   ...
 }:
 let
-  inherit (config.home-manager.users."${username}".sudo.nopasswd) paths;
+  mkRule = path: "%admin ALL=(ALL) NOPASSWD: ${path}";
+  rules = lib.mapAttrsToList (
+    user: userConfig:
+    let
+      paths = userConfig.sudo.nopasswd.paths or [ ];
+    in
+    if paths == [ ] then "" else lib.concatMapStringsSep "\n" mkRule paths
+  ) config.home-manager.users;
 in
-lib.mkIf (paths != [ ]) {
-  security.sudo.extraConfig = lib.concatMapStrings (
-    path: "%admin ALL=(ALL) NOPASSWD: ${path}\n"
-  ) paths;
+lib.mkIf (config ? home-manager && rules != [ ]) {
+  security.sudo.extraConfig = lib.concatStringsSep "\n" rules;
 }
