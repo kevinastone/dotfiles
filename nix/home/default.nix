@@ -1,23 +1,12 @@
-{ ... }:
-{
+_: {
+  # Defaults in every home-manager configuration
   imports = [
     # keep-sorted start
-    ./admin
-    ./chrome.nix
-    ./dev
     ./direnv
-    ./ghostty
     ./git
-    ./hammerspoon.nix
-    ./icloud.nix
-    ./media
-    ./scripts
     ./shell
     ./utils
     ./vim
-    ./x
-    ./xfce4
-    ./zed
     # keep-sorted end
   ];
 

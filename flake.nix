@@ -15,7 +15,7 @@
   };
 
   outputs =
-    inputs@{
+    {
       self,
       nix-darwin,
       nix-homebrew,
@@ -39,7 +39,7 @@
         {
           username ? "kstone",
           modules ? [ ],
-          home ? null,
+          home-modules ? [ ],
           ...
         }@args:
         let
@@ -54,9 +54,12 @@
               modules =
                 modules
                 ++ [
+                  ./nix
+                ]
+                ++ [
                   sudo-nopasswd.darwinModules.sudo-nopasswd
                 ]
-                ++ lib.optionals (home != null) [
+                ++ lib.optionals (home-modules != [ ]) [
                   home-manager.darwinModules.home-manager
                   {
                     # home-manager.verbose = true;
@@ -69,14 +72,19 @@
                     home-manager.extraSpecialArgs = {
                       inherit rootPath;
                     };
-                    home-manager.users.${username} = home;
+                    home-manager.users.${username} = {
+                      imports = [
+                        ./nix/home
+                      ]
+                      ++ home-modules;
+                    };
                   }
                 ];
             }
             // (builtins.removeAttrs args [
               "username"
               "modules"
-              "home"
+              "home-modules"
             ]);
         in
         darwinSystem;
@@ -91,11 +99,24 @@
 
       darwinConfigurations."M1Max" = mkDarwinSystem {
         modules = [
-          ./nix
           ./nix/darwin
           ./nix/darwin/homebrew.nix
         ];
-        home = import ./nix/home;
+        home-modules = [
+          # keep-sorted start
+          ./nix/home/admin
+          ./nix/home/chrome.nix
+          ./nix/home/dev
+          ./nix/home/ghostty
+          ./nix/home/hammerspoon.nix
+          ./nix/home/icloud.nix
+          ./nix/home/media
+          ./nix/home/scripts
+          ./nix/home/x
+          ./nix/home/xfce4
+          ./nix/home/zed
+          # keep-sorted end
+        ];
       };
     };
 }
