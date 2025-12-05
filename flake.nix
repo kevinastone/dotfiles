@@ -49,22 +49,13 @@
           inherit inputs;
           inherit username;
           inherit rootPath;
+          inherit nix-homebrew;
         };
         modules = [
           ./nix
           ./nix/darwin
+          ./nix/darwin/homebrew.nix
           sudo-nopasswd.darwinModules.sudo-nopasswd
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              # Install Homebrew under the default prefix
-              enable = true;
-              # User owning the Homebrew prefix
-              user = username;
-              # Automatically migrate existing Homebrew installations
-              autoMigrate = true;
-            };
-          }
           home-manager.darwinModules.home-manager
           {
             # home-manager.verbose = true;
