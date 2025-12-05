@@ -27,7 +27,6 @@
       sudo-nopasswd,
     }:
     let
-      username = "kstone";
       rootPath = path: ./. + "/${path}";
 
       # Small tool to iterate over each systems
@@ -35,6 +34,54 @@
 
       # Eval the treefmt modules from ./treefmt.nix
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
+
+      mkDarwinSystem =
+        {
+          username ? "kstone",
+          modules ? [ ],
+          home ? null,
+          ...
+        }@args:
+        let
+          inherit (nixpkgs) lib;
+          darwinSystem =
+            nix-darwin.lib.darwinSystem {
+              specialArgs = {
+                inherit inputs;
+                inherit rootPath;
+                inherit nix-homebrew;
+                inherit username;
+              };
+              modules =
+                modules
+                ++ [
+                  sudo-nopasswd.darwinModules.sudo-nopasswd
+                ]
+                ++ lib.optionals (home != null) [
+                  home-manager.darwinModules.home-manager
+                  {
+                    # home-manager.verbose = true;
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.useUserPackages = true;
+                    home-manager.sharedModules = [
+                      file-associations.homeManagerModules.default
+                      sudo-nopasswd.homeManagerModules.sudo-nopasswd
+                    ];
+                    home-manager.extraSpecialArgs = {
+                      inherit inputs;
+                      inherit rootPath;
+                    };
+                    home-manager.users.${username} = home;
+                  }
+                ];
+            }
+            // (builtins.removeAttrs args [
+              "username"
+              "modules"
+              "home"
+            ]);
+        in
+        darwinSystem;
     in
     {
       # for `nix fmt`
@@ -44,35 +91,13 @@
         formatting = treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.check self;
       });
 
-      darwinConfigurations."M1Max" = nix-darwin.lib.darwinSystem {
-        specialArgs = {
-          inherit inputs;
-          inherit username;
-          inherit rootPath;
-          inherit nix-homebrew;
-        };
+      darwinConfigurations."M1Max" = mkDarwinSystem {
         modules = [
           ./nix
           ./nix/darwin
           ./nix/darwin/homebrew.nix
-          sudo-nopasswd.darwinModules.sudo-nopasswd
-          home-manager.darwinModules.home-manager
-          {
-            # home-manager.verbose = true;
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.sharedModules = [
-              file-associations.homeManagerModules.default
-              sudo-nopasswd.homeManagerModules.sudo-nopasswd
-            ];
-            home-manager.users.${username} = import ./nix/home;
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-              inherit username;
-              inherit rootPath;
-            };
-          }
         ];
+        home = import ./nix/home;
       };
     };
 }
