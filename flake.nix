@@ -24,6 +24,8 @@
     }:
     let
       username = "kstone";
+      rootPath = path: ./. + "/${path}";
+
       # Small tool to iterate over each systems
       eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
 
@@ -42,6 +44,7 @@
         specialArgs = {
           inherit inputs;
           inherit username;
+          inherit rootPath;
         };
         modules = [
           ./nix
@@ -66,6 +69,7 @@
             home-manager.extraSpecialArgs = {
               inherit inputs;
               inherit username;
+              inherit rootPath;
             };
           }
         ];

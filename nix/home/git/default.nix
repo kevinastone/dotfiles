@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ rootPath, pkgs, ... }:
 {
   imports = [
     ./delta.nix
@@ -13,7 +13,7 @@
   # Keep bulk git config external for better re-use
   programs.git.includes = [
     {
-      path = ../../../config/git/config;
+      path = rootPath "config/git/config";
     }
   ];
 }

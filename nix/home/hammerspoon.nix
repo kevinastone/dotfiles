@@ -1,6 +1,7 @@
-_: {
+{ rootPath, ... }:
+{
   home.file.".hammerspoon" = {
-    source = ../../hammerspoon;
+    source = rootPath "hammerspoon";
     recursive = true;
   };
 }
