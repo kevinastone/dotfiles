@@ -11,6 +11,7 @@
     systems.url = "github:nix-systems/default";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     file-associations.url = "path:./nix/flakes/file-associations";
+    sudo-nopasswd.url = "path:./nix/flakes/sudo-nopasswd";
   };
 
   outputs =
@@ -23,6 +24,7 @@
       systems,
       treefmt-nix,
       file-associations,
+      sudo-nopasswd,
     }:
     let
       username = "kstone";
@@ -51,6 +53,7 @@
         modules = [
           ./nix
           ./nix/darwin
+          sudo-nopasswd.darwinModules.sudo-nopasswd
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
@@ -69,6 +72,7 @@
             home-manager.useUserPackages = true;
             home-manager.sharedModules = [
               file-associations.homeManagerModules.default
+              sudo-nopasswd.homeManagerModules.sudo-nopasswd
             ];
             home-manager.users.${username} = import ./nix/home;
             home-manager.extraSpecialArgs = {

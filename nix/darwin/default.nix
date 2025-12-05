@@ -3,7 +3,7 @@
   imports = [
     ./fonts.nix
     ./homebrew.nix
-    ./sudo.nix
+    # ./sudo.nix
     ./system
   ];
 

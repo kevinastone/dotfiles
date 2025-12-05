@@ -126,9 +126,21 @@
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs",
+        "sudo-nopasswd": "sudo-nopasswd",
         "systems": "systems",
         "treefmt-nix": "treefmt-nix"
       }
+    },
+    "sudo-nopasswd": {
+      "locked": {
+        "path": "./nix/flakes/sudo-nopasswd",
+        "type": "path"
+      },
+      "original": {
+        "path": "./nix/flakes/sudo-nopasswd",
+        "type": "path"
+      },
+      "parent": []
     },
     "systems": {
       "locked": {

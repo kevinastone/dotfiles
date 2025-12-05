@@ -6,7 +6,7 @@
 let
   mkRule = path: "%admin ALL=(ALL) NOPASSWD: ${path}";
   rules = lib.mapAttrsToList (
-    user: userConfig:
+    _user: userConfig:
     let
       paths = userConfig.sudo.nopasswd.paths or [ ];
     in

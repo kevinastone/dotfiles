@@ -1,9 +1,6 @@
 { ... }:
 {
   imports = [
-    ./lib
-  ]
-  ++ [
     # keep-sorted start
     ./admin
     ./chrome.nix

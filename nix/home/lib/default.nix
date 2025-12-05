@@ -1,6 +1,0 @@
-{ ... }:
-{
-  imports = [
-    ./sudo-nopasswd.nix
-  ];
-}
