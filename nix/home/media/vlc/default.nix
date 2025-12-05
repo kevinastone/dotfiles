@@ -4,9 +4,9 @@ let
     if pkgs.stdenv.isDarwin then "Library/Preferences/org.videolan.vlc" else ".config";
 in
 {
-  imports = [
-    ../../lib/file-associations.nix
-  ];
+  # imports = [
+  #   ../../lib/file-associations.nix
+  # ];
 
   home.packages = with pkgs; [
     vlc-bin

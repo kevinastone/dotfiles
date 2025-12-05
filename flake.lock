@@ -17,6 +17,17 @@
         "type": "github"
       }
     },
+    "file-associations": {
+      "locked": {
+        "path": "./nix/flakes/file-associations",
+        "type": "path"
+      },
+      "original": {
+        "path": "./nix/flakes/file-associations",
+        "type": "path"
+      },
+      "parent": []
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -110,6 +121,7 @@
     },
     "root": {
       "inputs": {
+        "file-associations": "file-associations",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",

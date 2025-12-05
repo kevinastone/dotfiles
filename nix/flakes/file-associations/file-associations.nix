@@ -19,7 +19,6 @@ let
 
   # Create the config file purely in the Nix store
   dutiConfigFile = pkgs.writeText "duti-config" extensions;
-
 in
 {
   options.file-associations = mkOption {

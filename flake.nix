@@ -10,6 +10,7 @@
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     systems.url = "github:nix-systems/default";
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    file-associations.url = "path:./nix/flakes/file-associations";
   };
 
   outputs =
@@ -21,6 +22,7 @@
       nixpkgs,
       systems,
       treefmt-nix,
+      file-associations,
     }:
     let
       username = "kstone";
@@ -65,6 +67,9 @@
             # home-manager.verbose = true;
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.sharedModules = [
+              file-associations.homeManagerModules.default
+            ];
             home-manager.users.${username} = import ./nix/home;
             home-manager.extraSpecialArgs = {
               inherit inputs;
