@@ -1,7 +1,6 @@
 { pkgs, username, ... }:
 {
   imports = [
-    ./apps.nix
     ./fonts.nix
     ./homebrew.nix
     ./sudo.nix
