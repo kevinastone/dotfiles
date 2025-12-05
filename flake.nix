@@ -47,7 +47,6 @@
           darwinSystem =
             nix-darwin.lib.darwinSystem {
               specialArgs = {
-                inherit inputs;
                 inherit rootPath;
                 inherit nix-homebrew;
                 inherit username;
@@ -68,7 +67,6 @@
                       sudo-nopasswd.homeManagerModules.sudo-nopasswd
                     ];
                     home-manager.extraSpecialArgs = {
-                      inherit inputs;
                       inherit rootPath;
                     };
                     home-manager.users.${username} = home;
