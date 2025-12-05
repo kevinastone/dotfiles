@@ -9,6 +9,7 @@ _: {
     taps = [ ];
     brews = [ ];
     casks = [
+      # keep-sorted start
       "1password"
       "1password-cli"
       "alfred"
@@ -17,6 +18,7 @@ _: {
       "spotify"
       "sublime-text"
       "the-unarchiver"
+      # keep-sorted end
     ];
     masApps = {
       "1Password for Safari" = 1569813296;
