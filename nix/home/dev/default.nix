@@ -7,6 +7,7 @@
     ./duckdb.nix
     ./javascript
     ./mise.nix
+    ./neovim.nix
     ./nix.nix
     ./python
     # keep-sorted end
