@@ -20,9 +20,6 @@
 [core]
 	quotepath = false
 
-[delta]
-	navigate = true
-
 [difftool]
 	prompt = false
 
