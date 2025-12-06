@@ -1,6 +1,9 @@
 _: {
   system.defaults.WindowManager = {
     EnableStandardClickToShowDesktop = false;
-    # HasDisplayedShowDesktopEducation = true;
+  };
+
+  system.defaults.CustomSystemPreferences."com.apple.WindowManager" = {
+    HasDisplayedShowDesktopEducation = true;
   };
 }

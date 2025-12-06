@@ -107,7 +107,8 @@
           ./nix/darwin
           ./nix/darwin/system
           ./nix/darwin/shell/fish.nix
-          ./nix/darwin/homebrew.nix
+          ./nix/darwin/homebrew
+          ./nix/darwin/homebrew/transmission.nix
         ];
         home-modules = [
           # keep-sorted start

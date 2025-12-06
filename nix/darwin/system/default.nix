@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    # keep-sorted start
     ./clock.nix
     ./control-center.nix
     ./desktop.nix
@@ -13,5 +14,7 @@
     ./photos.nix
     ./safari.nix
     ./screencapture.nix
+    ./time-machine.nix
+    # keep-sorted end
   ];
 }
