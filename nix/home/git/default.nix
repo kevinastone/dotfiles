@@ -1,4 +1,8 @@
-{ rootPath, pkgs, ... }:
+{
+  rootPath,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./delta.nix

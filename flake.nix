@@ -8,8 +8,11 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.inputs.nixpkgs.follows = "nixpkgs";
     systems.url = "github:nix-systems/default";
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
     file-associations.url = "path:./nix/flakes/file-associations";
     sudo-nopasswd.url = "path:./nix/flakes/sudo-nopasswd";
   };
@@ -19,6 +22,7 @@
       self,
       nix-darwin,
       nix-homebrew,
+      catppuccin,
       home-manager,
       nixpkgs,
       systems,
@@ -71,6 +75,7 @@
                     ];
                     home-manager.extraSpecialArgs = {
                       inherit rootPath;
+                      inherit catppuccin;
                     };
                     home-manager.users.${username} = {
                       imports = [
@@ -105,6 +110,7 @@
         home-modules = [
           # keep-sorted start
           ./nix/home/admin
+          ./nix/home/catppuccin.nix
           ./nix/home/chrome.nix
           ./nix/home/dev
           ./nix/home/ghostty
