@@ -1,7 +1,8 @@
 _: {
-  programs.vim = {
+  programs.neovim = {
     enable = true;
     defaultEditor = true;
-    # extraConfig = builtins.readFile ./vimrc;
+    viAlias = true;
+    vimAlias = true;
   };
 }
