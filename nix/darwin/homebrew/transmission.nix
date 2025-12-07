@@ -3,7 +3,7 @@ _: {
     "transmission"
   ];
 
-  system.defaults.CustomSystemPreferences."org.m0k.transmission" = {
+  system.defaults.CustomUserPreferences."org.m0k.transmission" = {
     # Don’t prompt for confirmation before downloading
     DownloadAsk = false;
     MagnetOpenAsk = false;
