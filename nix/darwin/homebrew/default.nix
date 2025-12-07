@@ -27,8 +27,6 @@
       # keep-sorted start
       "1password"
       "1password-cli"
-      "alfred"
-      "hammerspoon"
       "keepingyouawake"
       "spotify"
       "sublime-text"

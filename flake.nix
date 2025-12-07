@@ -121,7 +121,8 @@
           ./nix/home/chrome
           ./nix/home/dev
           ./nix/home/ghostty
-          ./nix/home/hammerspoon.nix
+          ./nix/home/homebrew/alfred.nix
+          ./nix/home/homebrew/hammerspoon.nix
           ./nix/home/homebrew/kap.nix
           ./nix/home/icloud.nix
           ./nix/home/media
