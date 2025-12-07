@@ -2,6 +2,7 @@
 {
   imports = [
     # keep-sorted start
+    ./appearance.nix
     ./clock.nix
     ./control-center.nix
     ./desktop.nix
