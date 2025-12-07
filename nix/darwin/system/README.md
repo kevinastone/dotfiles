@@ -3,5 +3,4 @@
 Still needing migration:
 
 - kya.sh
-- services.sh
 - terminal.sh

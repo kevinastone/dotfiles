@@ -15,6 +15,8 @@
     ./photos.nix
     ./safari.nix
     ./screencapture.nix
+    # Terminal doesn't work currently
+    # ./terminal.nix
     ./time-machine.nix
     # keep-sorted end
   ];
