@@ -7,4 +7,11 @@ _: {
     TrackpadRightClick = true;
     TrackpadThreeFingerDrag = true;
   };
+
+  # command = $
+  # control = ^
+  # option = ~
+  # shift = @
+  system.defaults.CustomSystemPreferences.NSGlobalDomain.NSUserKeyEquivalents."Emoji & Symbols" =
+    "@$e";
 }

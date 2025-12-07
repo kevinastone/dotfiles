@@ -114,7 +114,7 @@
           # keep-sorted start
           ./nix/home/admin
           ./nix/home/catppuccin.nix
-          ./nix/home/chrome.nix
+          ./nix/home/chrome
           ./nix/home/dev
           ./nix/home/ghostty
           ./nix/home/hammerspoon.nix
