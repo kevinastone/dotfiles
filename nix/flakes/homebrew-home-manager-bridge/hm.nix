@@ -26,4 +26,17 @@ in
       List of casks to have homebrew install on behalf of home-manager.
     '';
   };
+
+  options.homebrew.masApps = mkOption {
+    type = with types; attrsOf ints.positive;
+    default = { };
+    example = literalExpression ''
+      {
+        "1Password for Safari" = 1569813296;
+      }
+    '';
+    description = ''
+      List of Mac App Store app to have homebrew install on behalf of home-manager.
+    '';
+  };
 }
