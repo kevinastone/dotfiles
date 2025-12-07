@@ -68,6 +68,17 @@
         "type": "github"
       }
     },
+    "homebrew-home-manager-bridge": {
+      "locked": {
+        "path": "./nix/flakes/homebrew-home-manager-bridge",
+        "type": "path"
+      },
+      "original": {
+        "path": "./nix/flakes/homebrew-home-manager-bridge",
+        "type": "path"
+      },
+      "parent": []
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -128,6 +139,7 @@
         "catppuccin": "catppuccin",
         "file-associations": "file-associations",
         "home-manager": "home-manager",
+        "homebrew-home-manager-bridge": "homebrew-home-manager-bridge",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs",

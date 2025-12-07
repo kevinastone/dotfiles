@@ -15,6 +15,7 @@
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
     file-associations.url = "path:./nix/flakes/file-associations";
     sudo-nopasswd.url = "path:./nix/flakes/sudo-nopasswd";
+    homebrew-home-manager-bridge.url = "path:./nix/flakes/homebrew-home-manager-bridge";
   };
 
   outputs =
@@ -29,6 +30,7 @@
       treefmt-nix,
       file-associations,
       sudo-nopasswd,
+      homebrew-home-manager-bridge,
     }:
     let
       rootPath = path: ./. + "/${path}";
@@ -62,6 +64,7 @@
                 ]
                 ++ [
                   sudo-nopasswd.darwinModules.sudo-nopasswd
+                  homebrew-home-manager-bridge.darwinModules.default
                 ]
                 ++ lib.optionals (home-modules != [ ]) [
                   home-manager.darwinModules.home-manager
@@ -72,6 +75,7 @@
                     home-manager.sharedModules = [
                       file-associations.homeManagerModules.default
                       sudo-nopasswd.homeManagerModules.sudo-nopasswd
+                      homebrew-home-manager-bridge.homeManagerModules.default
                     ];
                     home-manager.extraSpecialArgs = {
                       inherit rootPath;
@@ -118,6 +122,7 @@
           ./nix/home/dev
           ./nix/home/ghostty
           ./nix/home/hammerspoon.nix
+          ./nix/home/homebrew/kap.nix
           ./nix/home/icloud.nix
           ./nix/home/media
           ./nix/home/scripts
