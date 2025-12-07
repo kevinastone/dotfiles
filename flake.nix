@@ -127,6 +127,7 @@
           ./nix/home/icloud.nix
           ./nix/home/media
           ./nix/home/scripts
+          ./nix/home/spotify.nix
           ./nix/home/x
           ./nix/home/xfce4
           ./nix/home/zed

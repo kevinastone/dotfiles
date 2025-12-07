@@ -28,7 +28,6 @@
       "1password"
       "1password-cli"
       "keepingyouawake"
-      "spotify"
       "sublime-text"
       "the-unarchiver"
       # keep-sorted end
