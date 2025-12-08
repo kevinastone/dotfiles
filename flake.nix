@@ -13,9 +13,9 @@
     systems.url = "github:nix-systems/default";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
-    file-associations.url = "path:./nix/flakes/file-associations";
-    sudo-nopasswd.url = "path:./nix/flakes/sudo-nopasswd";
-    homebrew-home-manager-bridge.url = "path:./nix/flakes/homebrew-home-manager-bridge";
+    file-associations.url = "path:nix/flakes/file-associations";
+    sudo-nopasswd.url = "path:nix/flakes/sudo-nopasswd";
+    homebrew-home-manager-bridge.url = "path:nix/flakes/homebrew-home-manager-bridge";
   };
 
   outputs =

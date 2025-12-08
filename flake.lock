@@ -39,11 +39,11 @@
     },
     "file-associations": {
       "locked": {
-        "path": "./nix/flakes/file-associations",
+        "path": "nix/flakes/file-associations",
         "type": "path"
       },
       "original": {
-        "path": "./nix/flakes/file-associations",
+        "path": "nix/flakes/file-associations",
         "type": "path"
       },
       "parent": []
@@ -70,11 +70,11 @@
     },
     "homebrew-home-manager-bridge": {
       "locked": {
-        "path": "./nix/flakes/homebrew-home-manager-bridge",
+        "path": "nix/flakes/homebrew-home-manager-bridge",
         "type": "path"
       },
       "original": {
-        "path": "./nix/flakes/homebrew-home-manager-bridge",
+        "path": "nix/flakes/homebrew-home-manager-bridge",
         "type": "path"
       },
       "parent": []
@@ -150,11 +150,11 @@
     },
     "sudo-nopasswd": {
       "locked": {
-        "path": "./nix/flakes/sudo-nopasswd",
+        "path": "nix/flakes/sudo-nopasswd",
         "type": "path"
       },
       "original": {
-        "path": "./nix/flakes/sudo-nopasswd",
+        "path": "nix/flakes/sudo-nopasswd",
         "type": "path"
       },
       "parent": []
