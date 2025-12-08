@@ -112,7 +112,7 @@
           ./nix/darwin/system
           ./nix/darwin/shell/fish.nix
           ./nix/darwin/homebrew
-          ./nix/darwin/homebrew/transmission.nix
+          ./nix/darwin/homebrew/media
         ];
         home-modules = [
           # keep-sorted start
