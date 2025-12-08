@@ -12,6 +12,7 @@
         autoMigrate = true;
       };
     }
+    ./kya.nix
   ];
 
   homebrew = {
@@ -27,7 +28,6 @@
       # keep-sorted start
       "1password"
       "1password-cli"
-      "keepingyouawake"
       "sublime-text"
       "the-unarchiver"
       # keep-sorted end

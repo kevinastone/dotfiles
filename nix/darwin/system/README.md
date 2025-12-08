@@ -2,5 +2,4 @@
 
 Still needing migration:
 
-- kya.sh
 - terminal.sh
