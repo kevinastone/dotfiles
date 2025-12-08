@@ -138,6 +138,7 @@
           ./nix/home/media
           ./nix/home/scripts
           ./nix/home/spotify.nix
+          ./nix/home/sublime
           ./nix/home/x
           ./nix/home/xfce4
           ./nix/home/zed

@@ -23,12 +23,11 @@
       upgrade = true;
     };
     taps = [ ];
-    brews = [ ];
+    brews = [ "mas" ];
     casks = [
       # keep-sorted start
       "1password"
       "1password-cli"
-      "sublime-text"
       # keep-sorted end
     ];
     masApps = {
