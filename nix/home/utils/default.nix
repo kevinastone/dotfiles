@@ -3,6 +3,7 @@
   imports = [
     # keep-sorted start
     ./htop.nix
+    ./the-unarchiver.nix
     ./tmux
     # keep-sorted end
   ];

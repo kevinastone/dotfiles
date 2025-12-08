@@ -29,7 +29,6 @@
       "1password"
       "1password-cli"
       "sublime-text"
-      "the-unarchiver"
       # keep-sorted end
     ];
     masApps = {
