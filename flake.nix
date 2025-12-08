@@ -112,6 +112,7 @@
           ./nix/darwin/system
           ./nix/darwin/shell/fish.nix
           ./nix/darwin/homebrew
+          ./nix/darwin/homebrew/dev
           ./nix/darwin/homebrew/media
         ];
         home-modules = [
