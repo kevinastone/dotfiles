@@ -114,6 +114,15 @@
           ./nix/darwin/homebrew
           ./nix/darwin/homebrew/dev
           ./nix/darwin/homebrew/media
+          (_: {
+            # Custom hombrew casks for this machine
+            homebrew.casks = [
+              "autodesk-fusion"
+              "discord"
+              "hyperbackupexplorer"
+              "wifiman"
+            ];
+          })
         ];
         home-modules = [
           # keep-sorted start
