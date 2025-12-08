@@ -1,6 +1,10 @@
 _: {
   imports = [
-    ./handbrake.nix
     ./transmission.nix
+  ];
+
+  homebrew.casks = [
+    "handbrake-app"
+    "qlvideo"
   ];
 }
