@@ -5,13 +5,10 @@
 }:
 let
   mkRule = path: "%admin ALL=(ALL) NOPASSWD: ${path}";
-  rules = lib.mapAttrsToList (
-    _user: userConfig:
-    let
-      paths = userConfig.sudo.nopasswd.paths or [ ];
-    in
-    if paths == [ ] then "" else lib.concatMapStringsSep "\n" mkRule paths
-  ) config.home-manager.users;
+  paths = lib.concatMap (cfg: cfg.sudo.nopasswd.paths or [ ]) (
+    lib.attrValues config.home-manager.users
+  );
+  rules = map mkRule paths;
 in
 lib.mkIf (config ? home-manager && rules != [ ]) {
   security.sudo.extraConfig = lib.concatStringsSep "\n" rules;
