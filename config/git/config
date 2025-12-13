@@ -35,6 +35,12 @@
 	default = "upstream"
 	followTags = true
 
+[pull]
+	rebase = true
+
+[branch]
+	autosetuprebase = always
+
 [user]
 	email = "kevinastone@gmail.com"
 	name = "Kevin Stone"
