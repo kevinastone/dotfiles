@@ -2,9 +2,7 @@
 {
   imports = [
     # keep-sorted start
-    ./ansible.nix
     ./k8s
-    ./lego.nix
     ./siege.nix
     # keep-sorted end
   ];
