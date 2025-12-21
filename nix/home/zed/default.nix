@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-
   programs.zed-editor = {
     enable = true;
     mutableUserKeymaps = false;
@@ -11,8 +10,6 @@
       nixd
     ];
   };
-
-  home.shellAliases.zed = pkgs.zed-editor.meta.mainProgram;
 
   xdg.configFile.zed = {
     source = ./zed;
