@@ -121,7 +121,6 @@
               "autodesk-fusion"
               "discord"
               "hyperbackupexplorer"
-              "wifiman"
             ];
           })
         ];
