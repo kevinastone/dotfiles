@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     # keep-sorted start
@@ -11,6 +11,12 @@
     ./neovim.nix
     ./nix.nix
     ./python
+    # keep-sorted end
+  ];
+
+  home.packages = with pkgs; [
+    # keep-sorted start
+    just
     # keep-sorted end
   ];
 }
