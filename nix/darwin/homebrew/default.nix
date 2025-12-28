@@ -1,4 +1,16 @@
-{ nix-homebrew, username, ... }:
+{
+  nix-homebrew,
+  username,
+  homebrew-core,
+  homebrew-cask,
+  ...
+}:
+let
+  taps = {
+    "homebrew/homebrew-core" = homebrew-core;
+    "homebrew/homebrew-cask" = homebrew-cask;
+  };
+in
 {
   imports = [
     nix-homebrew.darwinModules.nix-homebrew
@@ -8,7 +20,8 @@
         enable = true;
         # User owning the Homebrew prefix
         user = username;
-        # Automatically migrate existing Homebrew installations
+        inherit taps;
+        mutableTaps = false;
         autoMigrate = true;
       };
     }
@@ -18,11 +31,11 @@
   homebrew = {
     enable = true;
     onActivation = {
-      autoUpdate = true;
+      autoUpdate = false;
       cleanup = "zap";
       upgrade = true;
     };
-    taps = [ ];
+    taps = builtins.attrNames taps;
     brews = [ "mas" ];
   };
 }

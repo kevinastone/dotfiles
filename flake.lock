@@ -68,6 +68,38 @@
         "type": "github"
       }
     },
+    "homebrew-cask": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1766933134,
+        "narHash": "sha256-lDtEgMF0VOVRj5kOZNFFMzew2fOTnMY8IvKR2kh7byE=",
+        "owner": "homebrew",
+        "repo": "homebrew-cask",
+        "rev": "1e558c1757f51c7f2de345a0f79a57bee2f71613",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-cask",
+        "type": "github"
+      }
+    },
+    "homebrew-core": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1766932807,
+        "narHash": "sha256-5zcflvAWekXAibb3io43ckDrLOOrRXeRs81tAthwUbc=",
+        "owner": "homebrew",
+        "repo": "homebrew-core",
+        "rev": "46a5d07aed27fee38eec6f6e14de4ffe067534e0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-core",
+        "type": "github"
+      }
+    },
     "homebrew-home-manager-bridge": {
       "locked": {
         "path": "nix/flakes/homebrew-home-manager-bridge",
@@ -139,6 +171,8 @@
         "catppuccin": "catppuccin",
         "file-associations": "file-associations",
         "home-manager": "home-manager",
+        "homebrew-cask": "homebrew-cask",
+        "homebrew-core": "homebrew-core",
         "homebrew-home-manager-bridge": "homebrew-home-manager-bridge",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",

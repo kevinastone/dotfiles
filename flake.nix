@@ -8,6 +8,14 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
     catppuccin.url = "github:catppuccin/nix";
     catppuccin.inputs.nixpkgs.follows = "nixpkgs";
     systems.url = "github:nix-systems/default";
@@ -23,6 +31,8 @@
       self,
       nix-darwin,
       nix-homebrew,
+      homebrew-core,
+      homebrew-cask,
       catppuccin,
       home-manager,
       nixpkgs,
@@ -56,6 +66,8 @@
                 inherit rootPath;
                 inherit nix-homebrew;
                 inherit username;
+                inherit homebrew-core;
+                inherit homebrew-cask;
               };
               modules =
                 modules
