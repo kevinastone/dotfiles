@@ -103,7 +103,6 @@
       "initialization_options": {
         "settings": {
           // Ruff server settings goes here
-          "lineLength": 100,
           "lint": {
             "extendSelect": ["I"]
           }
