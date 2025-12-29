@@ -25,5 +25,10 @@
       "ctrl-s": "pane::RevealInProjectPanel",
       "ctrl-cmd-w": "pane::CloseAllItems"
     }
+  },
+  {
+    "bindings": {
+      "cmd-alt-g": ["agent::NewExternalAgentThread", { "agent": "gemini" }]
+    }
   }
 ]
