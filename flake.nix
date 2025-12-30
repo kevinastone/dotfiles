@@ -123,7 +123,6 @@
           ./nix/darwin/shell/fish.nix
           ./nix/darwin/homebrew
           ./nix/darwin/homebrew/dev
-          ./nix/darwin/homebrew/graphics
           ./nix/darwin/homebrew/media
           (_: {
             # Custom hombrew casks for this machine
