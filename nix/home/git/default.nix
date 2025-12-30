@@ -1,6 +1,5 @@
 {
-  rootPath,
-  pkgs,
+  self,
   ...
 }:
 {
@@ -8,16 +7,13 @@
     ./delta.nix
   ];
 
-  home.packages = with pkgs; [
-    lazygit
-  ];
-
   programs.git.enable = true;
   programs.git.ignores = [ ".DS_Store" ];
   # Keep bulk git config external for better re-use
   programs.git.includes = [
     {
-      path = rootPath "config/git/config";
+      path = self + "/config/git/config";
     }
   ];
+  programs.lazygit.enable = true;
 }

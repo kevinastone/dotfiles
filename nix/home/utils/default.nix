@@ -13,14 +13,16 @@
     httpie
     iperf
     iperf3
-    jq
     moreutils
     mosh
     ripgrep
     # keep-sorted end
   ];
 
+  # keep-sorted start
   programs.bat.enable = true;
   programs.broot.enable = true;
   programs.btop.enable = true;
+  programs.jq.enable = true;
+  # keep-sorted end
 }

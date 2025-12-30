@@ -43,8 +43,6 @@
       homebrew-home-manager-bridge,
     }:
     let
-      rootPath = path: ./. + "/${path}";
-
       # Small tool to iterate over each systems
       eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
 
@@ -63,7 +61,7 @@
           darwinSystem =
             nix-darwin.lib.darwinSystem {
               specialArgs = {
-                inherit rootPath;
+                inherit self;
                 inherit nix-homebrew;
                 inherit username;
                 inherit homebrew-core;
@@ -90,7 +88,7 @@
                       homebrew-home-manager-bridge.homeManagerModules.default
                     ];
                     home-manager.extraSpecialArgs = {
-                      inherit rootPath;
+                      inherit self;
                       inherit catppuccin;
                     };
                     home-manager.users.${username} = {

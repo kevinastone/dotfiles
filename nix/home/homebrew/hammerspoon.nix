@@ -1,14 +1,14 @@
 {
+  self,
   lib,
   pkgs,
-  rootPath,
   ...
 }:
 {
   homebrew.casks = [ "hammerspoon" ];
 
   home.file.".hammerspoon" = lib.mkIf pkgs.stdenv.isDarwin {
-    source = rootPath "hammerspoon";
+    source = self + "/hammerspoon";
     recursive = true;
   };
 }
