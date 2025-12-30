@@ -5,6 +5,7 @@ _: {
     ./direnv
     ./git
     ./shell
+    ./ssh
     ./utils
     ./vim
     # keep-sorted end
