@@ -2,8 +2,6 @@ _: {
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
-    enableBashIntegration = true;
-    enableZshIntegration = true;
     config.global.hide_env_diff = true;
   };
 
@@ -12,5 +10,3 @@ _: {
     recursive = true;
   };
 }
-
-# hide_env_diff = true

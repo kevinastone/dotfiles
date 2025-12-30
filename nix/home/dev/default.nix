@@ -4,7 +4,6 @@
     # keep-sorted start
     ./colima.nix
     ./docker.nix
-    ./duckdb.nix
     ./fonts.nix
     ./javascript
     ./mise.nix
@@ -16,6 +15,7 @@
 
   home.packages = with pkgs; [
     # keep-sorted start
+    duckdb
     just
     # keep-sorted end
   ];

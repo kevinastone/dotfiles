@@ -11,9 +11,7 @@
   programs.git.ignores = [ ".DS_Store" ];
   # Keep bulk git config external for better re-use
   programs.git.includes = [
-    {
-      path = self + "/config/git/config";
-    }
+    { path = self + "/config/git/config"; }
   ];
   programs.lazygit.enable = true;
 }
