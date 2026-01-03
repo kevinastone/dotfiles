@@ -7,6 +7,8 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
@@ -35,6 +37,7 @@
       homebrew-cask,
       catppuccin,
       home-manager,
+      nix-index-database,
       nixpkgs,
       systems,
       treefmt-nix,
@@ -86,6 +89,8 @@
                       file-associations.homeManagerModules.default
                       sudo-nopasswd.homeManagerModules.sudo-nopasswd
                       homebrew-home-manager-bridge.homeManagerModules.default
+                      nix-index-database.homeModules.default
+                      { programs.nix-index.enable = true; }
                     ];
                     home-manager.extraSpecialArgs = {
                       inherit self;
