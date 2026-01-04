@@ -1,7 +1,10 @@
 { pkgs, ... }:
+let
+  pythonPkg = pkgs.python314;
+in
 {
   home.packages = with pkgs; [
-    (python3.withPackages (
+    (pythonPkg.withPackages (
       python-pkgs: with python-pkgs; [
         # keep-sorted start
         numpy
