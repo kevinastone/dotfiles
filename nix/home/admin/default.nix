@@ -17,5 +17,7 @@
         hash = "sha256-uZsUo12ez6sz95fmOg5cmVBJNRH3eEhio8V2efQ29BU=";
       };
     }))
+    # alternative vnc-viewer (remote-viewer)
+    virt-viewer
   ];
 }
