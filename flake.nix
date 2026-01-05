@@ -105,7 +105,7 @@
                   }
                 ];
             }
-            // (builtins.removeAttrs args [
+            // (removeAttrs args [
               "username"
               "modules"
               "home-modules"
