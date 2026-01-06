@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   nixpkgs.overlays = [
-    (final: prev: {
+    (_final: prev: {
       siege = prev.siege.overrideAttrs {
         # Workaround for broken nixpkgs siege
         # https://github.com/NixOS/nixpkgs/issues/286775

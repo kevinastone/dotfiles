@@ -1,6 +1,6 @@
 _: {
   nixpkgs.overlays = [
-    (final: prev: {
+    (_final: prev: {
       arping = prev.arping.overrideAttrs (old: rec {
         # Pin arping to 2.26 since they broke macos compatiblity in 2.27
         # (should be fixed in 2.28)
