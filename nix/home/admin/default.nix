@@ -3,7 +3,6 @@
   imports = [
     # keep-sorted start
     ./k8s
-    ./siege.nix
     # keep-sorted end
   ];
 
