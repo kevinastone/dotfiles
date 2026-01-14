@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    nixfmt-rfc-style
+    nixfmt
     nil
     nixd
   ];
