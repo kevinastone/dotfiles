@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 let
   preferencesPath =
     if pkgs.stdenv.isDarwin then "Library/Preferences/org.videolan.vlc" else ".config";
@@ -10,8 +10,13 @@ in
 
   home.file."${preferencesPath}/vlcrc".source = ./vlcrc;
 
-  file-associations.mp4 = "org.videolan.vlc";
-  file-associations.mkv = "org.videolan.vlc";
-  file-associations.avi = "org.videolan.vlc";
-  file-associations.mov = "org.videolan.vlc";
+  file-associations = lib.genAttrs [
+    # keep-sorted start
+    "avi"
+    "mkv"
+    "mov"
+    "mp4"
+    "wmv"
+    # keep-sorted end
+  ] (_: "org.videolan.vlc");
 }
