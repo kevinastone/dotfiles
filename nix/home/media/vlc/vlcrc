@@ -175,7 +175,7 @@
 #macosx-nativefullscreenmode=0
 
 # Display VLC status menu icon (boolean)
-#macosx-statusicon=1
+#macosx-statusicon=0
 
 # Allow automatic icon changes (boolean)
 #macosx-icon-change=1
@@ -4404,4 +4404,3 @@ key-vol-mute=m
 
 # Playlist bookmark 10 (string)
 #bookmark10=
-

@@ -18,6 +18,7 @@
     # Terminal doesn't work currently
     # ./terminal.nix
     ./time-machine.nix
+    ./vlc.nix
     # keep-sorted end
   ];
 }
