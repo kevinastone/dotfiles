@@ -1,0 +1,18 @@
+{
+  "atomic_save": false,
+  "auto_complete": true,
+  "bold_folder_labels": true,
+  "color_scheme": "Monokai.sublime-color-scheme",
+  "draw_white_space": "selection",
+  "font_face": "FiraCode Nerd Font",
+  "font_size": 12.0,
+  "open_files_in_new_window": false,
+  "show_full_path": true,
+  "show_panel_on_build": false,
+  "tab_size": 4,
+  "theme": "Adaptive.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_whitespace_on_save": true,
+  "word_wrap": true,
+  "index_files": true
+}
