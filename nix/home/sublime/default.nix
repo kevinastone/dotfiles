@@ -12,4 +12,9 @@ in
   # Rely on sublime to merge configuration from other Packages
   home.file."${preferencesPath}/Packages/Declarative/Preferences.sublime-settings".source =
     ./Preferences.sublime-settings;
+
+  home.file."${preferencesPath}/Packages/User" = {
+    source = ./User;
+    recursive = true;
+  };
 }

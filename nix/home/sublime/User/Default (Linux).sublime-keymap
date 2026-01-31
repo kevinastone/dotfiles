@@ -1,0 +1,6 @@
+[
+	{
+		"keys": ["super+s"],
+		"command": "reveal_in_side_bar"
+	}
+]

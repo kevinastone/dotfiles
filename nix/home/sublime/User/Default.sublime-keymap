@@ -1,0 +1,39 @@
+[
+	{
+		"keys": ["super+ctrl+w"],
+		"command": "close_all"
+	},
+	{
+		"keys": ["super+ctrl+c"],
+		"command": "close_workspace"
+	},
+	{
+		"keys": ["ctrl+a"],
+		"command": "toggle_white_space"
+	},
+	{
+		"keys": ["ctrl+r"],
+		"command": "toggle_ruler"
+	},
+	{
+		"keys": ["super+r", "d"],
+		"command": "sublime_jedi_goto",
+		"context": [
+			{ "key": "selector", "operator": "equal", "operand": "source.python" }
+		]
+	},
+	{
+		"keys": ["super+."],
+		"command": "open_file",
+		"args": {"file": "${project}"}
+	},
+	{
+		"keys": ["super+\\"],
+		"command": "githubinator",
+		"args": {"permalink": false, "branch": "master" }
+	},
+	{
+		"keys": ["super+shift+enter"],
+		"command": "wrap_lines_plus"
+	}
+]
