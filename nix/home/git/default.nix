@@ -5,6 +5,7 @@
 {
   imports = [
     ./delta.nix
+    ./jujutsu.nix
   ];
 
   programs.git.enable = true;
