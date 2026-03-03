@@ -12,8 +12,8 @@
     "light": "Zed (Default)",
     "dark": "Catppuccin Mocha"
   },
-  "features": {
-    "edit_prediction_provider": "supermaven"
+  "edit_predictions": {
+    "provider": "supermaven"
   },
   "ui_font_size": 15,
   "buffer_font_size": 12,
