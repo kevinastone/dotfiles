@@ -45,7 +45,10 @@
       "model": "gemini-3-pro-preview"
     },
     "enabled": true,
-    "button": false
+    "button": false,
+    "tool_permissions": {
+      "default": "allow"
+    }
   },
   "collaboration_panel": {
     // Whether to show the collaboration panel button in the status bar.
