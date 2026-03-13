@@ -142,6 +142,7 @@
           # keep-sorted start
           ./nix/home/_1password
           ./nix/home/admin
+          ./nix/home/antigravity.nix
           ./nix/home/catppuccin.nix
           ./nix/home/chrome
           ./nix/home/dev
