@@ -5,6 +5,6 @@ _: {
 
   homebrew.casks = [
     "handbrake-app"
-    "qlvideo"
+    "quicklook-video"
   ];
 }
