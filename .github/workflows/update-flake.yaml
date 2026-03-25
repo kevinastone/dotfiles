@@ -1,0 +1,53 @@
+name: Update Flake Inputs
+
+on:
+  schedule:
+    - cron: "0 4 * * *" # Run daily at 4 AM UTC
+  workflow_dispatch:
+
+jobs:
+  update-and-build:
+    runs-on: macos-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update flake inputs
+        id: update
+        continue-on-error: true
+        run: nix flake update
+
+      - name: Build darwin configurations
+        id: build
+        if: steps.update.outcome == 'success'
+        continue-on-error: true
+        run: |
+          # Get list of darwin configurations
+          configs=$(nix eval --json '.#darwinConfigurations' --apply 'builtins.attrNames')
+
+          # Parse JSON array and build each configuration
+          echo "$configs" | jq -r '.[]' | while read -r config; do
+            echo "Building darwin configuration: $config"
+            nix build ".#darwinConfigurations.\"$config\".system" --no-link
+          done
+
+      - name: Create Pull Request
+        if: steps.update.outcome == 'success' && steps.build.outcome == 'success'
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: "chore(flake): update inputs"
+          title: "chore(flake): update inputs"
+          body: |
+            Automated pull request to update Nix flake inputs.
+
+            All darwin configurations have been successfully built with the new inputs.
+          branch: update-flake-lock
+          delete-branch: true
