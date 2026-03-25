@@ -9,6 +9,8 @@ in
     settings = {
       confirm-close-surface = false;
       window-inherit-working-directory = false;
+      tab-inherit-working-directory = false;
+      split-inherit-working-directory = false;
       shell-integration-features = "ssh-env";
       bell-features = "no-attention, no-title";
     };
