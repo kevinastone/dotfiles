@@ -13,7 +13,7 @@
     "dark": "Catppuccin Mocha"
   },
   "edit_predictions": {
-    "provider": "supermaven"
+    "provider": "none"
   },
   "ui_font_size": 15,
   "buffer_font_size": 12,
