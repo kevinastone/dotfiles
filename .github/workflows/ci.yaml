@@ -17,8 +17,11 @@ jobs:
           - system: aarch64-darwin
             os: macos-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: cachix/install-nix-action@v31
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          extra_nix_config: |
+            min-free = 5368709120  # 5GB
+            max-free = 10737418240 # 10GB
       - run: nix flake check --impure --override-input systems github:nix-systems/${{ matrix.system }} --no-write-lock-file --no-update-lock-file

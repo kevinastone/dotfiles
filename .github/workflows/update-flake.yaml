@@ -14,11 +14,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-
+      - name: Free disk space
+        continue-on-error: true
+        run: |
+          sudo rm -rf /Applications/Xcode*
+          sudo rm -rf /Library/Developer/CoreSimulator/Profiles/Runtimes/*
       - name: Install Nix
         uses: cachix/install-nix-action@v31
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          extra_nix_config: |
+            min-free = 5368709120  # 5GB
+            max-free = 10737418240 # 10GB
 
       - name: Update flake inputs
         id: update
