@@ -5,6 +5,7 @@
     ./colima.nix
     ./docker.nix
     ./fonts.nix
+    ./gemini.nix
     ./javascript
     # ./mise.nix
     ./neovim.nix
