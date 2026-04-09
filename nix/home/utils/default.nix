@@ -10,6 +10,7 @@
 
   home.packages = with pkgs; [
     # keep-sorted start
+    fpart
     httpie
     iperf
     iperf3
