@@ -5,13 +5,7 @@ _: {
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    # plugins = with pkgs.vimPlugins; [
-    #   {
-    #     plugin = catppuccin-nvim;
-    #     config = ''
-    #       colorscheme catppuccin-mocha
-    #     '';
-    #   }
-    # ];
+    withRuby = false;
+    withPython3 = false;
   };
 }
