@@ -1,0 +1,7 @@
+bell-features = no-attention, no-title
+confirm-close-surface = false
+shell-integration-features = ssh-env
+split-inherit-working-directory = false
+tab-inherit-working-directory = false
+theme = light:catppuccin-mocha,dark:catppuccin-mocha
+window-inherit-working-directory = false
