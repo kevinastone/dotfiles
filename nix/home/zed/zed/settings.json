@@ -35,11 +35,13 @@
     "show": "always"
   },
   "project_panel": {
+    "dock": "left",
     "folder_icons": false,
     "auto_reveal_entries": false,
     "indent_size": 15
   },
   "agent": {
+    "dock": "right",
     "default_model": {
       "provider": "google",
       "model": "gemini-3-pro-preview"
