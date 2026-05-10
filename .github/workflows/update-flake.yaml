@@ -56,7 +56,7 @@ jobs:
           configs=$(nix eval --json '.#darwinConfigurations' --apply 'builtins.attrNames')
 
           # Initialize PR body
-          cat << 'EOF' > pr-body.md
+          cat << 'EOF' > "$RUNNER_TEMP/pr-body.md"
           Automated pull request to update Nix flake inputs.
 
           All darwin configurations have been successfully built with the new inputs.
@@ -72,13 +72,13 @@ jobs:
               old_path=$(cat "/tmp/old-configs/$config")
               echo "Generating diff for $config..."
               
-              echo "" >> pr-body.md
-              echo "<details><summary><b>$config</b></summary>" >> pr-body.md
-              echo "" >> pr-body.md
-              echo "\`\`\`" >> pr-body.md
-              nix run nixpkgs#nvd -- --color never diff "$old_path" "$out_path" >> pr-body.md || true
-              echo "\`\`\`" >> pr-body.md
-              echo "</details>" >> pr-body.md
+              echo "" >> "$RUNNER_TEMP/pr-body.md"
+              echo "<details><summary><b>$config</b></summary>" >> "$RUNNER_TEMP/pr-body.md"
+              echo "" >> "$RUNNER_TEMP/pr-body.md"
+              echo "\`\`\`" >> "$RUNNER_TEMP/pr-body.md"
+              nix run nixpkgs#nvd -- --color never diff "$old_path" "$out_path" >> "$RUNNER_TEMP/pr-body.md" || true
+              echo "\`\`\`" >> "$RUNNER_TEMP/pr-body.md"
+              echo "</details>" >> "$RUNNER_TEMP/pr-body.md"
             fi
           done
 
@@ -88,6 +88,6 @@ jobs:
         with:
           commit-message: "chore(flake): update inputs"
           title: "chore(flake): update inputs"
-          body-path: pr-body.md
+          body-path: ${{ runner.temp }}/pr-body.md
           branch: update-flake-lock
           delete-branch: true
