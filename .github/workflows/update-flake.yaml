@@ -28,23 +28,58 @@ jobs:
             min-free = 5368709120  # 5GB
             max-free = 10737418240 # 10GB
 
-      - name: Update flake inputs
-        id: update
-        continue-on-error: true
-        run: nix flake update
-
-      - name: Build darwin configurations
-        id: build
-        if: steps.update.outcome == 'success'
+      - name: Build current darwin configurations
+        id: build-current
         continue-on-error: true
         run: |
           # Get list of darwin configurations
           configs=$(nix eval --json '.#darwinConfigurations' --apply 'builtins.attrNames')
 
+          mkdir -p /tmp/old-configs
           # Parse JSON array and build each configuration
           echo "$configs" | jq -r '.[]' | while read -r config; do
-            echo "Building darwin configuration: $config"
-            nix build ".#darwinConfigurations.\"$config\".system" --no-link
+            echo "Building current darwin configuration: $config"
+            out_path=$(nix build ".#darwinConfigurations.\"$config\".system" --print-out-paths --no-link)
+            echo "$out_path" > "/tmp/old-configs/$config"
+          done
+
+      - name: Update flake inputs
+        id: update
+        continue-on-error: true
+        run: nix flake update
+
+      - name: Build new darwin configurations and generate diff
+        id: build
+        if: steps.update.outcome == 'success'
+        continue-on-error: true
+        run: |
+          configs=$(nix eval --json '.#darwinConfigurations' --apply 'builtins.attrNames')
+
+          # Initialize PR body
+          cat << 'EOF' > pr-body.md
+          Automated pull request to update Nix flake inputs.
+
+          All darwin configurations have been successfully built with the new inputs.
+
+          ### Package Changes
+          EOF
+          
+          echo "$configs" | jq -r '.[]' | while read -r config; do
+            echo "Building new darwin configuration: $config"
+            out_path=$(nix build ".#darwinConfigurations.\"$config\".system" --print-out-paths --no-link)
+            
+            if [ -f "/tmp/old-configs/$config" ]; then
+              old_path=$(cat "/tmp/old-configs/$config")
+              echo "Generating diff for $config..."
+              
+              echo "" >> pr-body.md
+              echo "<details><summary><b>$config</b></summary>" >> pr-body.md
+              echo "" >> pr-body.md
+              echo "\`\`\`" >> pr-body.md
+              nix run nixpkgs#nvd -- --color never diff "$old_path" "$out_path" >> pr-body.md || true
+              echo "\`\`\`" >> pr-body.md
+              echo "</details>" >> pr-body.md
+            fi
           done
 
       - name: Create Pull Request
@@ -53,9 +88,6 @@ jobs:
         with:
           commit-message: "chore(flake): update inputs"
           title: "chore(flake): update inputs"
-          body: |
-            Automated pull request to update Nix flake inputs.
-
-            All darwin configurations have been successfully built with the new inputs.
+          body-path: pr-body.md
           branch: update-flake-lock
           delete-branch: true
