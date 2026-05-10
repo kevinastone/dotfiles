@@ -63,7 +63,7 @@ jobs:
 
           ### Package Changes
           EOF
-          
+
           echo "$configs" | jq -r '.[]' | while read -r config; do
             echo "Building new darwin configuration: $config"
             out_path=$(nix build ".#darwinConfigurations.\"$config\".system" --print-out-paths --no-link)
