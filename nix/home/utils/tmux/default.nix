@@ -1,4 +1,5 @@
-_: {
+{ self, ... }:
+{
 
   programs.tmux = {
     enable = true;
@@ -6,6 +7,6 @@ _: {
   };
 
   home.file = {
-    ".tmux.conf".source = ./tmux.conf;
+    ".tmux.conf".source = self + "/tmux.conf";
   };
 }
