@@ -56,10 +56,6 @@
     // Whether to show the collaboration panel button in the status bar.
     "button": false
   },
-  "notification_panel": {
-    // Whether to show the notification panel button in the status bar.
-    "button": false
-  },
   "outline_panel": {
     "dock": "right"
   },
