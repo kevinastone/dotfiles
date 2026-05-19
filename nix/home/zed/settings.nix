@@ -1,6 +1,8 @@
-args@{ lib, ... }:
-lib.mkMerge [
-  {
+_: {
+  imports = [
+    ./agent.nix
+  ];
+  programs.zed-editor.userSettings = {
     edit_predictions.provider = "none";
     ui_font_size = 15;
     buffer_font_size = 12;
@@ -24,7 +26,5 @@ lib.mkMerge [
     # Allow zed to use direnv to pull in flake dependencies
     load_direnv = "shell_hook";
     inlay_hints.enabled = false;
-  }
-  (import ./agent.nix args)
-  (import ./languages args)
-]
+  };
+}

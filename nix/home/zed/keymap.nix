@@ -1,10 +1,3 @@
-# Zed keymap
-#
-# For information on binding keys, see the Zed
-# documentation: https://zed.dev/docs/key-bindings
-#
-# To see the default key bindings run `zed: open default keymap`
-# from the command palette.
 _:
 let
   keymap = {
@@ -31,9 +24,11 @@ let
     };
   };
 in
-builtins.attrValues (
-  builtins.mapAttrs (
-    context: bindings:
-    if context == "Global" then { inherit bindings; } else { inherit context bindings; }
-  ) keymap
-)
+{
+  programs.zed-editor.userKeymaps = builtins.attrValues (
+    builtins.mapAttrs (
+      context: bindings:
+      if context == "Global" then { inherit bindings; } else { inherit context bindings; }
+    ) keymap
+  );
+}
