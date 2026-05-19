@@ -1,0 +1,35 @@
+# Zed keymap
+#
+# For information on binding keys, see the Zed
+# documentation: https://zed.dev/docs/key-bindings
+#
+# To see the default key bindings run `zed: open default keymap`
+# from the command palette.
+[
+  {
+    context = "Workspace";
+    bindings."cmd-ctrl-p" = "projects::OpenRecent";
+  }
+  {
+    context = "Editor";
+    bindings = {
+      "cmd-ctrl-p" = "projects::OpenRecent";
+      "ctrl-cmd-g" = "editor::SelectAllMatches";
+    };
+  }
+  {
+    context = "Pane";
+    bindings = {
+      "ctrl-s" = "pane::RevealInProjectPanel";
+      "ctrl-cmd-w" = "pane::CloseAllItems";
+    };
+  }
+  {
+    bindings."cmd-alt-g" = [
+      "agent::NewExternalAgentThread"
+      {
+        agent.custom.name = "gemini";
+      }
+    ];
+  }
+]
