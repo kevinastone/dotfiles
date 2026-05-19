@@ -4,6 +4,7 @@ Readme.markdown
 sublime.sh
 macos.sh
 macos.d/.*
+mule.sh
 .*\.lock
 .*\.nix
 nix/.*
