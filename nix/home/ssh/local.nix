@@ -8,9 +8,6 @@ in
       "*.home.kevinastone.com"
       "*.parents.kevinastone.com"
       "*.local"
-      "mini"
-      "bedroom"
-      "scoreboard"
     ];
     forwardAgent = true;
   };
