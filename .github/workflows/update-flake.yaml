@@ -67,11 +67,11 @@ jobs:
           echo "$configs" | jq -r '.[]' | while read -r config; do
             echo "Building new darwin configuration: $config"
             out_path=$(nix build ".#darwinConfigurations.\"$config\".system" --print-out-paths --no-link)
-            
+
             if [ -f "/tmp/old-configs/$config" ]; then
               old_path=$(cat "/tmp/old-configs/$config")
               echo "Generating diff for $config..."
-              
+
               echo "" >> "$RUNNER_TEMP/pr-body.md"
               echo "<details><summary><b>$config</b></summary>" >> "$RUNNER_TEMP/pr-body.md"
               echo "" >> "$RUNNER_TEMP/pr-body.md"

@@ -4,9 +4,18 @@ _: {
   programs.fish_indent.enable = true;
   # programs.shellcheck.enable = true;
 
-  # JSON/YAML formatter
-  programs.prettier.enable = true;
-  settings.formatter.prettier.includes = [ "*.{json,yaml}" ];
+  # JSON formatter
+  programs.biome.enable = true;
+  programs.biome.settings.formatter = {
+    indentStyle = "space";
+    indentWidth = 2;
+  };
+
+  # YAML formatter
+  programs.yamlfmt.enable = true;
+  programs.yamlfmt.settings.formatter = {
+    retain_line_breaks_single = true;
+  };
 
   # toml formatter
   programs.taplo.enable = true;
