@@ -51,7 +51,7 @@
       }
     ];
   };
-  langauges.Nix = {
+  languages.Nix = {
     language_servers = [
       "nil"
       "nixd"
