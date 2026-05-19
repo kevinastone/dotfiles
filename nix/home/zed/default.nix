@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+args@{ pkgs, ... }:
 {
   programs.zed-editor = {
     enable = true;
@@ -12,8 +12,8 @@
       "sql"
       "toml"
     ];
-    userSettings = import ./settings;
-    userKeymaps = import ./keymap.nix;
+    userSettings = import ./settings args;
+    userKeymaps = import ./keymap.nix args;
     extraPackages = with pkgs; [
       python3
       nil

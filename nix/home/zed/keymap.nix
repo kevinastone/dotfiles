@@ -5,31 +5,35 @@
 #
 # To see the default key bindings run `zed: open default keymap`
 # from the command palette.
-[
-  {
-    context = "Workspace";
-    bindings."cmd-ctrl-p" = "projects::OpenRecent";
-  }
-  {
-    context = "Editor";
-    bindings = {
+_:
+let
+  keymap = {
+    Workspace = {
+      "cmd-ctrl-p" = "projects::OpenRecent";
+    };
+
+    Editor = {
       "cmd-ctrl-p" = "projects::OpenRecent";
       "ctrl-cmd-g" = "editor::SelectAllMatches";
     };
-  }
-  {
-    context = "Pane";
-    bindings = {
+
+    Pane = {
       "ctrl-s" = "pane::RevealInProjectPanel";
       "ctrl-cmd-w" = "pane::CloseAllItems";
     };
-  }
-  {
-    bindings."cmd-alt-g" = [
-      "agent::NewExternalAgentThread"
-      {
-        agent.custom.name = "gemini";
-      }
-    ];
-  }
-]
+
+    # Bindings with no specific context
+    Global = {
+      "cmd-alt-g" = [
+        "agent::NewExternalAgentThread"
+        { agent.custom.name = "gemini"; }
+      ];
+    };
+  };
+in
+builtins.attrValues (
+  builtins.mapAttrs (
+    context: bindings:
+    if context == "Global" then { inherit bindings; } else { inherit context bindings; }
+  ) keymap
+)
