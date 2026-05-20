@@ -1,6 +1,6 @@
 alfred/.*
 Brewfile
-Readme.markdown
+.*\.markdown
 sublime.sh
 macos.sh
 macos.d/.*
