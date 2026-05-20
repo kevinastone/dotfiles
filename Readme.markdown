@@ -41,23 +41,16 @@ nix flake check
 ```
 
 
-## Editors
-
-```
-# Install Sublime Package Manager
-./sublime.sh
-# Vim Plugins
-vim -c "PlugInstall"
-```
-
-
-## Setup Syncing for Alfred
+## Alfred
 
 1. After installing powerpack license
 
 2. Preferences->Advanced
 
         Syncing -> Set sync folder
+
+
+3. The `alfred` directory has snapshots of key files
 
 
 ## Alternative: Setup your dotfiles
