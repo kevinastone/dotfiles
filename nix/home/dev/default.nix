@@ -16,6 +16,7 @@
 
   home.packages = with pkgs; [
     # keep-sorted start
+    cyberduck
     duckdb
     just
     # keep-sorted end
