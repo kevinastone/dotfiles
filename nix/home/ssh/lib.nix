@@ -1,8 +1,8 @@
 { lib, ... }:
 {
   ignoreHostKeys = {
-    extraOptions.StrictHostKeyChecking = "no";
-    userKnownHostsFile = "/dev/null";
+    StrictHostKeyChecking = "no";
+    UserKnownHostsFile = "/dev/null";
   };
 
   mkHosts = hosts: lib.concatStringsSep " " hosts;

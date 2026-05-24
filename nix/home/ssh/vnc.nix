@@ -1,7 +1,12 @@
 { lib, ... }:
 let
   sshLib = import ./lib.nix { inherit lib; };
-  localForwards = [
+  vncHosts = sshLib.mkHosts [
+    "sprite"
+    "jump-sprite"
+    "sprite.parents.kevinastone.com"
+  ];
+  LocalForward = [
     {
       bind.port = 5900;
       host.address = "localhost";
@@ -10,12 +15,7 @@ let
   ];
 in
 {
-  programs.ssh.matchBlocks.sprite = {
-    host = sshLib.mkHosts [
-      "sprite"
-      "jump-sprite"
-      "sprite.parents.kevinastone.com"
-    ];
-    inherit localForwards;
+  programs.ssh.settings."${vncHosts}" = {
+    inherit LocalForward;
   };
 }

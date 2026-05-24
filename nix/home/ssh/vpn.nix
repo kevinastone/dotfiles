@@ -4,17 +4,17 @@ let
   mkJump = host: ip: {
     name = "jump-${host}";
     value = {
-      proxyJump = "wireguard.kevinastone.com";
-      hostname = ip;
-      forwardAgent = true;
+      ProxyJump = "wireguard.kevinastone.com";
+      HostName = ip;
+      ForwardAgent = true;
     };
   };
 in
 {
-  programs.ssh.matchBlocks = {
+  programs.ssh.settings = {
     "wireguard.kevinastone.com" = {
-      user = "admin";
-      forwardAgent = true;
+      User = "admin";
+      ForwardAgent = true;
     };
   }
   // mkJumps {
