@@ -42,8 +42,7 @@
 	autosetuprebase = always
 
 [blame]
-    # This was introduced in git 2.52.0 but segfaults
-    # ignoreRevsFile = :(optional).git-blame-ignore-revs
+    ignoreRevsFile = :(optional).git-blame-ignore-revs
 
 [user]
 	email = "kevinastone@gmail.com"
