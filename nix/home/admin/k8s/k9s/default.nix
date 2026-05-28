@@ -6,6 +6,7 @@ in
   imports = [
     ./cnpg.nix
     ./debug.nix
+    ./dive.nix
   ];
 
   programs.k9s.enable = true;
