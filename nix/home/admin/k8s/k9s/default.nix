@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./argo-workflows.nix
     ./cnpg.nix
     ./debug.nix
     ./dive.nix
