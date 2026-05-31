@@ -7,8 +7,9 @@
     catppuccin.homeModules.catppuccin
   ];
 
-  catppuccin = {
+  catppuccin = rec {
     enable = true;
+    autoEnable = enable;
     flavor = "mocha";
   };
 }
