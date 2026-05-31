@@ -1,8 +1,10 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    colima
-  ];
+  home.packages =
+    with pkgs;
+    lib.optionals pkgs.stdenv.isDarwin [
+      colima
+    ];
 
-  programs.ssh.includes = [ "~/.colima/ssh_config" ];
+  programs.ssh.includes = lib.optionals pkgs.stdenv.isDarwin [ "~/.colima/ssh_config" ];
 }

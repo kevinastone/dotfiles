@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   home.packages = with pkgs; [
     antigravity-cli
@@ -28,6 +28,10 @@
       shopify.ruby-lsp
       # keep-sorted end
     ];
+  };
+  home.file.".gemini/antigravity-cli/settings.json".text = lib.toJSON {
+    enableTelemetry = false;
+    enableTerminalSandbox = true;
   };
 }
 
