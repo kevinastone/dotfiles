@@ -2,7 +2,7 @@
 {
   imports = [
     # keep-sorted start
-    ./antigravity.nix
+    ./antigravity
     ./colima.nix
     ./docker.nix
     ./fonts.nix
