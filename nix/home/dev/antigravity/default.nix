@@ -1,6 +1,7 @@
 { lib, pkgs, ... }:
 {
   imports = [
+    ./git-hook.nix
     ./keybindings.nix
   ];
 
