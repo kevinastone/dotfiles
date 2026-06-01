@@ -7,6 +7,4 @@
     enableZshIntegration = true;
     settings = lib.importTOML (self + "/config/starship.toml");
   };
-
-  # xdg.configFile."starship.toml".source = self + "/config/starship.toml";
 }
