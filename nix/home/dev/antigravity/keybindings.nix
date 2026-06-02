@@ -1,23 +1,16 @@
-_: {
+{ lib, ... }:
+let
+  # Fetched from https://github.com/microsoft/vscode-sublime-keybindings/blob/main/package.json
+  sublimePackage = lib.importJSON ./vscode-sublime-keybindings/package.json;
+  sublimeKeybindings = sublimePackage.contributes.keybindings;
+in
+{
   programs.antigravity.profiles.default.keybindings = [
     {
       command = "workbench.action.openRecent";
-      key = "ctrl+cmd+p";
+      key = "ctrl+alt+p";
+      mac = "ctrl+cmd+p";
     }
-    {
-      key = "ctrl+cmd+up";
-      command = "editor.action.moveLinesUpAction";
-      when = "editorTextFocus";
-    }
-    {
-      key = "ctrl+cmd+down";
-      command = "editor.action.moveLinesDownAction";
-      when = "editorTextFocus";
-    }
-    {
-      key = "cmd+shift+d";
-      command = "editor.action.copyLinesDownAction";
-      when = "editorFocus";
-    }
-  ];
+  ]
+  ++ sublimeKeybindings;
 }
