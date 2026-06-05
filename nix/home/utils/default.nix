@@ -10,6 +10,7 @@
 
   home.packages = with pkgs; [
     # keep-sorted start
+    duckdb
     fpart
     httpie
     iperf
