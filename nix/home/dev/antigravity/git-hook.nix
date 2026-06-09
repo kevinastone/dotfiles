@@ -7,6 +7,11 @@ in
     COMMIT_MSG_FILE=$1
     COMMIT_SOURCE=$2
 
+    # Exit early if SKIP_AGY is set
+    if [ -n "$SKIP_AGY" ]; then
+      exit 0
+    fi
+
     # Only run if a message wasn't already provided via git commit -m, -F, or an amend
     if [ -z "$COMMIT_SOURCE" ]; then
       # Exit early if there are no staged changes to read
