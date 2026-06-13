@@ -2,11 +2,10 @@
 let
   preferencesPath =
     if pkgs.stdenv.isDarwin then "Library/Preferences/org.videolan.vlc" else ".config";
+  vlcPkg = with pkgs; if stdenv.isDarwin then vlc-bin else vlc;
 in
 {
-  home.packages = with pkgs; [
-    vlc-bin
-  ];
+  home.packages = [ vlcPkg ];
 
   home.file."${preferencesPath}/vlcrc".source = ./vlcrc;
 
