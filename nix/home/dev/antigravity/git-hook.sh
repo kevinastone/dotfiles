@@ -22,7 +22,20 @@ fi
 echo "Antigravity CLI is drafting your commit message..."
 
 # Pipe the cached diff cleanly into agy's one-shot pipeline
-git diff --cached | agy -p \
+# We include a stat summary, exclude common lockfiles, and truncate the diff
+# to prevent overwhelming the LLM's context window.
+{
+    git diff --cached --stat
+    echo
+    git diff --cached -- \
+        ':!*package-lock.json' \
+        ':!*yarn.lock' \
+        ':!*pnpm-lock.yaml' \
+        ':!*Cargo.lock' \
+        ':!*go.sum' \
+        ':!*flake.lock' \
+        | head -n 1000
+} | agy -p \
     "Review this git diff (provided in stdin) and draft a concise conventional commit message. Respond with ONLY the commit message body. Do not wrap the output in markdown code blocks or quotes." \
     > "$COMMIT_MSG_FILE"
 fi
