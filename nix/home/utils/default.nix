@@ -10,6 +10,7 @@
 
   home.packages = with pkgs; [
     # keep-sorted start
+    dua # disk-usage analyzer
     duckdb
     fpart
     httpie
