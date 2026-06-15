@@ -32,6 +32,7 @@ echo "Antigravity CLI is drafting your commit message..."
         ':!*yarn.lock' \
         ':!*pnpm-lock.yaml' \
         ':!*Cargo.lock' \
+        ':!*uv.lock' \
         ':!*go.sum' \
         ':!*flake.lock' \
         | head -n 1000
