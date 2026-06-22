@@ -37,5 +37,10 @@ in
     };
     taps = builtins.attrNames taps;
     brews = [ "mas" ];
+
+    masApps = {
+      "Wireguard" = 1451685025;
+      "wBlock" = 6746388723;
+    };
   };
 }

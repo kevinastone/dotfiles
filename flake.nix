@@ -9,9 +9,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-    # https://github.com/zhaofengli/nix-homebrew/issues/148#issuecomment-4606316915
-    # https://github.com/nix-darwin/nix-darwin/issues/1791
-    nix-homebrew.url = "github:zhaofengli/nix-homebrew?rev=b3a87b4793205cc111f3c61e25e018ffac3b8039";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
@@ -130,6 +128,7 @@
           ./nix/darwin/shell/fish.nix
           ./nix/darwin/homebrew
           ./nix/darwin/homebrew/dev
+          ./nix/darwin/homebrew/graphics.nix
           ./nix/darwin/homebrew/media
           (_: {
             # Custom hombrew casks for this machine
