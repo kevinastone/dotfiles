@@ -5,11 +5,13 @@ let
       script,
       ...
     }@args:
-    pkgs.writeShellApplication {
-      name = builtins.baseNameOf script;
-      text = builtins.readFile script;
-    }
-    // (builtins.removeAttrs args [ "scripts" ]);
+    pkgs.writeShellApplication (
+      {
+        name = baseNameOf script;
+        text = builtins.readFile script;
+      }
+      // (removeAttrs args [ "script" ])
+    );
 in
 {
   home.packages =
@@ -18,6 +20,10 @@ in
       (mkShellApplication {
         script = ./clear-tmux-idle-shells.sh;
         runtimeInputs = [ tmux ];
+      })
+      (mkShellApplication {
+        script = ./spherical-sbs-metadata.sh;
+        runtimeInputs = [ exiftool ];
       })
     ]
     ++ lib.optionals pkgs.stdenv.isDarwin [
