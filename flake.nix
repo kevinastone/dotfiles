@@ -124,6 +124,7 @@
       darwinConfigurations."M1Max" = mkDarwinSystem {
         modules = [
           ./nix/darwin
+          ./nix/darwin/smb
           ./nix/darwin/system
           ./nix/darwin/shell/fish.nix
           ./nix/darwin/homebrew
