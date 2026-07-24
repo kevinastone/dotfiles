@@ -36,7 +36,7 @@ echo "Antigravity CLI is drafting your commit message..."
         ':!*go.sum' \
         ':!*flake.lock' \
         | head -n 1000
-} | agy -p \
+} | agy --dangerously-skip-permissions -p \
     "Review this git diff (provided in stdin) and draft a concise conventional commit message. Respond with ONLY the commit message body. Do not wrap the output in markdown code blocks or quotes." \
     > "$COMMIT_MSG_FILE"
 fi
