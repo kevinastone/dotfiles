@@ -18,6 +18,8 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    onepassword-shell-plugins.url = "github:1Password/shell-plugins";
+    onepassword-shell-plugins.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
     catppuccin.inputs.nixpkgs.follows = "nixpkgs";
     systems.url = "github:nix-systems/default";
@@ -35,6 +37,7 @@
       nix-homebrew,
       homebrew-core,
       homebrew-cask,
+      onepassword-shell-plugins,
       catppuccin,
       home-manager,
       nix-index-database,
@@ -95,6 +98,7 @@
                     home-manager.extraSpecialArgs = {
                       inherit self;
                       inherit catppuccin;
+                      inherit onepassword-shell-plugins;
                     };
                     home-manager.users.${username} = {
                       imports = [
