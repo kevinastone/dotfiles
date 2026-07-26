@@ -12,7 +12,11 @@
           "nil"
           "nixd"
         ];
-        formatter.external.command = "nixfmt";
+        format_on_save = "on";
+        formatter.external = {
+          command = "nixfmt";
+          arguments = [ "{buffer_path}" ];
+        };
       };
     };
   };
