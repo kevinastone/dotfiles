@@ -5,7 +5,7 @@ let
   sublimeKeybindings = sublimePackage.contributes.keybindings;
 in
 {
-  programs.antigravity.profiles.default.keybindings = [
+  keybindings = [
     {
       command = "workbench.action.openRecent";
       key = "ctrl+alt+p";
