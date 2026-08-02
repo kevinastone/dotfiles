@@ -1,6 +1,6 @@
 _: {
   imports = [
-    ./git-hook.nix
+    # ./git-hook.nix
   ];
 
   programs.antigravity-cli.enable = true;
