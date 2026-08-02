@@ -12,6 +12,7 @@ in
   file-associations = lib.genAttrs [
     # keep-sorted start
     "avi"
+    "flv"
     "mkv"
     "mov"
     "mp4"
