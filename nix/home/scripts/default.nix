@@ -25,6 +25,13 @@ in
         script = ./spherical-sbs-metadata.sh;
         runtimeInputs = [ exiftool ];
       })
+      (mkShellApplication {
+        script = ./unnest-video-file.sh;
+        runtimeInputs = [
+          coreutils
+          findutils
+        ];
+      })
     ]
     ++ lib.optionals pkgs.stdenv.isDarwin [
       (mkShellApplication {
