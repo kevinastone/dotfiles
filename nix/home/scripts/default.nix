@@ -30,6 +30,7 @@ in
         runtimeInputs = [
           coreutils
           findutils
+          gum
         ];
       })
     ]
