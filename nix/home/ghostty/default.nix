@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  ghosttyPkg = with pkgs; if stdenv.isDarwin then ghostty-bin else ghostty;
+  ghosttyPkg = with pkgs; if stdenv.hostPlatform.isDarwin then ghostty-bin else ghostty;
 in
 {
   programs.ghostty = {

@@ -1,6 +1,7 @@
 { lib, pkgs, ... }:
 let
-  preferencesPath = if pkgs.stdenv.isDarwin then "Library/Application Support/" else ".config";
+  preferencesPath =
+    if pkgs.stdenv.hostPlatform.isDarwin then "Library/Application Support/" else ".config";
 in
 {
   imports = [

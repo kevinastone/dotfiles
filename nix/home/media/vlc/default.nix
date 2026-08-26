@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 let
   preferencesPath =
-    if pkgs.stdenv.isDarwin then "Library/Preferences/org.videolan.vlc" else ".config";
-  vlcPkg = with pkgs; if stdenv.isDarwin then vlc-bin else vlc;
+    if pkgs.stdenv.hostPlatform.isDarwin then "Library/Preferences/org.videolan.vlc" else ".config";
+  vlcPkg = with pkgs; if stdenv.hostPlatform.isDarwin then vlc-bin else vlc;
 in
 {
   home.packages = [ vlcPkg ];

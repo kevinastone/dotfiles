@@ -7,7 +7,7 @@
 {
   homebrew.casks = [ "hammerspoon" ];
 
-  home.file.".hammerspoon" = lib.mkIf pkgs.stdenv.isDarwin {
+  home.file.".hammerspoon" = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
     source = self + "/hammerspoon";
     recursive = true;
   };

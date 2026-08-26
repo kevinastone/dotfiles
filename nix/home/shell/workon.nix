@@ -1,7 +1,7 @@
 { lib, pkgs, ... }:
 {
 
-  home.sessionVariables.WORKON_BASE_DIR = lib.mkIf pkgs.stdenv.isDarwin "$HOME/Documents";
+  home.sessionVariables.WORKON_BASE_DIR = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin "$HOME/Documents";
 
   programs.fish.completions.workon = ''
     complete -c workon -xa '(for d in $WORKON_BASE_DIR/*; test -d "$d"; and echo (basename $d); end)'

@@ -5,7 +5,7 @@
     package = with pkgs; google-chrome;
   };
 
-  home.file."Library/Services" = lib.mkIf pkgs.stdenv.isDarwin {
+  home.file."Library/Services" = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
     source = ./services;
     recursive = true;
   };
