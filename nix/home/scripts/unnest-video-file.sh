@@ -31,11 +31,8 @@ fi
 # Print instructions for gum
 echo "Select which video files to unnest (Space to select/deselect, Enter to confirm):"
 
-# Create a comma-separated list of all candidates to pre-select them
-joined_candidates=$(IFS=,; echo "${candidates[*]}")
-
 # Format candidates for gum choose and default to all selected
-selected_files=$(printf "%s\n" "${candidates[@]}" | gum choose --no-limit --selected="$joined_candidates")
+selected_files=$(printf "%s\n" "${candidates[@]}" | gum choose --no-limit --selected="*")
 
 # If gum was cancelled (Ctrl+C / Esc) or nothing was selected, exit.
 if [[ -z "$selected_files" ]]; then
@@ -67,10 +64,7 @@ if [[ ${#moved_dirs[@]} -gt 0 ]]; then
     # Deduplicate and sort directory paths
     IFS=$'\n' read -r -d '' -a unique_dirs < <(printf "%s\n" "${moved_dirs[@]}" | sort -u && printf '\0')
     
-    # Create a comma-separated list of unique directories to pre-select them
-    joined_dirs=$(IFS=,; echo "${unique_dirs[*]}")
-    
-    selected_dirs=$(printf "%s\n" "${unique_dirs[@]}" | gum choose --no-limit --selected="$joined_dirs")
+    selected_dirs=$(printf "%s\n" "${unique_dirs[@]}" | gum choose --no-limit --selected="*")
     
     if [[ -n "$selected_dirs" ]]; then
         echo "Deleting selected directories..."
