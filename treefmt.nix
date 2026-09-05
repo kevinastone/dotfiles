@@ -4,6 +4,15 @@ _: {
   programs.fish_indent.enable = true;
   # programs.shellcheck.enable = true;
 
+  # GitHub Actions linter
+  programs.actionlint.enable = true;
+
+  # Shell formatting
+  programs.shfmt.enable = true;
+
+  # Python formatter (for custom modules & helper scripts)
+  programs.ruff-format.enable = true;
+
   # JSON formatter
   programs.biome.enable = true;
   programs.biome.settings.formatter = {

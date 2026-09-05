@@ -3,40 +3,40 @@ COMMIT_SOURCE=${2:-}
 
 # Exit early if SKIP_AGY is set
 if [ -n "${SKIP_AGY:-}" ]; then
-exit 0
+  exit 0
 fi
 
 # Only run if a message wasn't already provided via git commit -m, -F, or an amend
 if [ -z "$COMMIT_SOURCE" ]; then
-# Exit early if there are no staged changes to read
-if git diff --cached --quiet; then
+  # Exit early if there are no staged changes to read
+  if git diff --cached --quiet; then
     exit 0
-fi
+  fi
 
-# Ensure agy is available in the path, otherwise fail gracefully to standard empty commit
-if ! command -v agy &> /dev/null; then
+  # Ensure agy is available in the path, otherwise fail gracefully to standard empty commit
+  if ! command -v agy &>/dev/null; then
     echo "Warning: 'agy' CLI tool not found in PATH. Skipping auto-generated commit message."
     exit 0
-fi
+  fi
 
-echo "Antigravity CLI is drafting your commit message..."
+  echo "Antigravity CLI is drafting your commit message..."
 
-# Pipe the cached diff cleanly into agy's one-shot pipeline
-# We include a stat summary, exclude common lockfiles, and truncate the diff
-# to prevent overwhelming the LLM's context window.
-{
+  # Pipe the cached diff cleanly into agy's one-shot pipeline
+  # We include a stat summary, exclude common lockfiles, and truncate the diff
+  # to prevent overwhelming the LLM's context window.
+  {
     git diff --cached --stat
     echo
     git diff --cached -- \
-        ':!*package-lock.json' \
-        ':!*yarn.lock' \
-        ':!*pnpm-lock.yaml' \
-        ':!*Cargo.lock' \
-        ':!*uv.lock' \
-        ':!*go.sum' \
-        ':!*flake.lock' \
-        | head -n 1000
-} | agy --dangerously-skip-permissions -p \
+      ':!*package-lock.json' \
+      ':!*yarn.lock' \
+      ':!*pnpm-lock.yaml' \
+      ':!*Cargo.lock' \
+      ':!*uv.lock' \
+      ':!*go.sum' \
+      ':!*flake.lock' |
+      head -n 1000
+  } | agy --dangerously-skip-permissions -p \
     "Review this git diff (provided in stdin) and draft a concise conventional commit message. Respond with ONLY the commit message body. Do not wrap the output in markdown code blocks or quotes." \
-    > "$COMMIT_MSG_FILE"
+    >"$COMMIT_MSG_FILE"
 fi

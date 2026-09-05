@@ -6,4 +6,4 @@
 
 defaults write com.apple.screencapture "location" -string "$HOME/Downloads"
 
-killall SystemUIServerk &> /dev/null
+killall SystemUIServerk &>/dev/null

@@ -26,5 +26,4 @@ defaults write com.apple.finder NewWindowTarget -string "PfHm"
 # Previous Scope : `SCsp`
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-
-killall Finder &> /dev/null
+killall Finder &>/dev/null

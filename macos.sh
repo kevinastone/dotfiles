@@ -9,8 +9,8 @@ sudo -v
 
 # Load our Defined Bash Profile Configurations
 if [ -d macos.d ]; then
-    for fn in macos.d/*.sh; do
-        echo $fn
-        bash $fn
-    done
+  for fn in macos.d/*.sh; do
+    echo $fn
+    bash $fn
+  done
 fi

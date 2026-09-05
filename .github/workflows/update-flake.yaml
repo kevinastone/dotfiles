@@ -72,13 +72,15 @@ jobs:
               old_path=$(cat "/tmp/old-configs/$config")
               echo "Generating diff for $config..."
 
-              echo "" >> "$RUNNER_TEMP/pr-body.md"
-              echo "<details><summary><b>$config</b></summary>" >> "$RUNNER_TEMP/pr-body.md"
-              echo "" >> "$RUNNER_TEMP/pr-body.md"
-              echo "\`\`\`" >> "$RUNNER_TEMP/pr-body.md"
-              nix run nixpkgs#nvd -- --color never diff "$old_path" "$out_path" >> "$RUNNER_TEMP/pr-body.md" || true
-              echo "\`\`\`" >> "$RUNNER_TEMP/pr-body.md"
-              echo "</details>" >> "$RUNNER_TEMP/pr-body.md"
+              {
+                echo ""
+                echo "<details><summary><b>$config</b></summary>"
+                echo ""
+                echo "\`\`\`"
+                nix run nixpkgs#nvd -- --color never diff "$old_path" "$out_path" || true
+                echo "\`\`\`"
+                echo "</details>"
+              } >> "$RUNNER_TEMP/pr-body.md"
             fi
           done
 
