@@ -11,7 +11,7 @@ curl -fsSL https://install.determinate.systems/nix | sh -s -- install --prefer-u
 ### Run Nix-Darwin
 
 ```
-sudo nix run nix-darwin -- switch --flake ~/dotfiles
+sudo nix run nix-darwin -- switch --flake ~/dotfiles --accept-flake-config
 ```
 
 Rebuilds can be run with:
