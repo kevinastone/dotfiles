@@ -82,6 +82,7 @@
                 inherit username;
                 inherit homebrew-core;
                 inherit homebrew-cask;
+                inherit nixpkgs;
               };
               modules =
                 modules

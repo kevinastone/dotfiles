@@ -1,10 +1,15 @@
-{ username, ... }:
+{ username, nixpkgs, ... }:
 {
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
 
   system.primaryUser = username;
+
+  # Pin flake registry and NIX_PATH to nixpkgs input to prevent redundant downloads
+  nix.registry.nixpkgs.flake = nixpkgs;
+  nix.nixPath = [ "nixpkgs=${nixpkgs}" ];
+
   nix.settings = {
     trusted-users = [
       "root"

@@ -20,6 +20,8 @@
     options = "--delete-older-than 30d";
   };
 
+  nix.optimise.automatic = true;
+
   environment.systemPackages = with pkgs; [
     curl
     htop
