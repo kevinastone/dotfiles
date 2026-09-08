@@ -20,6 +20,28 @@ Rebuilds can be run with:
 sudo darwin-rebuild switch --flake ~/dotfiles
 ```
 
+### Maintenance & Garbage Collection
+
+Garbage collection runs automatically weekly (`--delete-older-than 30d`) via launchd, and store deduplication is enabled automatically.
+
+To run maintenance manually:
+
+```bash
+# Delete older system generations (nix-darwin) and collect unreferenced store paths
+sudo nix-collect-garbage --delete-older-than 14d
+
+# Or delete ALL previous generations (keeps only active generation)
+sudo nix-collect-garbage -d
+
+# Deduplicate identical store files via hardlinks
+nix store optimise
+```
+
+> **Note on Direnv:** If you use `nix-direnv`, project devShells are kept alive as GC roots. To reclaim that space, remove `.direnv` caches in your projects before collecting garbage:
+> ```bash
+> find ~/Documents -maxdepth 3 -type d -name ".direnv" -prune -exec rm -rf {} +
+> ```
+
 ### Fixing Nix-Store issues
 
 ```
