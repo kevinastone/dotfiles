@@ -166,12 +166,12 @@
           ./nix/home/homebrew/alfred.nix
           ./nix/home/homebrew/hammerspoon.nix
           ./nix/home/homebrew/kap.nix
+          ./nix/home/homebrew/tailscale.nix
           ./nix/home/icloud.nix
           ./nix/home/media
           ./nix/home/scripts
           ./nix/home/spotify.nix
           ./nix/home/sublime
-          ./nix/home/tailscale.nix
           ./nix/home/x
           ./nix/home/xfce4
           ./nix/home/zed
