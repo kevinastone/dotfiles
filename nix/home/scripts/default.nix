@@ -29,7 +29,7 @@ in
         script = ./unnest-video-file.sh;
         runtimeInputs = [
           coreutils
-          findutils
+          fd
           gum
         ];
       })
