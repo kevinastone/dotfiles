@@ -1,5 +1,40 @@
-# Target directory to scan (defaults to the current directory if no argument is provided)
-TARGET_DIR="${1:-.}"
+# Parse command-line arguments
+TARGET_DIR=""
+IGNORE_DIRS=()
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  -i | --ignore)
+    if [[ -n $2 && $2 != -* ]]; then
+      IGNORE_DIRS+=("$2")
+      shift 2
+    else
+      echo "Error: $1 requires a path argument." >&2
+      exit 1
+    fi
+    ;;
+  --ignore=*)
+    IGNORE_DIRS+=("${1#*=}")
+    shift
+    ;;
+  -*)
+    echo "Error: Unknown option: $1" >&2
+    exit 1
+    ;;
+  *)
+    if [[ -z $TARGET_DIR ]]; then
+      TARGET_DIR="$1"
+    else
+      echo "Error: Multiple target directories specified: '$TARGET_DIR' and '$1'" >&2
+      exit 1
+    fi
+    shift
+    ;;
+  esac
+done
+
+# Default target directory to the current directory if no argument is provided
+TARGET_DIR="${TARGET_DIR:-.}"
 
 # Enable nullglob: Unmatched globs expand to nothing rather than the literal string
 # Enable nocaseglob: Case-insensitive matching so .MP4 and .mp4 are both caught
@@ -7,6 +42,39 @@ shopt -s nullglob nocaseglob
 
 # Temporary array of candidate videos to move
 candidates=()
+
+# Build find command arguments with prune filters for ignored directories
+find_cmd=(find "$TARGET_DIR" -mindepth 1)
+
+if [[ ${#IGNORE_DIRS[@]} -gt 0 ]]; then
+  ignore_expr=()
+  for ignore_dir in "${IGNORE_DIRS[@]}"; do
+    # Strip trailing slashes
+    trimmed_dir="${ignore_dir%/}"
+    [[ -z $trimmed_dir ]] && continue
+
+    if [[ ${#ignore_expr[@]} -gt 0 ]]; then
+      ignore_expr+=(-o)
+    fi
+
+    if [[ $trimmed_dir == /* ]]; then
+      # Absolute path specified
+      ignore_expr+=(-path "$trimmed_dir" -o -path "$trimmed_dir/*")
+    elif [[ $trimmed_dir == */* ]]; then
+      # Relative path with subdirectory components (e.g. sub/Keep)
+      # Match relative to TARGET_DIR as well as any suffix path
+      target_rel="${TARGET_DIR%/}/$trimmed_dir"
+      ignore_expr+=(-path "$target_rel" -o -path "$target_rel/*" -o -path "*/$trimmed_dir" -o -path "*/$trimmed_dir/*")
+    else
+      # Simple directory name (e.g. Keep)
+      target_rel="${TARGET_DIR%/}/$trimmed_dir"
+      ignore_expr+=(-name "$trimmed_dir" -o -path "$target_rel" -o -path "$target_rel/*")
+    fi
+  done
+  find_cmd+=(\( "${ignore_expr[@]}" \) -prune -o)
+fi
+
+find_cmd+=(-type d -print0)
 
 # Find all directories recursively, starting from TARGET_DIR
 # -mindepth 1 prevents checking the TARGET_DIR itself
@@ -20,7 +88,7 @@ while IFS= read -r -d '' dir; do
   if [[ $count -eq 1 ]]; then
     candidates+=("${videos[0]}")
   fi
-done < <(find "$TARGET_DIR" -mindepth 1 -type d -print0)
+done < <("${find_cmd[@]}")
 
 # Check if we found any candidates
 if [[ ${#candidates[@]} -eq 0 ]]; then
