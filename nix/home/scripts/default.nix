@@ -25,13 +25,15 @@ in
         script = ./spherical-sbs-metadata.sh;
         runtimeInputs = [ exiftool ];
       })
-      (mkShellApplication {
-        script = ./unnest-video-file.sh;
+      (pkgs.writeShellApplication {
+        name = "unnest-video-file";
         runtimeInputs = [
-          coreutils
-          fd
+          zx
           gum
         ];
+        text = ''
+          exec zx ${./unnest-video-file.mjs} "$@"
+        '';
       })
     ]
     ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
