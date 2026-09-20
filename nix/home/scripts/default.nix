@@ -32,7 +32,7 @@ in
           gum
         ];
         text = ''
-          exec zx ${./unnest-video-file.mjs} "$@"
+          exec zx ${./unnest-video-file.mts} "$@"
         '';
       })
     ]

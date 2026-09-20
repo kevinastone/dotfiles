@@ -1,10 +1,21 @@
 #!/usr/bin/env zx
+/// <reference types="zx/globals" />
 
 $.verbose = false;
 
+interface ScriptArgs {
+  i?: string | string[];
+  ignore?: string | string[];
+  _: string[];
+}
+
+const args = argv as unknown as ScriptArgs;
+
 // 1. Parse CLI arguments
-const ignoreList = [argv.i, argv.ignore].filter(Boolean).flat();
-const targetDir = path.resolve(argv._[0] || ".");
+const ignoreList = [args.i, args.ignore]
+  .flat()
+  .filter((x): x is string => Boolean(x));
+const targetDir = path.resolve(args._[0] || ".");
 
 // 2. Find candidate videos (directories containing exactly 1 video file)
 const ignorePatterns = ignoreList.flatMap((d) => {
@@ -25,7 +36,7 @@ const videoFiles = await glob("*/*.{mp4,mkv,avi,mov,wmv,flv,webm,m4v}", {
 });
 
 const candidates = Object.values(Object.groupBy(videoFiles, path.dirname))
-  .filter((files) => files.length === 1)
+  .filter((files): files is string[] => files?.length === 1)
   .map(([file]) => file);
 
 if (candidates.length === 0) {
@@ -34,9 +45,13 @@ if (candidates.length === 0) {
 }
 
 // 3. Helper to interactively choose items via gum
-function gumChoose(items) {
+function gumChoose(items: string[], header?: string): string[] {
   try {
-    const res = $.spawnSync("gum", ["choose", "--no-limit", "--selected=*"], {
+    const gumArgs = ["choose", "--no-limit", "--selected=*"];
+    if (header) {
+      gumArgs.push(`--header=${header}`);
+    }
+    const res = $.spawnSync("gum", gumArgs, {
       input: [...items, ""].join("\n"),
       stdio: ["pipe", "pipe", "inherit"],
       encoding: "utf-8",
@@ -51,10 +66,10 @@ function gumChoose(items) {
 }
 
 // 4. Prompt user to select which files to move
-console.log(
-  "Select which video files to unnest (Space to select/deselect, Enter to confirm):",
+const selectedFiles = gumChoose(
+  candidates,
+  "Select which video files to unnest",
 );
-const selectedFiles = gumChoose(candidates);
 
 if (selectedFiles.length === 0) {
   console.log("No files selected. Aborting.");
@@ -77,10 +92,10 @@ const movedDirs = await Promise.all(
 
 // 6. Prompt user to clean up emptied source directories
 if (movedDirs.length > 0) {
-  console.log(
-    "\nSelect which directories to delete (Space to select/deselect, Enter to confirm):",
+  const selectedDirs = gumChoose(
+    movedDirs,
+    "Select which directories to delete",
   );
-  const selectedDirs = gumChoose(movedDirs);
 
   if (selectedDirs.length > 0) {
     console.log("Deleting selected directories...");

@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "zx": "^8.8.5"
+  }
+}
