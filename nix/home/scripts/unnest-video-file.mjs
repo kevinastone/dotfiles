@@ -15,7 +15,7 @@ const ignorePatterns = ignoreList.flatMap((d) => {
   return [`**/${trimmed}/**`, `**/${trimmed}`, `${trimmed}/**`, `${trimmed}`];
 });
 
-const videoFiles = await glob("**/*.{mp4,mkv,avi,mov,wmv,flv,webm,m4v}", {
+const videoFiles = await glob("*/*.{mp4,mkv,avi,mov,wmv,flv,webm,m4v}", {
   cwd: targetDir,
   ignore: ignorePatterns,
   absolute: true,
