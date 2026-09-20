@@ -11,8 +11,11 @@ const targetDir = path.resolve(argv._[0] || ".");
 const ignorePatterns = ignoreList.flatMap((d) => {
   const trimmed = d.replace(/\/+$/, "");
   if (!trimmed) return [];
-  if (trimmed.startsWith("/")) return [trimmed, `${trimmed}/**`];
-  return [`**/${trimmed}/**`, `**/${trimmed}`, `${trimmed}/**`, `${trimmed}`];
+  const rel =
+    path.isAbsolute(trimmed) && trimmed.startsWith(targetDir)
+      ? path.relative(targetDir, trimmed)
+      : trimmed;
+  return [`${rel}/**`, rel];
 });
 
 const videoFiles = await glob("*/*.{mp4,mkv,avi,mov,wmv,flv,webm,m4v}", {
