@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./ffmpeg.nix
+    ./scripts
     ./vlc
     ./yt-dlp
   ];
