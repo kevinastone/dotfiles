@@ -7,10 +7,13 @@ _: {
   ];
 
   programs.zed-editor.extensions = [
-    "html"
+    # keep-sorted start
+    "cue"
     "dockerfile"
     "git-firefly"
+    "html"
     "sql"
     "toml"
+    # keep-sorted end
   ];
 }
