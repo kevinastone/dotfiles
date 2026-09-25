@@ -24,13 +24,23 @@ let
     writer "/bin/${name}" (builtins.readFile script);
 in
 {
-  home.packages = [
+  home.packages = with pkgs; [
     (writeNuBin {
       script = ./title-rename.nu;
-      runtimeInputs = [ pkgs.ffmpeg ];
+      runtimeInputs = [ ffmpeg ];
     })
     (writeNuBin {
       script = ./prefix-rename.nu;
+    })
+    (writeShellApplication {
+      name = "unnest-video-file";
+      runtimeInputs = [
+        zx
+        gum
+      ];
+      text = ''
+        exec zx ${./unnest-video-file.mts} "$@"
+      '';
     })
   ];
 }
