@@ -12,6 +12,7 @@ _: {
     "dockerfile"
     "git-firefly"
     "html"
+    "nu"
     "sql"
     "toml"
     # keep-sorted end
