@@ -46,6 +46,6 @@ def main [
         if not $dry_run {
             mv $f $target
         }
-        print $"($f) -> ($target)"
+        print $"($f | path basename) -> ($target | path basename)"
     }
 }
