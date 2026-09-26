@@ -2,11 +2,11 @@
 let
   writeNuBin =
     {
+      name ? pkgs.lib.removeSuffix ".nu" (baseNameOf script),
       script,
       runtimeInputs ? [ ],
     }:
     let
-      name = pkgs.lib.removeSuffix ".nu" (baseNameOf script);
       writer = pkgs.writers.makeScriptWriter (
         {
           interpreter = "${pkgs.nushell}/bin/nu";
@@ -36,7 +36,11 @@ in
       name = "unnest-video-file";
       runtimeInputs = [
         zx
-        gum
+        (writeNuBin {
+          name = "unnest-video-file-nu";
+          script = ./unnest-video-file.nu;
+          runtimeInputs = [ gum ];
+        })
       ];
       text = ''
         exec zx ${./unnest-video-file.mts} "$@"
