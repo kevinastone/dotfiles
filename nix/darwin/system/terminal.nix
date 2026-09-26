@@ -1,4 +1,4 @@
-_: {
+{
   system.defaults.CustomUserPreferences."com.apple.Terminal" = {
     NewTabWorkingDirectoryBehavior = true;
     "Default Window Settings" = "Default";

@@ -1,4 +1,4 @@
-_: {
+{
   imports = [
     # ./git-hook.nix
   ];

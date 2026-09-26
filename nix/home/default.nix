@@ -1,4 +1,4 @@
-_: {
+{
   # Defaults in every home-manager configuration
   imports = [
     # keep-sorted start

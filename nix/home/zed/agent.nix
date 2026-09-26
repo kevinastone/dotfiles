@@ -1,4 +1,4 @@
-_: {
+{
   programs.zed-editor.userSettings = {
     agent_servers.gemini.type = "registry";
     agent = {

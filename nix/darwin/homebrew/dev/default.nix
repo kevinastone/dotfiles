@@ -1,4 +1,4 @@
-_: {
+{
   homebrew.casks = [
     # keep-sorted start
     "balenaetcher"

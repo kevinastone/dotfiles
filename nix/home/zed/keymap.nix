@@ -1,4 +1,3 @@
-_:
 let
   keymap = {
     Workspace = {

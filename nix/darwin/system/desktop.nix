@@ -1,4 +1,4 @@
-_: {
+{
   system.defaults.WindowManager = {
     EnableStandardClickToShowDesktop = false;
   };

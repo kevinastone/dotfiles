@@ -1,4 +1,4 @@
-_: {
+{
   system.defaults.finder = {
     ShowPathbar = true;
     ShowHardDrivesOnDesktop = true;

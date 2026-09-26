@@ -1,4 +1,4 @@
-_: {
+{
   imports = [
     ./agent.nix
     ./keymap.nix

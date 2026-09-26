@@ -1,4 +1,3 @@
-_:
 let
   argsPrefix = "kubectl cnpg --context $CONTEXT -n $NAMESPACE";
   mkCnpgPlugin =

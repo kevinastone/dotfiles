@@ -1,4 +1,4 @@
-_: {
+{
   imports = [
     # keep-sorted start
     ./k8s.nix

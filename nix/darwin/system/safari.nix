@@ -1,4 +1,4 @@
-_: {
+{
   system.defaults.CustomSystemPreferences."com.apple.Safari" = {
     #!/usr/bin/env bash
 
