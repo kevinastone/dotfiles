@@ -18,7 +18,7 @@ let
         "${argsPrefix} ${command} $NAME | less"
       ];
     }
-    // (builtins.removeAttrs params [
+    // (removeAttrs params [
       "command"
       "shortCut"
       "scopes"
