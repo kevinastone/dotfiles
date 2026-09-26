@@ -67,6 +67,7 @@
 
       mkDarwinSystem =
         {
+          system,
           username ? "kstone",
           modules ? [ ],
           home-modules ? [ ],
@@ -87,6 +88,7 @@
               modules =
                 modules
                 ++ [
+                  { nixpkgs.hostPlatform = system; }
                   ./nix
                 ]
                 ++ [
@@ -121,6 +123,7 @@
                 ];
             }
             // (removeAttrs args [
+              "system"
               "username"
               "modules"
               "home-modules"
@@ -137,6 +140,7 @@
       });
 
       darwinConfigurations."M1Max" = mkDarwinSystem {
+        system = "aarch64-darwin";
         modules = [
           ./nix/darwin
           ./nix/darwin/smb
@@ -146,14 +150,14 @@
           ./nix/darwin/homebrew/dev
           ./nix/darwin/homebrew/graphics.nix
           ./nix/darwin/homebrew/media
-          (_: {
-            # Custom hombrew casks for this machine
+          {
+            # Custom homebrew casks for this machine
             homebrew.casks = [
               "autodesk-fusion"
               "discord"
               "hyperbackupexplorer"
             ];
-          })
+          }
         ];
         home-modules = [
           # keep-sorted start
