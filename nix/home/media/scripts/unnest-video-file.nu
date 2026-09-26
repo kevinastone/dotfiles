@@ -30,7 +30,7 @@ def main [
     }
 
     # 3. Prompt user to select which files to move using gum
-    let selected_files = (gum-choose $candidates "Select which video files to unnest")
+    let selected_files = ($candidates | gum-choose "Select which video files to unnest")
 
     if ($selected_files | is-empty) {
         print "No files selected. Aborting."
@@ -56,7 +56,7 @@ def main [
 
     # 5. Prompt user to clean up emptied source directories
     if ($moved_dirs | is-not-empty) {
-        let selected_dirs = (gum-choose $moved_dirs "Select which directories to delete")
+        let selected_dirs = ($moved_dirs | gum-choose "Select which directories to delete")
 
         if ($selected_dirs | is-not-empty) {
             print "Deleting selected directories..."
@@ -73,8 +73,8 @@ def main [
 }
 
 # Helper to interactively choose items via gum
-def gum-choose [items: list<string>, header?: string]: nothing -> list<string> {
-    let input = $items | to text
+def gum-choose [header?: string]: list<string> -> list<string> {
+    let input = $in | to text
     let args = [
         "choose"
         "--no-limit"
