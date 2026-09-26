@@ -30,6 +30,7 @@
 
   # Add ability to used TouchID for sudo authentication
   security.pam.services.sudo_local.touchIdAuth = true;
+  security.pam.services.sudo_local.reattach = true;
 
   # Declare the user that will be running `nix-darwin`.
   users.users.${username} = {
