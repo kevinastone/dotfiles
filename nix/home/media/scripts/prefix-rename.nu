@@ -32,12 +32,7 @@ def main [
             continue
         }
 
-        let new_path = (
-            $file
-            | path parse
-            | update basename $new_filename
-            | path join
-        )
+        let new_path = $file | path basename --replace $new_filename
 
         if not $dry_run {
             mv $file $new_path
