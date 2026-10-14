@@ -4,6 +4,7 @@
     # keep-sorted start
     ./antigravity
     ./colima.nix
+    ./container.nix
     ./docker.nix
     ./fonts.nix
     ./javascript
