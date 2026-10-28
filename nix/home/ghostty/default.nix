@@ -7,6 +7,7 @@ in
     enable = true;
     package = ghosttyPkg;
     settings = {
+      auto-update = "off";
       confirm-close-surface = false;
       window-inherit-working-directory = false;
       tab-inherit-working-directory = false;
