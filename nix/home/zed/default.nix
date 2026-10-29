@@ -1,6 +1,5 @@
 {
   imports = [
-    ./agent.nix
     ./keymap.nix
     ./languages
     ./settings.nix

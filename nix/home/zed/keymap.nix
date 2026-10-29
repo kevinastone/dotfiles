@@ -14,13 +14,13 @@ let
       "ctrl-cmd-w" = "pane::CloseAllItems";
     };
 
-    # Bindings with no specific context
-    Global = {
-      "cmd-alt-g" = [
-        "agent::NewExternalAgentThread"
-        { agent.custom.name = "gemini"; }
-      ];
-    };
+    # # Bindings with no specific context
+    # Global = {
+    #   "cmd-alt-g" = [
+    #     "agent::NewExternalAgentThread"
+    #     { agent.custom.name = "gemini"; }
+    #   ];
+    # };
   };
 in
 {

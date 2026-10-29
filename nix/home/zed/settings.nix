@@ -1,6 +1,6 @@
 {
   imports = [
-    ./agent.nix
+    # ./agent.nix
   ];
   programs.zed-editor.userSettings = {
     edit_predictions.provider = "none";
