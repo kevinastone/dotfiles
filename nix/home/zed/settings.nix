@@ -16,7 +16,7 @@
     minimap.show = "always";
     project_panel = {
       dock = "left";
-      folder_icons = false;
+      folder_indicator = "chevron";
       auto_reveal_entries = false;
       indent_size = 15;
     };
