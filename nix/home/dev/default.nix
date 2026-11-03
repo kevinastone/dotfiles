@@ -8,7 +8,7 @@
     ./docker.nix
     ./fonts.nix
     ./javascript
-    # ./mise.nix
+    ./mise.nix
     ./neovim.nix
     ./nix.nix
     ./python

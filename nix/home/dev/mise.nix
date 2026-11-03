@@ -1,29 +1,15 @@
-{
+{ config, ... }: {
   programs.mise = {
     enable = true;
+    enableFishIntegration = true;
 
     globalConfig = {
       settings = {
-        # disable warning about */.node-version files
+        # Don't activate mise unless there's a local .mise.toml
         idiomatic_version_file_enable_tools = [ ];
-        python = {
-          uv_venv_auto = true;
-        };
+        ceiling_paths = [ config.home.homeDirectory ];
+        verbose = false;
       };
-      tools = {
-        node = {
-          version = "lts";
-          postinstall = "corepack enable";
-        };
-        rust = "stable";
-        python = "latest";
-        uv = "latest";
-      };
-    };
-
-    settings = {
-      verbose = false;
-      auto_install = true;
     };
   };
 }
