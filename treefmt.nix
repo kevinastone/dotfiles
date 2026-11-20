@@ -9,7 +9,11 @@
   programs.actionlint.enable = true;
 
   # Shell formatting
-  programs.shfmt.enable = true;
+  programs.shfmt = {
+    enable = true;
+    indent_size = 2;
+    simplify = true;
+  };
 
   # Python formatter (for custom modules & helper scripts)
   programs.ruff-format.enable = true;
