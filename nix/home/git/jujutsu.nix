@@ -17,7 +17,8 @@
         "--"
         "sh"
         "-c"
-        "jj git fetch && jj rebase -o 'trunk()'"
+        "jj git fetch \"$@\" && jj rebase -o 'trunk()'"
+        ""
       ];
       push = [
         "util"
