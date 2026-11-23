@@ -19,6 +19,15 @@
         "-c"
         "jj git fetch && jj rebase -o 'trunk()'"
       ];
+      push = [
+        "util"
+        "exec"
+        "--"
+        "sh"
+        "-c"
+        "jj tug && jj git push \"$@\""
+        ""
+      ];
       tug = [
         "bookmark"
         "advance"
