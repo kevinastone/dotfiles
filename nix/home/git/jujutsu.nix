@@ -11,6 +11,14 @@
       bookmark-advance-to = "heads(::@ & ~empty())";
     };
     aliases = {
+      pull = [
+        "util"
+        "exec"
+        "--"
+        "sh"
+        "-c"
+        "jj git fetch && jj rebase -o 'trunk()'"
+      ];
       tug = [
         "bookmark"
         "advance"
