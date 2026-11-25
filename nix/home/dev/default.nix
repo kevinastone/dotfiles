@@ -20,6 +20,7 @@
     cyberduck
     duckdb
     just
+    nushell
     # keep-sorted end
   ];
 }
