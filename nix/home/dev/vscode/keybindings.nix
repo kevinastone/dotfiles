@@ -4,13 +4,11 @@ let
   sublimePackage = lib.importJSON ./vscode-sublime-keybindings/package.json;
   sublimeKeybindings = sublimePackage.contributes.keybindings;
 in
-{
-  keybindings = [
-    {
-      command = "workbench.action.openRecent";
-      key = "ctrl+alt+p";
-      mac = "ctrl+cmd+p";
-    }
-  ]
-  ++ sublimeKeybindings;
-}
+[
+  {
+    command = "workbench.action.openRecent";
+    key = "ctrl+alt+p";
+    mac = "ctrl+cmd+p";
+  }
+]
+++ sublimeKeybindings
