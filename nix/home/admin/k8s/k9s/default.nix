@@ -1,7 +1,11 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
-  preferencesPath =
-    if pkgs.stdenv.hostPlatform.isDarwin then "Library/Application Support/" else ".config";
+  enableXdgConfig = !pkgs.stdenv.hostPlatform.isDarwin || config.xdg.enable;
 in
 {
   imports = [
@@ -16,6 +20,11 @@ in
 
   # Workaround for catppuccin/k9s defects
   # https://github.com/catppuccin/k9s/issues/16
-  home.file."${preferencesPath}/k9s/skins/catppuccin-mocha.yaml".source =
-    lib.mkForce ./catppuccin-mocha.yaml;
+  xdg.configFile = lib.mkIf enableXdgConfig {
+    "k9s/skins/catppuccin-mocha.yaml".source = lib.mkForce ./catppuccin-mocha.yaml;
+  };
+  home.file = lib.mkIf (!enableXdgConfig) {
+    "Library/Application Support/k9s/skins/catppuccin-mocha.yaml".source =
+      lib.mkForce ./catppuccin-mocha.yaml;
+  };
 }

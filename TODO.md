@@ -6,7 +6,7 @@
 
 - [x] **Fix wrong plist domain in Mail defaults** (`nix/darwin/system/mail.nix`):
   `ConversationViewSortDescending = true` is being written to `"com.apple.Photos"` instead of `"com.apple.mail"` (copy-paste from `photos.nix`). Also consider `CustomUserPreferences` instead of `CustomSystemPreferences` for per-user app preferences.
-- [ ] **Update `k9s` Catppuccin skin path for XDG** (`nix/home/admin/k8s/k9s/default.nix`):
+- [x] **Update `k9s` Catppuccin skin path for XDG** (`nix/home/admin/k8s/k9s/default.nix`):
   `preferencesPath` hardcodes `"Library/Application Support/"` on Darwin (also producing a double slash `Support//k9s`). Now that `xdg.enable = true` is enabled, `programs.k9s` and `catppuccin/nix` use `~/.config/k9s`, so the `lib.mkForce` skin override is written to the wrong directory and no longer takes effect. Switch to `xdg.configFile."k9s/skins/catppuccin-mocha.yaml"` when `!pkgs.stdenv.hostPlatform.isDarwin || config.xdg.enable`.
 - [ ] **Fix `workon` fallback logic in Fish** (`nix/home/shell/workon.nix`):
   Line 15 runs `set -q WORKON_BASE_DIR; or set`—in Fish, bare `set` prints every shell variable to stdout and returns `0`, so when `WORKON_BASE_DIR` is unset (e.g., on Linux), `workon` dumps the entire environment and sets `base` to empty instead of `$HOME` (`cd /$path`). Replace with an explicit `if set -q WORKON_BASE_DIR ... else ... end`.
