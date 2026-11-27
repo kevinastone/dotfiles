@@ -1,12 +1,6 @@
 {
   system.defaults.CustomSystemPreferences."com.apple.Safari" = {
-    #!/usr/bin/env bash
-
-    ###############################################################################
-    # Safari & WebKit  #
-    ###############################################################################
-
-    # Setup new window and tab behvior
+    # Setup new window and tab behavior
     # 0: Homepage
     # 1: Empty Page
     # 2: Same Page
@@ -38,9 +32,6 @@
     AutoFillPasswords = false;
     AutoFillCreditCardData = false;
     AutoFillMiscellaneousForms = false;
-
-    # Enable “Do Not Track”
-    SendDoNotTrackHTTPHeader = true;
 
     # Show status bar
     ShowStatusBar = true;
