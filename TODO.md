@@ -33,7 +33,7 @@
 
 ## Security, Platform Guards & Idioms
 
-- [ ] **Remove relative `./node_modules/.bin` from global `PATH`** (`nix/home/shell/fish/conf.d/node.fish`):
+- [x] **Remove relative `./node_modules/.bin` from global `PATH`** (`nix/home/shell/fish/conf.d/node.fish`):
   `fish_add_path -g ./node_modules/.bin` puts a relative directory in global `PATH`, allowing any directory you `cd` into to shadow binaries like `git` or `ls`. Prefer per-project `PATH_add node_modules/.bin` via `direnv` (`.envrc`) or `mise`.
 - [ ] **Use `IdentityAgent` in SSH config for 1Password** (`nix/home/shell/fish/conf.d/1password.fish` & `nix/home/ssh/`):
   Setting `SSH_AUTH_SOCK` only in `if status --is-login` Fish shells misses GUI apps (Zed, Fork) and non-login contexts, and can clobber forwarded SSH agents. Configuring `IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"` in `programs.ssh` (guarded by `isDarwin`) works across all tools and shells while still allowing explicit `ForwardAgent` overrides.
