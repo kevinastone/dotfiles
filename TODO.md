@@ -44,8 +44,6 @@
 
 ## CI & Home-Directory Polish
 
-- [ ] **Expand CI flake checks beyond formatting** (`flake.nix` & `.github/workflows/ci.yaml`):
-  `checks` in `flake.nix` currently only runs `treefmt`. Adding a Darwin system/home evaluation or build check to `checks.aarch64-darwin` will catch broken Nix module evaluations on PRs before merge.
 - [ ] **Optimize `update-flake.yaml` build time** (`.github/workflows/update-flake.yaml`):
   Building every `darwinConfiguration` twice from scratch (`build-current` + `build`) daily on `macos-latest` risks hitting the 30-minute timeout when uncached packages update. Consider running weekly (or caching `/nix/store` with `DeterminateSystems/magic-nix-cache-action` / Cachix).
 - [ ] **Optional remaining `$HOME` XDG environment variables** (`nix/home/shell/`):
