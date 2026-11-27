@@ -23,13 +23,6 @@
 - [x] **Update `.skip-install` for root repo files** (`.skip-install`):
   `install.sh` symlinks every non-dot file in the repo root to `~/.<file>` unless matched in `.skip-install`. Add `TODO\.md` (and remove obsolete `sublime.sh`).
 
-## Shared Config Drift (Nix vs. Work Laptop)
-
-- [ ] **Single-source Ghostty settings** (`nix/home/ghostty/default.nix` & `config/ghostty/config`):
-  Unlike `git` (`programs.git.includes`) and `starship` (`lib.importTOML`), Ghostty settings are duplicated in both `nix/home/ghostty/default.nix` and `config/ghostty/config` (and `auto-update = "off"` is only in the Nix copy). Reference `config/ghostty/config` from Nix (e.g., via Ghostty's `config-file` directive or parsing) so edits stay in sync across machines while keeping `catppuccin.nix` theme integration on Nix.
-- [ ] **Refresh `Brewfile` for work laptop parity** (`Brewfile`):
-  Review whether newer tools/apps used daily (e.g., `ghostty`, `starship`, `fish`, `ripgrep`, `bat`, `delta`, `jujutsu`, `zed`) should be added to `Brewfile` alongside `alfred` and `hammerspoon`.
-
 ## Dead, Orphaned & Duplicate Config
 
 - [ ] **Remove duplicate packages across modules**:
