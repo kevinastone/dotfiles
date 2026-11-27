@@ -10,7 +10,7 @@
   `preferencesPath` hardcodes `"Library/Application Support/"` on Darwin (also producing a double slash `Support//k9s`). Now that `xdg.enable = true` is enabled, `programs.k9s` and `catppuccin/nix` use `~/.config/k9s`, so the `lib.mkForce` skin override is written to the wrong directory and no longer takes effect. Switch to `xdg.configFile."k9s/skins/catppuccin-mocha.yaml"` when `!pkgs.stdenv.hostPlatform.isDarwin || config.xdg.enable`.
 - [x] **Fix `workon` fallback logic in Fish** (`nix/home/shell/workon.nix`):
   Line 15 runs `set -q WORKON_BASE_DIR; or set`—in Fish, bare `set` prints every shell variable to stdout and returns `0`, so when `WORKON_BASE_DIR` is unset (e.g., on Linux), `workon` dumps the entire environment and sets `base` to empty instead of `$HOME` (`cd /$path`). Replace with an explicit `if set -q WORKON_BASE_DIR ... else ... end`.
-- [ ] **Fix `tmux.conf` reload keybinding for XDG** (`tmux.conf`):
+- [x] **Fix `tmux.conf` reload keybinding for XDG** (`tmux.conf`):
   `bind r source-file ~/.tmux.conf` fails on Nix machines now that `programs.tmux` writes `~/.config/tmux/tmux.conf`. Use an `if-shell` check so `<prefix> r` works on both Nix (`~/.config/tmux/tmux.conf`) and non-Nix (`~/.tmux.conf`) machines:
   ```tmux
   bind r if-shell "[ -f ~/.config/tmux/tmux.conf ]" "source-file ~/.config/tmux/tmux.conf" "source-file ~/.tmux.conf" \; display-message "  Config reloaded..."
