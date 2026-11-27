@@ -44,8 +44,6 @@
 
 ## CI & Home-Directory Polish
 
-- [ ] **Optimize `update-flake.yaml` build time** (`.github/workflows/update-flake.yaml`):
-  Building every `darwinConfiguration` twice from scratch (`build-current` + `build`) daily on `macos-latest` risks hitting the 30-minute timeout when uncached packages update. Consider running weekly (or caching `/nix/store` with `DeterminateSystems/magic-nix-cache-action` / Cachix).
 - [ ] **Optional remaining `$HOME` XDG environment variables** (`nix/home/shell/`):
   If you want to eliminate remaining history/tool dotfiles in `~`:
   - `LESSHISTFILE = "${config.xdg.stateHome}/less/history"` (or `"-"`)
