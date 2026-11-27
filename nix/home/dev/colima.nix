@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   services.colima = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
     enable = true;
@@ -17,5 +22,7 @@
     };
   };
 
-  programs.ssh.includes = lib.optionals pkgs.stdenv.hostPlatform.isDarwin [ "~/.colima/ssh_config" ];
+  programs.ssh.includes = lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
+    "~/${config.services.colima.colimaHomeDir}/ssh_config"
+  ];
 }
