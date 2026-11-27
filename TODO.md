@@ -26,11 +26,11 @@
 ## Dead, Orphaned & Duplicate Config
 
 - [ ] **Clean up unused / unimported modules and files**:
-  - `nix/home/vim/vimrc`: ~200-line legacy `vim-plug` config not referenced by Nix or `install.sh` (`.skip-install` skips `nix/.*`).
-  - `nix/home/shell/bash/`: `default.nix` is empty (`{ }`) and `profile.d/{cdr,workon}.bash` are unreferenced.
-  - `nix/overlays/default.nix`: empty `imports = [ ];` stub.
-  - `nix/home/dev/vscode/`: never imported, `programs.vscode.enable` is unset, and `keybindings.nix` returns `{ keybindings = [ ... ]; }` instead of a list (which would fail module type-checking if enabled). Either wire it up or remove it.
-  - `nix/home/utils/sqlite/`: never imported in `nix/home/utils/default.nix` (and writes `~/.sqliterc` rather than XDG).
+  - [x] `nix/home/vim/vimrc`: ~200-line legacy `vim-plug` config not referenced by Nix or `install.sh` (`.skip-install` skips `nix/.*`).
+  - [ ] `nix/home/shell/bash/`: `default.nix` is empty (`{ }`) and `profile.d/{cdr,workon}.bash` are unreferenced.
+  - [ ] `nix/overlays/default.nix`: empty `imports = [ ];` stub.
+  - [ ] `nix/home/dev/vscode/`: never imported, `programs.vscode.enable` is unset, and `keybindings.nix` returns `{ keybindings = [ ... ]; }` instead of a list (which would fail module type-checking if enabled). Either wire it up or remove it.
+  - [ ] `nix/home/utils/sqlite/`: never imported in `nix/home/utils/default.nix` (and writes `~/.sqliterc` rather than XDG).
 - [ ] **Simplify `unnest-video-file` wrapper** (`nix/home/media/scripts/`):
   `unnest-video-file.mts` (+ `zx`, `package.json`, `package-lock.json`, `.gitignore`) only parses `-i`/`--ignore` and `-n`/`--dry-run` before spawning `unnest-video-file-nu`. Handling those flags directly in `unnest-video-file.nu` (or a tiny `getopts` shell wrapper) removes the `zx`/Node runtime dependency and lockfiles.
 
