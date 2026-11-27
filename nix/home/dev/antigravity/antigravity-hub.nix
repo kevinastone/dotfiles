@@ -13,13 +13,15 @@ in
 {
   home.packages = with pkgs; [ antigravity-hub ];
 
-  home.activation.antigravityHubSettingsActivation = lib.hm.dag.entryAfter [ "linkGeneration" ] (
-    lib.hm.generators.mkImpureConfigMerger {
-      inherit pkgs staticSettings;
-      format = "json";
-      empty = "{}";
-      jqOperation = "$dynamic * $static";
-      path = "${config.home.homeDirectory}/Library/Application Support/Antigravity/app_storage.json";
-    }
+  home.activation.antigravityHubSettingsActivation = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin (
+    lib.hm.dag.entryAfter [ "linkGeneration" ] (
+      lib.hm.generators.mkImpureConfigMerger {
+        inherit pkgs staticSettings;
+        format = "json";
+        empty = "{}";
+        jqOperation = "$dynamic * $static";
+        path = "${config.home.homeDirectory}/Library/Application Support/Antigravity/app_storage.json";
+      }
+    )
   );
 }
