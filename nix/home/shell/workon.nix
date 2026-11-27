@@ -8,26 +8,27 @@
   '';
 
   programs.fish.functions.workon.body = ''
-      set -q argv[1]
-      and set -l path $argv[1]
-      or set -l path "."
+    set -l path "."
+    if set -q argv[1]
+      set path $argv[1]
+    end
 
-      set -q WORKON_BASE_DIR; or set
-      and set -l base $WORKON_BASE_DIR
-      or set -l base $HOME
+    set -l base $HOME
+    if set -q WORKON_BASE_DIR
+      set base $WORKON_BASE_DIR
+    end
 
-    	# Change this to your base projects path [$base/{project1,project2,...}]
+    # Change this to your relative virtual_env dir (if exists) [$base/{project}/$VENV_DIR]
+    set -l VENV_DIR ".venv"
 
-    	# Change this to your relative virtual_env dir (if exists) [$base/{project}/$VENV_DIR]
-    	set VENV_DIR ".venv"
+    if set -q VIRTUAL_ENV; and test -n "$VIRTUAL_ENV"
+      deactivate
+    end
 
-    	test -z "$VIRTUAL_ENV"
-    	or deactivate
+    cd $base/$path
+    and test -d $VENV_DIR
+    and source $VENV_DIR/bin/activate.fish
 
-    	cd $base/$path
-      and test -d $VENV_DIR
-      and source $VENV_DIR/bin/activate.fish
-
-      true
+    true
   '';
 }
