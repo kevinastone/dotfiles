@@ -25,11 +25,6 @@
 
 ## Dead, Orphaned & Duplicate Config
 
-- [ ] **Remove duplicate packages across modules**:
-  - `duckdb` is listed in both `nix/home/dev/default.nix` and `nix/home/utils/default.nix`.
-  - `nil` and `nixd` are listed in both `nix/home/dev/nix.nix` and `nix/home/zed/languages/nix.nix` (`extraPackages`). Also consider running only `nixd` (or `nil`) in Zed's `languages.Nix.language_servers` rather than both simultaneously to avoid duplicate LSP diagnostics/hover output.
-  - `htop` is installed in both `nix/default.nix` (`environment.systemPackages`) and `nix/home/utils/htop.nix` (`programs.htop.enable = true`).
-  - `vim` and `environment.variables.EDITOR = "vim"` in `nix/default.nix` overlap with `programs.neovim` (`defaultEditor = true`, `vimAlias = true`) in `nix/home/vim/default.nix`.
 - [ ] **Clean up unused / unimported modules and files**:
   - `nix/home/vim/vimrc`: ~200-line legacy `vim-plug` config not referenced by Nix or `install.sh` (`.skip-install` skips `nix/.*`).
   - `nix/home/shell/bash/`: `default.nix` is empty (`{ }`) and `profile.d/{cdr,workon}.bash` are unreferenced.
