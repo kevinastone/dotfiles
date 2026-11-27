@@ -9,5 +9,6 @@
     ];
     maxJobs = 4;
     config.virtualisation.cores = 6;
+    config.virtualisation.darwin-builder.memorySize = 8 * 1024; # MiB
   };
 }
