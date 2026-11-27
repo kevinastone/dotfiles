@@ -39,8 +39,6 @@
   Setting `SSH_AUTH_SOCK` only in `if status --is-login` Fish shells misses GUI apps (Zed, Fork) and non-login contexts, and can clobber forwarded SSH agents. Configuring `IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"` in `programs.ssh` (guarded by `isDarwin`) works across all tools and shells while still allowing explicit `ForwardAgent` overrides.
 - [x] **Guard Darwin-only paths and check types in `antigravity-hub.nix`** (`nix/home/dev/antigravity/antigravity-hub.nix`):
   Guard the `Library/Application Support/Antigravity/app_storage.json` activation hook with `lib.mkIf pkgs.stdenv.hostPlatform.isDarwin`, and verify whether `autoCheckForUpdates` expects boolean `false` instead of string `"false"`.
-- [ ] **Harden `sudo-nopasswd` path resolution** (`nix/flakes/sudo-nopasswd/hm.nix`):
-  `hm.nix` resolves entries to `"${profileDirectory}/bin/${item}"`, which breaks if a system binary string (like `"reboot"` in its example) is passed, and relies on profile symlinks rather than immutable `/nix/store` paths (`lib.getExe pkg`).
 - [ ] **Review Safari & macOS sandboxed preferences** (`nix/darwin/system/safari.nix`):
   On modern macOS, Safari runs in a container (`~/Library/Containers/com.apple.Safari/...`) and ignores `/Library/Preferences/com.apple.Safari.plist` (`CustomSystemPreferences`) for most user settings; `SendDoNotTrackHTTPHeader` was also removed upstream. Remove the stray `#!/usr/bin/env bash` comment at the top of the attrset.
 
