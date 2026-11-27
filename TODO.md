@@ -18,7 +18,7 @@
   *(Also remove the duplicate `set -g history-limit 10000` on line 12.)*
 - [x] **Use absolute paths in Time Machine exclusions** (`nix/darwin/system/time-machine.nix`):
   `SkipPaths` uses `"~${username}/Downloads"` etc., which macOS `backupd` does not expand inside `/Library/Preferences/com.apple.TimeMachine.plist`. Use `"/Users/${username}/..."` instead.
-- [ ] **Fix `SystemUIServer` typo in non-Nix macOS script** (`macos.d/screenshots.sh`):
+- [x] **Fix `SystemUIServer` typo in non-Nix macOS script** (`macos.d/screenshots.sh`):
   `killall SystemUIServerk` has a trailing `k`, silently failing to restart `SystemUIServer` when running `./macos.sh`.
 - [ ] **Update `.skip-install` for root repo files** (`.skip-install`):
   `install.sh` symlinks every non-dot file in the repo root to `~/.<file>` unless matched in `.skip-install`. Add `TODO\.md` (and remove obsolete `sublime.sh`).
