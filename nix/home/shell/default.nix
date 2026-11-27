@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   imports = [
     # keep-sorted start
@@ -10,5 +11,6 @@
   ];
 
   home.file.".hushlogin".text = "";
-  home.file.".inputrc".source = ./inputrc;
+  xdg.configFile."readline/inputrc".source = ./inputrc;
+  home.sessionVariables.INPUTRC = "${config.xdg.configHome}/readline/inputrc";
 }
