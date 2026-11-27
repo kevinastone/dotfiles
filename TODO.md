@@ -16,7 +16,7 @@
   bind r if-shell "[ -f ~/.config/tmux/tmux.conf ]" "source-file ~/.config/tmux/tmux.conf" "source-file ~/.tmux.conf" \; display-message "  Config reloaded..."
   ```
   *(Also remove the duplicate `set -g history-limit 10000` on line 12.)*
-- [ ] **Use absolute paths in Time Machine exclusions** (`nix/darwin/system/time-machine.nix`):
+- [x] **Use absolute paths in Time Machine exclusions** (`nix/darwin/system/time-machine.nix`):
   `SkipPaths` uses `"~${username}/Downloads"` etc., which macOS `backupd` does not expand inside `/Library/Preferences/com.apple.TimeMachine.plist`. Use `"/Users/${username}/..."` instead.
 - [ ] **Fix `SystemUIServer` typo in non-Nix macOS script** (`macos.d/screenshots.sh`):
   `killall SystemUIServerk` has a trailing `k`, silently failing to restart `SystemUIServer` when running `./macos.sh`.

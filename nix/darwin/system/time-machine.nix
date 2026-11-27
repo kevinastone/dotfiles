@@ -1,15 +1,15 @@
 { config, ... }:
 let
-  username = config.system.primaryUser;
+  home = config.users.users.${config.system.primaryUser}.home;
 in
 {
   system.defaults.CustomSystemPreferences."com.apple.TimeMachine" = {
     SkipPaths = [
-      "~${username}/Downloads"
-      "~${username}/Documents/Virtualbox VMs"
-      "~${username}/.local"
-      "~${username}/Movies"
-      "~${username}/Applications"
+      "${home}/Downloads"
+      "${home}/Documents/Virtualbox VMs"
+      "${home}/.local"
+      "${home}/Movies"
+      "${home}/Applications"
     ];
 
     RequiresACPower = true;
