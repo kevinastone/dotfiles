@@ -1,7 +1,6 @@
 alfred/.*
 Brewfile
 Readme.markdown
-TODO\.md
 macos.sh
 macos.d/.*
 .*\.lock
