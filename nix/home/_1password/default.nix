@@ -28,6 +28,10 @@
   programs._1password-shell-plugins.enable = true;
   # programs._1password-shell-plugins.plugins = with pkgs; [];
 
-  programs.ssh.settings."*".IdentityAgent =
-    lib.mkIf pkgs.stdenv.hostPlatform.isDarwin "\"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
+  programs.ssh.settings = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
+    "~1password" = {
+      header = ''Match host * exec "test -S ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"'';
+      IdentityAgent = ''"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"'';
+    };
+  };
 }
