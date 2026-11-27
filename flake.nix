@@ -143,6 +143,7 @@
         system = "aarch64-darwin";
         modules = [
           ./nix/darwin
+          ./nix/darwin/linux-builder.nix
           ./nix/darwin/smb
           ./nix/darwin/system
           ./nix/darwin/shell/fish.nix
