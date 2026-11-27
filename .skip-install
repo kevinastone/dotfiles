@@ -1,7 +1,7 @@
 alfred/.*
 Brewfile
 Readme.markdown
-sublime.sh
+TODO\.md
 macos.sh
 macos.d/.*
 .*\.lock

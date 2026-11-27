@@ -20,7 +20,7 @@
   `SkipPaths` uses `"~${username}/Downloads"` etc., which macOS `backupd` does not expand inside `/Library/Preferences/com.apple.TimeMachine.plist`. Use `"/Users/${username}/..."` instead.
 - [x] **Fix `SystemUIServer` typo in non-Nix macOS script** (`macos.d/screenshots.sh`):
   `killall SystemUIServerk` has a trailing `k`, silently failing to restart `SystemUIServer` when running `./macos.sh`.
-- [ ] **Update `.skip-install` for root repo files** (`.skip-install`):
+- [x] **Update `.skip-install` for root repo files** (`.skip-install`):
   `install.sh` symlinks every non-dot file in the repo root to `~/.<file>` unless matched in `.skip-install`. Add `TODO\.md` (and remove obsolete `sublime.sh`).
 
 ## Shared Config Drift (Nix vs. Work Laptop)
