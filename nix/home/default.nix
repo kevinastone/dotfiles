@@ -14,6 +14,7 @@
   home.stateVersion = "26.05"; # Please read the comment before changing.
 
   xdg.enable = true;
+  home.preferXdgDirectories = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
