@@ -155,7 +155,6 @@
             # Custom homebrew casks for this machine
             homebrew.casks = [
               "autodesk-fusion"
-              "discord"
               "hyperbackupexplorer"
             ];
           }
@@ -167,6 +166,7 @@
           ./nix/home/catppuccin.nix
           ./nix/home/chrome
           ./nix/home/dev
+          ./nix/home/discord.nix
           ./nix/home/ghostty
           ./nix/home/homebrew/alfred.nix
           ./nix/home/homebrew/hammerspoon.nix
