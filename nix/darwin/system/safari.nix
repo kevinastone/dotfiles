@@ -28,8 +28,7 @@
     IncludeDevelopMenu = true;
     WebKitDeveloperExtrasEnabledPreferenceKey = true;
 
-    # Disable AutoFill
-    AutoFillPasswords = false;
+    # Disable AutoFill (keep AutoFillPasswords enabled for 1Password macOS AutoFill)
     AutoFillCreditCardData = false;
     AutoFillMiscellaneousForms = false;
 
